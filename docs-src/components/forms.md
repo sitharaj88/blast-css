@@ -38,7 +38,7 @@ lede: Inputs, selects, textareas, switches, checkboxes, ranges, file inputs, fie
 ## Select
 
 <demo>
-<select class="b-select">
+<select class="b-select" aria-label="Choose a fruit">
   <option>Apple</option>
   <option>Banana</option>
   <option>Cherry</option>
@@ -83,7 +83,7 @@ lede: Inputs, selects, textareas, switches, checkboxes, ranges, file inputs, fie
 ## Range
 
 <demo>
-<input type="range" class="b-range">
+<input type="range" class="b-range" aria-label="Volume">
 </demo>
 
 ## Validation states
@@ -122,7 +122,7 @@ Add `data-required` to `.b-label` to render a red asterisk:
 ## Disabled
 
 <demo>
-<input class="b-input" disabled value="Read-only">
+<input class="b-input" disabled value="Read-only" aria-label="Disabled input example">
 </demo>
 
 ## API

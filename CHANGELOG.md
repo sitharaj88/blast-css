@@ -2,7 +2,16 @@
 
 All notable changes to BlastCSS will be documented here.
 
-## 0.4.0
+## 1.0.0
+
+The first stable release. The public API surface is now committed:
+
+- Class names with the `b-` prefix (components) and unprefixed utilities are stable.
+- All `--b-*` design tokens are stable.
+- Module exports (`.`, `./core`, `./components`, `./components-extra`, `./utilities`, `./motion`, `./reset`, `./js`, `./tokens.json`, `./tokens.css`, `./tokens.ts`) are stable.
+- The optional JS helper API — `autoInit`, `initDialogs`, `initCollapse`, `initTabs`, `initDropdowns`, `initToasts`, `initPopovers`, `initSegmented`, `initCombobox`, `initTagInput`, `initCommand`, `initTheme`, `showToast`, `viewTransition`, `trapDialogFocus` — is stable.
+
+Breaking changes will go through major version bumps from here.
 
 ### Foundations modernized
 - Migrated the entire color system to **OKLCH** with `light-dark()` so dark mode works without redefining variables.

@@ -118,11 +118,13 @@
 
     document.addEventListener("keydown", (event) => {
       if ((event.metaKey || event.ctrlKey) && event.key.toLowerCase() === "k") {
+        // If a component-level palette claims ⌘K (data-shortcut), defer to it.
+        if (document.querySelector(".b-command[data-shortcut]")) return;
         event.preventDefault();
         if (searchDialog.open) searchDialog.close();
         else open();
       }
-      if (event.key === "/" && document.activeElement?.tagName !== "INPUT" && document.activeElement?.tagName !== "TEXTAREA") {
+      if (event.key === "/" && document.activeElement?.tagName !== "INPUT" && document.activeElement?.tagName !== "TEXTAREA" && !searchDialog.open) {
         event.preventDefault();
         open();
       }

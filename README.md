@@ -2,6 +2,8 @@
 
 A modern, framework-agnostic CSS framework built on the latest web platform: cascade layers, OKLCH design tokens, container queries, the popover API, anchor positioning, and view transitions. Tiny, fast, no build step, no runtime dependencies.
 
+**Version 1.0** — public API is stable. See [CHANGELOG.md](CHANGELOG.md) for the full inventory.
+
 ```text
 blast.min.css                  ~12 KB gzip   (full bundle)
 blast.core.min.css            ~5.0 KB gzip   (tokens + reset + base + layout + forms + a11y + motion)

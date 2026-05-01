@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-05-01T15:42:28.112Z",
+  "generatedAt": "2026-05-01T16:35:02.072Z",
   "bundles": {
     "dist/blast.min.css": {
       "bytes": 60268,
@@ -30,8 +30,8 @@
       "gzipBytes": 679
     },
     "dist/blast.min.js": {
-      "bytes": 12516,
-      "gzipBytes": 3300
+      "bytes": 12499,
+      "gzipBytes": 3294
     }
   },
   "fixtures": {

@@ -1,6 +1,6 @@
 {
   "name": "blastcss",
-  "version": "0.4.0",
+  "version": "1.0.0",
   "description": "A modern, framework-agnostic CSS framework built on cascade layers, OKLCH tokens, container queries, and the popover API.",
   "type": "module",
   "homepage": "https://github.com/blastcss/blastcss#readme",

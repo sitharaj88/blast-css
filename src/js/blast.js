@@ -382,7 +382,8 @@ export function initCommand(root = document) {
 
   root.addEventListener("keydown", (event) => {
     if ((event.metaKey || event.ctrlKey) && event.key.toLowerCase() === "k") {
-      const palette = document.querySelector("dialog.b-command, .b-command[data-shortcut]");
+      // Only opt-in palettes claim ⌘K; the docs search uses its own handler.
+      const palette = document.querySelector(".b-command[data-shortcut]");
       if (!palette) return;
       event.preventDefault();
       if (palette.tagName === "DIALOG") {
