@@ -9,7 +9,7 @@
     <meta property="og:title" content="Quick start · BlastCSS">
     <meta property="og:description" content="BlastCSS is a tiny, modern, framework-agnostic CSS framework built on cascade layers, OKLCH tokens, and container queries.">
     <meta property="og:type" content="website">
-    <meta property="og:image" content="https://opengraph.githubassets.com/1/sitharaj88/blast-css">
+    <meta property="og:image" content="https://sitharaj88.github.io/blast-css/og/guides-quickstart.png">
     <meta name="twitter:card" content="summary_large_image">
     <link rel="icon" type="image/svg+xml" href="../favicon.svg">
     <title>Quick start · BlastCSS</title>
@@ -107,9 +107,16 @@
 <h2 id="2-layout-primitives"><a class="b-anchor-link" href="#2-layout-primitives" aria-label="Anchor link">2. Layout primitives</a></h2>
 <p>Compose pages with semantic layout classes. Each is a single-purpose primitive:</p>
 <section class="b-demo">
-    <div class="b-demo-tabs" role="tablist">
-      <button class="b-demo-tab is-active" type="button" role="tab" aria-selected="true" data-tab="preview">Preview</button>
-      <button class="b-demo-tab" type="button" role="tab" aria-selected="false" data-tab="code">Code</button>
+    <div class="b-demo-bar">
+      <div class="b-demo-tabs" role="tablist">
+        <button class="b-demo-tab is-active" type="button" role="tab" aria-selected="true" data-tab="preview">Preview</button>
+        <button class="b-demo-tab" type="button" role="tab" aria-selected="false" data-tab="code">Code</button>
+      </div>
+      <div class="b-demo-toolbar">
+        <button class="b-demo-theme" type="button" data-demo-theme aria-label="Toggle preview theme" title="Toggle preview theme">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79Z"/></svg>
+        </button>
+      </div>
     </div>
     <div class="b-demo-preview" role="tabpanel" data-panel="preview"><div class="b-stack" style="--b-stack-gap: var(--b-3)">
   <div class="b-cluster">
@@ -152,9 +159,16 @@
 <h2 id="3-components-are-html-class-names"><a class="b-anchor-link" href="#3-components-are-html-class-names" aria-label="Anchor link">3. Components are HTML + class names</a></h2>
 <p>No JSX, no slots, no hydration: a button is <code>&lt;button class="b-btn"&gt;</code>. Extend by adding modifier classes (<code>b-btn-secondary</code>, <code>b-btn-soft</code>, <code>b-btn-lg</code>).</p>
 <section class="b-demo">
-    <div class="b-demo-tabs" role="tablist">
-      <button class="b-demo-tab is-active" type="button" role="tab" aria-selected="true" data-tab="preview">Preview</button>
-      <button class="b-demo-tab" type="button" role="tab" aria-selected="false" data-tab="code">Code</button>
+    <div class="b-demo-bar">
+      <div class="b-demo-tabs" role="tablist">
+        <button class="b-demo-tab is-active" type="button" role="tab" aria-selected="true" data-tab="preview">Preview</button>
+        <button class="b-demo-tab" type="button" role="tab" aria-selected="false" data-tab="code">Code</button>
+      </div>
+      <div class="b-demo-toolbar">
+        <button class="b-demo-theme" type="button" data-demo-theme aria-label="Toggle preview theme" title="Toggle preview theme">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79Z"/></svg>
+        </button>
+      </div>
     </div>
     <div class="b-demo-preview" role="tabpanel" data-panel="preview"><div class="b-cluster">
   <button class="b-btn">Primary</button>
@@ -183,9 +197,16 @@
 <h2 id="4-utilities-for-one-offs"><a class="b-anchor-link" href="#4-utilities-for-one-offs" aria-label="Anchor link">4. Utilities for one-offs</a></h2>
 <p>Short, opt-in helpers for spacing, layout, typography, and color. They live in a dedicated cascade layer so they never fight components.</p>
 <section class="b-demo">
-    <div class="b-demo-tabs" role="tablist">
-      <button class="b-demo-tab is-active" type="button" role="tab" aria-selected="true" data-tab="preview">Preview</button>
-      <button class="b-demo-tab" type="button" role="tab" aria-selected="false" data-tab="code">Code</button>
+    <div class="b-demo-bar">
+      <div class="b-demo-tabs" role="tablist">
+        <button class="b-demo-tab is-active" type="button" role="tab" aria-selected="true" data-tab="preview">Preview</button>
+        <button class="b-demo-tab" type="button" role="tab" aria-selected="false" data-tab="code">Code</button>
+      </div>
+      <div class="b-demo-toolbar">
+        <button class="b-demo-theme" type="button" data-demo-theme aria-label="Toggle preview theme" title="Toggle preview theme">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79Z"/></svg>
+        </button>
+      </div>
     </div>
     <div class="b-demo-preview" role="tabpanel" data-panel="preview"><div class="d-flex items-center gap-3 p-4 rounded-lg bg-soft-primary">
   <div class="b-avatar">JD</div>

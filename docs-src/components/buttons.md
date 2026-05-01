@@ -104,20 +104,43 @@ Add `aria-busy="true"` for loading spinners that overlay the button text without
 <button class="b-btn b-btn-block">Block button</button>
 ```
 
+## States
+
+<demo>
+## Default
+<button class="b-btn">Click me</button>
+
+## Loading
+<button class="b-btn" aria-busy="true">Saving</button>
+
+## Disabled
+<button class="b-btn" disabled>Disabled</button>
+
+## Block
+<button class="b-btn b-btn-block">Block button</button>
+</demo>
+
 ## API
 
-| Class | Effect |
-| --- | --- |
-| `.b-btn` | Base button |
-| `.b-btn-secondary` | Surface background |
-| `.b-btn-ghost` | Transparent until hover |
-| `.b-btn-soft` | Tinted brand background |
-| `.b-btn-outline` | Border-only with brand color |
-| `.b-btn-success` / `-warning` / `-danger` | Status |
-| `.b-btn-sm` / `.b-btn-lg` | Sizes |
-| `.b-btn-block` | Full width |
-| `.b-icon-btn` | Square icon button |
-| `.b-btn-group` | Visually joined buttons |
+<api>
+| Name | Type | Default | Description |
+| --- | --- | --- | --- |
+| `.b-btn` | base | — | Default solid button. Pair with one of the variants below. |
+| `.b-btn-secondary` | variant | — | Surface background, neutral border. Use for non-primary actions. |
+| `.b-btn-ghost` | variant | — | Transparent until hover. Best in dense toolbars. |
+| `.b-btn-soft` | variant | — | Tinted primary background. Lower contrast than solid. |
+| `.b-btn-outline` | variant | — | Border-only with primary color. |
+| `.b-btn-success` | variant | — | Green background, success ink color. |
+| `.b-btn-warning` | variant | — | Amber background, warning ink color. |
+| `.b-btn-danger` | variant | — | Red background, danger ink color. |
+| `.b-btn-sm` | size | — | Smaller height (`var(--b-control-sm)`). |
+| `.b-btn-lg` | size | — | Larger height (`var(--b-control-lg)`). |
+| `.b-btn-block` | modifier | — | Full-width button. |
+| `.b-icon-btn` | base | — | Square 1:1 button for icons only. Always pair with `aria-label`. |
+| `.b-btn-group` | layout | — | Visually joins adjacent `.b-btn` elements. |
+| `aria-busy` | attribute | `false` | Set to `true` to show a centered loading spinner. |
+| `disabled` | attribute | — | Standard HTML disabled state. |
+</api>
 
 ## Accessibility
 

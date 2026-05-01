@@ -181,14 +181,120 @@ function codeBlock(code, lang) {
 }
 
 function demoBlock(html) {
+  // Multi-variant detection: lines starting with `## Variant Name` split into tabs.
+  const variantParts = html.split(/^##\s+(.+)$/m);
+  if (variantParts.length > 1) {
+    // The first chunk before any `## ` heading is preamble (often empty).
+    const preamble = variantParts[0].trim();
+    const variants = [];
+    for (let i = 1; i < variantParts.length; i += 2) {
+      const name = variantParts[i].trim();
+      const body = (variantParts[i + 1] || "").trim();
+      variants.push({ name, body });
+    }
+    if (variants.length > 1) return demoVariantsBlock(variants, preamble);
+  }
+  return demoSingle(html);
+}
+
+function demoSingle(html) {
   return `<section class="b-demo">
-    <div class="b-demo-tabs" role="tablist">
-      <button class="b-demo-tab is-active" type="button" role="tab" aria-selected="true" data-tab="preview">Preview</button>
-      <button class="b-demo-tab" type="button" role="tab" aria-selected="false" data-tab="code">Code</button>
+    <div class="b-demo-bar">
+      <div class="b-demo-tabs" role="tablist">
+        <button class="b-demo-tab is-active" type="button" role="tab" aria-selected="true" data-tab="preview">Preview</button>
+        <button class="b-demo-tab" type="button" role="tab" aria-selected="false" data-tab="code">Code</button>
+      </div>
+      <div class="b-demo-toolbar">
+        <button class="b-demo-theme" type="button" data-demo-theme aria-label="Toggle preview theme" title="Toggle preview theme">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79Z"/></svg>
+        </button>
+      </div>
     </div>
     <div class="b-demo-preview" role="tabpanel" data-panel="preview">${html}</div>
     <div class="b-demo-code" role="tabpanel" data-panel="code" hidden>${codeBlock(html, "html")}</div>
   </section>`;
+}
+
+function demoVariantsBlock(variants, preamble) {
+  const variantTabs = variants.map((v, i) => `<button class="b-demo-variant-tab${i === 0 ? " is-active" : ""}" type="button" role="tab" aria-selected="${i === 0}" data-variant="${i}">${escapeHtml(v.name)}</button>`).join("");
+  const previews = variants.map((v, i) => `<div class="b-demo-variant${i === 0 ? " is-active" : ""}" data-variant-pane="${i}">
+    <div class="b-demo-preview" role="tabpanel" data-panel="preview">${preamble}${v.body}</div>
+    <div class="b-demo-code" role="tabpanel" data-panel="code" hidden>${codeBlock((preamble ? preamble + "\n" : "") + v.body, "html")}</div>
+  </div>`).join("");
+
+  return `<section class="b-demo b-demo-variants">
+    <div class="b-demo-bar">
+      <div class="b-demo-tabs" role="tablist">
+        <button class="b-demo-tab is-active" type="button" role="tab" aria-selected="true" data-tab="preview">Preview</button>
+        <button class="b-demo-tab" type="button" role="tab" aria-selected="false" data-tab="code">Code</button>
+      </div>
+      <div class="b-demo-toolbar">
+        <button class="b-demo-theme" type="button" data-demo-theme aria-label="Toggle preview theme" title="Toggle preview theme">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79Z"/></svg>
+        </button>
+      </div>
+    </div>
+    <div class="b-demo-variant-tabs" role="tablist">${variantTabs}</div>
+    <div class="b-demo-variants-body">${previews}</div>
+  </section>`;
+}
+
+function apiBlock(rows) {
+  // rows is an array of {class, type, default, description}
+  const headerRow = `<tr>
+    <th scope="col">Name</th>
+    <th scope="col">Type</th>
+    <th scope="col">Default</th>
+    <th scope="col">Description</th>
+  </tr>`;
+  const bodyRows = rows.map((r) => `<tr>
+    <td>
+      <code class="docs-api-name">${inline(r.name)}</code>
+      <button class="docs-api-copy" type="button" data-b-copy data-copy-text="${escapeAttr(stripTagsForCopy(r.name))}" aria-label="Copy ${escapeAttr(stripTagsForCopy(r.name))}">
+        <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="9" y="9" width="13" height="13" rx="2"/><path d="M5 15V5a2 2 0 0 1 2-2h10"/></svg>
+      </button>
+    </td>
+    <td><code class="docs-api-type">${inline(r.type || "—")}</code></td>
+    <td><code class="docs-api-default">${inline(r.default || "—")}</code></td>
+    <td>${inline(r.description || "")}</td>
+  </tr>`).join("");
+  return `<div class="docs-api-table-wrap">
+    <table class="docs-api-table">
+      <thead>${headerRow}</thead>
+      <tbody>${bodyRows}</tbody>
+    </table>
+  </div>`;
+}
+
+function stripTagsForCopy(s) {
+  return s.replace(/`([^`]+)`/g, "$1");
+}
+
+function parseApi(raw) {
+  // Markdown-table form:
+  //   name | type | default | description
+  //   ---  | ---  | ---     | ---
+  //   .b-btn | base | — | Default button
+  const lines = raw.trim().split("\n").map((l) => l.trim()).filter(Boolean);
+  const rows = [];
+  for (let i = 0; i < lines.length; i++) {
+    const line = lines[i];
+    if (!line.includes("|")) continue;
+    if (/^[\s|:-]+$/.test(line)) continue; // separator row
+    const cells = line.split("|").map((c) => c.trim()).filter((_, idx, arr) => idx > 0 || arr[0] !== "" ? true : false);
+    // Trim leading/trailing empty cells from leading/trailing pipes.
+    while (cells.length && cells[0] === "") cells.shift();
+    while (cells.length && cells[cells.length - 1] === "") cells.pop();
+    if (rows.length === 0 && cells.some((c) => /^name$/i.test(c))) continue; // header
+    if (cells.length < 2) continue;
+    rows.push({
+      name: cells[0] || "",
+      type: cells[1] || "",
+      default: cells[2] || "",
+      description: cells[3] || ""
+    });
+  }
+  return rows;
 }
 
 function parseMarkdown(src) {
@@ -209,6 +315,13 @@ function parseMarkdown(src) {
     const idx = demos.length;
     demos.push(trimmed);
     return `\n\n@@DEMO_${idx}@@\n\n`;
+  });
+
+  const apis = [];
+  body = body.replace(/<api>([\s\S]*?)<\/api>/g, (_, raw) => {
+    const idx = apis.length;
+    apis.push(parseApi(raw));
+    return `\n\n@@API_${idx}@@\n\n`;
   });
 
   const codeBlocks = [];
@@ -238,6 +351,12 @@ function parseMarkdown(src) {
     const demoMatch = line.trim().match(/^@@DEMO_(\d+)@@$/);
     if (demoMatch) {
       out.push(demoBlock(demos[Number(demoMatch[1])]));
+      i++; continue;
+    }
+
+    const apiMatch = line.trim().match(/^@@API_(\d+)@@$/);
+    if (apiMatch) {
+      out.push(apiBlock(apis[Number(apiMatch[1])]));
       i++; continue;
     }
 
@@ -477,7 +596,9 @@ function shell({ title, description, content, currentPath, headings, hideToc, bo
   const depth = currentPath.split("/").length - 2;
   const rel = depth > 0 ? "../".repeat(depth) : "./";
   const distRel = `${rel}../dist/`;
-  const ogImage = "https://opengraph.githubassets.com/1/sitharaj88/blast-css";
+  const ogSlug = currentPath.replace(/^\//, "").replace(/\.html$/, "").replace(/[/\\]/g, "-") || "index";
+  const ogImage = `${SITE_BASE}/og/${ogSlug}.png`;
+  const ogImageRel = `${rel}og/${ogSlug}.png`;
   const editPath = currentPath.replace(/\.html$/, ".md").replace(/^\//, "");
   const editHref = `${REPO_URL}/edit/main/docs-src/${editPath}`;
 

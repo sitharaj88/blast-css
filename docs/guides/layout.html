@@ -9,7 +9,7 @@
     <meta property="og:title" content="Layout primitives · BlastCSS">
     <meta property="og:description" content="BlastCSS is a tiny, modern, framework-agnostic CSS framework built on cascade layers, OKLCH tokens, and container queries.">
     <meta property="og:type" content="website">
-    <meta property="og:image" content="https://opengraph.githubassets.com/1/sitharaj88/blast-css">
+    <meta property="og:image" content="https://sitharaj88.github.io/blast-css/og/guides-layout.png">
     <meta name="twitter:card" content="summary_large_image">
     <link rel="icon" type="image/svg+xml" href="../favicon.svg">
     <title>Layout primitives · BlastCSS</title>
@@ -90,9 +90,16 @@
   </header><h2 id="container"><a class="b-anchor-link" href="#container" aria-label="Anchor link">Container</a></h2>
 <p>A centered, max-width wrapper with horizontal padding. Container queries are enabled by default, so children can use <code>@sm:</code> / <code>@md:</code> / <code>@lg:</code> variants.</p>
 <section class="b-demo">
-    <div class="b-demo-tabs" role="tablist">
-      <button class="b-demo-tab is-active" type="button" role="tab" aria-selected="true" data-tab="preview">Preview</button>
-      <button class="b-demo-tab" type="button" role="tab" aria-selected="false" data-tab="code">Code</button>
+    <div class="b-demo-bar">
+      <div class="b-demo-tabs" role="tablist">
+        <button class="b-demo-tab is-active" type="button" role="tab" aria-selected="true" data-tab="preview">Preview</button>
+        <button class="b-demo-tab" type="button" role="tab" aria-selected="false" data-tab="code">Code</button>
+      </div>
+      <div class="b-demo-toolbar">
+        <button class="b-demo-theme" type="button" data-demo-theme aria-label="Toggle preview theme" title="Toggle preview theme">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79Z"/></svg>
+        </button>
+      </div>
     </div>
     <div class="b-demo-preview" role="tabpanel" data-panel="preview"><div class="b-container" style="border:1px dashed var(--b-border); padding-block: var(--b-3); text-align:center">.b-container — capped at 72rem</div></div>
     <div class="b-demo-code" role="tabpanel" data-panel="code" hidden><figure class="b-code" data-lang="html">
@@ -110,9 +117,16 @@
 <h2 id="stack"><a class="b-anchor-link" href="#stack" aria-label="Anchor link">Stack</a></h2>
 <p>Vertical column with consistent gap. Override via <code>--b-stack-gap</code>.</p>
 <section class="b-demo">
-    <div class="b-demo-tabs" role="tablist">
-      <button class="b-demo-tab is-active" type="button" role="tab" aria-selected="true" data-tab="preview">Preview</button>
-      <button class="b-demo-tab" type="button" role="tab" aria-selected="false" data-tab="code">Code</button>
+    <div class="b-demo-bar">
+      <div class="b-demo-tabs" role="tablist">
+        <button class="b-demo-tab is-active" type="button" role="tab" aria-selected="true" data-tab="preview">Preview</button>
+        <button class="b-demo-tab" type="button" role="tab" aria-selected="false" data-tab="code">Code</button>
+      </div>
+      <div class="b-demo-toolbar">
+        <button class="b-demo-theme" type="button" data-demo-theme aria-label="Toggle preview theme" title="Toggle preview theme">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79Z"/></svg>
+        </button>
+      </div>
     </div>
     <div class="b-demo-preview" role="tabpanel" data-panel="preview"><div class="b-stack" style="--b-stack-gap: var(--b-3)">
   <div class="b-card"><div class="b-card-body">One</div></div>
@@ -137,9 +151,16 @@
 <h2 id="cluster"><a class="b-anchor-link" href="#cluster" aria-label="Anchor link">Cluster</a></h2>
 <p>Horizontal row that wraps. Use for chips, button groups, breadcrumbs.</p>
 <section class="b-demo">
-    <div class="b-demo-tabs" role="tablist">
-      <button class="b-demo-tab is-active" type="button" role="tab" aria-selected="true" data-tab="preview">Preview</button>
-      <button class="b-demo-tab" type="button" role="tab" aria-selected="false" data-tab="code">Code</button>
+    <div class="b-demo-bar">
+      <div class="b-demo-tabs" role="tablist">
+        <button class="b-demo-tab is-active" type="button" role="tab" aria-selected="true" data-tab="preview">Preview</button>
+        <button class="b-demo-tab" type="button" role="tab" aria-selected="false" data-tab="code">Code</button>
+      </div>
+      <div class="b-demo-toolbar">
+        <button class="b-demo-theme" type="button" data-demo-theme aria-label="Toggle preview theme" title="Toggle preview theme">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79Z"/></svg>
+        </button>
+      </div>
     </div>
     <div class="b-demo-preview" role="tabpanel" data-panel="preview"><div class="b-cluster">
   <span class="b-chip">Engineering</span>
@@ -166,9 +187,16 @@
 <h2 id="split"><a class="b-anchor-link" href="#split" aria-label="Anchor link">Split</a></h2>
 <p>Two-column row that pushes children to opposite ends.</p>
 <section class="b-demo">
-    <div class="b-demo-tabs" role="tablist">
-      <button class="b-demo-tab is-active" type="button" role="tab" aria-selected="true" data-tab="preview">Preview</button>
-      <button class="b-demo-tab" type="button" role="tab" aria-selected="false" data-tab="code">Code</button>
+    <div class="b-demo-bar">
+      <div class="b-demo-tabs" role="tablist">
+        <button class="b-demo-tab is-active" type="button" role="tab" aria-selected="true" data-tab="preview">Preview</button>
+        <button class="b-demo-tab" type="button" role="tab" aria-selected="false" data-tab="code">Code</button>
+      </div>
+      <div class="b-demo-toolbar">
+        <button class="b-demo-theme" type="button" data-demo-theme aria-label="Toggle preview theme" title="Toggle preview theme">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79Z"/></svg>
+        </button>
+      </div>
     </div>
     <div class="b-demo-preview" role="tabpanel" data-panel="preview"><div class="b-split">
   <strong>Settings</strong>
@@ -191,9 +219,16 @@
 <h2 id="grid"><a class="b-anchor-link" href="#grid" aria-label="Anchor link">Grid</a></h2>
 <p>Responsive auto-fit grid. Defaults to columns that are at least 16rem wide.</p>
 <section class="b-demo">
-    <div class="b-demo-tabs" role="tablist">
-      <button class="b-demo-tab is-active" type="button" role="tab" aria-selected="true" data-tab="preview">Preview</button>
-      <button class="b-demo-tab" type="button" role="tab" aria-selected="false" data-tab="code">Code</button>
+    <div class="b-demo-bar">
+      <div class="b-demo-tabs" role="tablist">
+        <button class="b-demo-tab is-active" type="button" role="tab" aria-selected="true" data-tab="preview">Preview</button>
+        <button class="b-demo-tab" type="button" role="tab" aria-selected="false" data-tab="code">Code</button>
+      </div>
+      <div class="b-demo-toolbar">
+        <button class="b-demo-theme" type="button" data-demo-theme aria-label="Toggle preview theme" title="Toggle preview theme">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79Z"/></svg>
+        </button>
+      </div>
     </div>
     <div class="b-demo-preview" role="tabpanel" data-panel="preview"><div class="b-grid" style="--b-grid-min:8rem;">
   <div class="b-card"><div class="b-card-body">A</div></div>

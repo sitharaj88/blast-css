@@ -495,13 +495,19 @@ body.docs-body {
   overflow: clip;
 }
 
-.b-demo-tabs {
+.b-demo-bar {
   align-items: center;
   background: var(--b-surface);
   border-block-end: 1px solid var(--b-border);
   display: flex;
   gap: var(--b-1);
   padding: var(--b-2) var(--b-3);
+}
+
+.b-demo-tabs {
+  align-items: center;
+  display: flex;
+  gap: var(--b-1);
 }
 
 .b-demo-tab {
@@ -524,6 +530,69 @@ body.docs-body {
   background: var(--b-elevated);
   color: var(--b-text);
 }
+
+.b-demo-toolbar {
+  align-items: center;
+  display: flex;
+  gap: var(--b-1);
+  margin-inline-start: auto;
+}
+
+.b-demo-theme {
+  align-items: center;
+  background: transparent;
+  border: 1px solid transparent;
+  border-radius: var(--b-radius-sm);
+  color: var(--b-muted);
+  cursor: pointer;
+  display: inline-flex;
+  inline-size: 1.75rem;
+  block-size: 1.75rem;
+  justify-content: center;
+  transition: color var(--b-duration-fast) var(--b-ease), background var(--b-duration-fast) var(--b-ease), border-color var(--b-duration-fast) var(--b-ease);
+}
+
+.b-demo-theme:hover {
+  background: var(--b-elevated);
+  border-color: var(--b-border);
+  color: var(--b-text);
+}
+
+/* Variant tabs (per-component example variants) */
+.b-demo-variant-tabs {
+  align-items: center;
+  background: var(--b-surface);
+  border-block-end: 1px solid var(--b-border);
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--b-1);
+  padding: var(--b-2) var(--b-3);
+}
+
+.b-demo-variant-tab {
+  background: transparent;
+  border: 1px solid transparent;
+  border-radius: var(--b-radius-pill);
+  color: var(--b-muted);
+  cursor: pointer;
+  font-family: inherit;
+  font-size: var(--b-text-xs);
+  font-weight: var(--b-weight-semi);
+  padding: .25rem .65rem;
+  transition: color var(--b-duration-fast) var(--b-ease), background var(--b-duration-fast) var(--b-ease), border-color var(--b-duration-fast) var(--b-ease);
+}
+
+.b-demo-variant-tab:hover { color: var(--b-text); }
+
+.b-demo-variant-tab.is-active {
+  background: var(--b-elevated);
+  border-color: var(--b-border);
+  color: var(--b-text);
+}
+
+.b-demo-variants-body { position: relative; }
+.b-demo-variant { display: none; }
+.b-demo-variant.is-active { display: block; }
 
 .b-demo-preview {
   align-items: center;
@@ -1577,6 +1646,143 @@ dialog.b-command[open] { animation: b-scale-in var(--b-duration-fast) var(--b-ea
 .docs-404 .docs-toc { display: none; }
 .docs-404 .docs-article { max-inline-size: none; }
 .docs-404 .docs-article > p { text-align: center; max-inline-size: 50ch; margin-inline: auto; }
+
+/* ─────────────────────────────────────────────────────────────
+   Per-demo theme override — flips a single preview light/dark.
+   ───────────────────────────────────────────────────────────── */
+
+.b-demo-preview[data-theme="light"] { color-scheme: light; }
+.b-demo-preview[data-theme="dark"] { color-scheme: dark; }
+
+/* ─────────────────────────────────────────────────────────────
+   API / prop tables
+   ───────────────────────────────────────────────────────────── */
+
+.docs-api-table-wrap {
+  border: 1px solid var(--b-border);
+  border-radius: var(--b-radius-lg);
+  margin-block: var(--b-5);
+  overflow: hidden;
+}
+
+.docs-article .docs-api-table {
+  border-collapse: collapse;
+  display: table;
+  font-size: var(--b-text-sm);
+  inline-size: 100%;
+  margin: 0;
+  overflow: visible;
+}
+
+.docs-article .docs-api-table thead { background: var(--b-surface); }
+.docs-article .docs-api-table th {
+  border: 0;
+  border-block-end: 1px solid var(--b-border);
+  color: var(--b-muted);
+  font-size: var(--b-text-2xs);
+  font-weight: var(--b-weight-bold);
+  letter-spacing: var(--b-tracking-wide);
+  padding: var(--b-3) var(--b-4);
+  text-align: start;
+  text-transform: uppercase;
+}
+
+.docs-article .docs-api-table td {
+  border: 0;
+  border-block-end: 1px solid var(--b-border);
+  padding: var(--b-3) var(--b-4);
+  text-align: start;
+  vertical-align: top;
+}
+
+.docs-article .docs-api-table tbody tr:last-child td { border-block-end: 0; }
+
+.docs-article .docs-api-table td:first-child {
+  align-items: center;
+  display: flex;
+  gap: var(--b-2);
+  white-space: nowrap;
+}
+
+.docs-api-name {
+  background: var(--b-primary-soft);
+  border-radius: var(--b-radius-sm);
+  color: var(--b-primary-strong);
+  font-weight: var(--b-weight-semi);
+}
+
+.docs-api-type, .docs-api-default {
+  background: var(--b-surface);
+  border-radius: var(--b-radius-sm);
+  color: var(--b-muted);
+  font-size: var(--b-text-xs);
+}
+
+.docs-api-copy {
+  background: transparent;
+  border: 1px solid transparent;
+  border-radius: var(--b-radius-sm);
+  color: var(--b-subtle);
+  cursor: pointer;
+  display: inline-flex;
+  inline-size: 1.5rem;
+  block-size: 1.5rem;
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
+  transition: opacity var(--b-duration-fast) var(--b-ease), color var(--b-duration-fast) var(--b-ease), border-color var(--b-duration-fast) var(--b-ease);
+}
+
+.docs-article .docs-api-table tr:hover .docs-api-copy,
+.docs-api-copy:focus-visible { opacity: 1; }
+
+.docs-api-copy:hover {
+  border-color: var(--b-border);
+  color: var(--b-text);
+}
+
+.docs-api-copy[data-copied="true"] {
+  border-color: color-mix(in oklch, var(--b-success) 40%, transparent);
+  color: var(--b-success);
+  opacity: 1;
+}
+
+/* ─────────────────────────────────────────────────────────────
+   Flash toast (anchor copy + future micro-feedback)
+   ───────────────────────────────────────────────────────────── */
+
+.docs-flash {
+  background: oklch(15% 0.02 264);
+  border-radius: var(--b-radius-pill);
+  color: #fff;
+  font-size: var(--b-text-xs);
+  font-weight: var(--b-weight-semi);
+  inset-block-start: 0;
+  inset-inline-start: 0;
+  opacity: 0;
+  padding: .35rem .75rem;
+  pointer-events: none;
+  position: absolute;
+  transform: translateY(4px);
+  transition: opacity var(--b-duration-fast) var(--b-ease), transform var(--b-duration-fast) var(--b-ease);
+  z-index: 200;
+}
+
+.docs-flash.is-visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.docs-flash-center {
+  inset-block-start: 50%;
+  inset-inline-start: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.docs-flash-center.is-visible { transform: translate(-50%, -50%); }
+
+/* Anchor link cursor */
+.b-anchor-link { cursor: pointer; }
 
 /* ─────────────────────────────────────────────────────────────
    View transitions
