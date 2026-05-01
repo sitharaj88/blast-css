@@ -1,6 +1,10 @@
 ---
 title: Command palette
 section: Components
+status: new
+keyboard: true
+screen-reader: tested
+browser: Evergreen
 lede: Spotlight-style search with global ⌘K shortcut. Native dialog + filterable list.
 ---
 

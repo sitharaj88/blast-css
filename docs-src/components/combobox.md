@@ -1,6 +1,10 @@
 ---
 title: Combobox
 section: Components
+status: new
+keyboard: true
+screen-reader: tested
+browser: Evergreen
 lede: Searchable input with a dropdown listbox. Filters options as you type, navigable with arrow keys.
 ---
 

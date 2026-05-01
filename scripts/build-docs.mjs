@@ -67,7 +67,10 @@ const NAV = [
   ]}
 ];
 
-const flatNav = NAV.flatMap((section) => section.items.map((item) => ({ ...item, section: section.title })));
+function flatNavList() {
+  return NAV.flatMap((section) => section.items.map((item) => ({ ...item, section: section.title })));
+}
+let flatNav = flatNavList();
 
 // ─────────────────────────────────────────────────────────────────
 // Inline assets
@@ -274,7 +277,26 @@ function parseMarkdown(src) {
         buf.push(lines[i].replace(/^>\s?/, ""));
         i++;
       }
-      out.push(`<blockquote>${inline(buf.join(" "))}</blockquote>`);
+      const text = buf.join("\n").trim();
+      const calloutMatch = text.match(/^\[!(NOTE|TIP|WARNING|IMPORTANT|DANGER)\]\s*\n?([\s\S]*)$/i);
+      if (calloutMatch) {
+        const kind = calloutMatch[1].toLowerCase();
+        const body = calloutMatch[2].trim();
+        const icons = {
+          note: '<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M12 16v-4M12 8h.01"/></svg>',
+          tip: '<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 18h6M10 22h4M12 2a7 7 0 0 0-4 12.74V17h8v-2.26A7 7 0 0 0 12 2Z"/></svg>',
+          warning: '<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10.29 3.86 1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0Z"/><path d="M12 9v4M12 17h.01"/></svg>',
+          important: '<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2v8M12 14h.01M12 22A10 10 0 1 0 12 2a10 10 0 0 0 0 20Z"/></svg>',
+          danger: '<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M15 9l-6 6M9 9l6 6"/></svg>'
+        };
+        const titles = { note: "Note", tip: "Tip", warning: "Warning", important: "Important", danger: "Danger" };
+        out.push(`<aside class="docs-callout docs-callout-${kind}" role="note">
+          <div class="docs-callout-head">${icons[kind]}<span>${titles[kind]}</span></div>
+          <div class="docs-callout-body">${inline(body)}</div>
+        </aside>`);
+      } else {
+        out.push(`<blockquote>${inline(text.replace(/\n/g, " "))}</blockquote>`);
+      }
       continue;
     }
 
@@ -315,15 +337,58 @@ function relativeHref(currentPath, targetPath) {
   return up + down;
 }
 
+// Metadata collected in a pre-pass: url -> { status, keyboard, screenReader, browser, lede, title, description }
+let META = {};
+
+function statusBadge(status) {
+  if (!status) return "";
+  const map = { stable: "Stable", beta: "Beta", new: "New", preview: "Preview", deprecated: "Deprecated" };
+  const label = map[status.toLowerCase()] || status;
+  return `<span class="docs-nav-status docs-nav-status-${status.toLowerCase()}" aria-label="${label}">${label}</span>`;
+}
+
 function navMarkup(currentPath) {
   return NAV.map((section) => {
     const items = section.items.map((item) => {
       const isActive = item.href === currentPath;
       const href = relativeHref(currentPath, item.href);
-      return `<li><a class="docs-nav-link${isActive ? " is-active" : ""}" href="${href}">${item.title}</a></li>`;
+      const meta = META[item.href] || {};
+      const status = meta.status === "new" || meta.status === "beta" ? statusBadge(meta.status) : "";
+      return `<li><a class="docs-nav-link${isActive ? " is-active" : ""}" href="${href}">${item.title}${status}</a></li>`;
     }).join("");
     return `<div class="docs-nav-section"><div class="docs-nav-title">${section.title}</div><ul class="docs-nav-list">${items}</ul></div>`;
   }).join("");
+}
+
+function componentInfoBar(meta) {
+  if (!meta) return "";
+  const items = [];
+  if (meta.status) {
+    items.push(`<span class="docs-info-pill docs-info-status docs-info-status-${meta.status.toLowerCase()}">
+      <span class="docs-info-dot" aria-hidden="true"></span>
+      ${escapeHtml(meta.status[0].toUpperCase() + meta.status.slice(1))}
+    </span>`);
+  }
+  if (meta.keyboard) {
+    items.push(`<span class="docs-info-pill" title="Keyboard accessible">
+      <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="6" width="20" height="14" rx="2"/><path d="M6 10h.01M10 10h.01M14 10h.01M18 10h.01M6 14h.01M10 14h.01M14 14h.01M18 14h.01"/></svg>
+      Keyboard
+    </span>`);
+  }
+  if (meta["screen-reader"] || meta.screenReader) {
+    items.push(`<span class="docs-info-pill" title="Tested with screen readers">
+      <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M12 8v8M8 12h8"/></svg>
+      Screen reader
+    </span>`);
+  }
+  if (meta.browser) {
+    items.push(`<span class="docs-info-pill" title="Browser support: ${escapeAttr(meta.browser)}">
+      <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M2 12h20M12 2a14 14 0 0 1 0 20M12 2a14 14 0 0 0 0 20"/></svg>
+      ${escapeHtml(meta.browser)}
+    </span>`);
+  }
+  if (!items.length) return "";
+  return `<div class="docs-info-bar">${items.join("")}</div>`;
 }
 
 function tocMarkup(headings) {
@@ -543,6 +608,7 @@ async function buildPage(mdPath) {
     ${frontmatter.section ? `<div class="docs-eyebrow">${escapeHtml(frontmatter.section)}</div>` : ""}
     <h1>${escapeHtml(title)}</h1>
     ${frontmatter.lede ? `<p class="docs-lede">${escapeHtml(frontmatter.lede)}</p>` : ""}
+    ${componentInfoBar(frontmatter)}
   </header>`;
 
   const stripFirstH1 = html.replace(/^<h1[^>]*>[\s\S]*?<\/h1>\n?/, "");
@@ -630,10 +696,185 @@ async function writeFavicon() {
   await writeFile(resolve(outDir, "favicon.svg"), FAVICON_SVG);
 }
 
+// Quick frontmatter-only parse for the metadata pre-pass.
+function readFrontmatter(src) {
+  const match = src.match(/^---\s*\n([\s\S]+?)\n---\s*\n/);
+  if (!match) return {};
+  const fm = {};
+  for (const line of match[1].split("\n")) {
+    const m = line.match(/^([\w-]+):\s*(.+)$/);
+    if (m) fm[m[1]] = m[2].trim().replace(/^["']|["']$/g, "");
+  }
+  return fm;
+}
+
+async function collectMetadata(mdFiles) {
+  const meta = {};
+  for (const file of mdFiles) {
+    const src = await readFile(file, "utf8");
+    const rel = relative(srcDir, file);
+    const url = "/" + rel.replace(/\.md$/, ".html").replace(/\\/g, "/");
+    meta[url] = readFrontmatter(src);
+  }
+  return meta;
+}
+
+// ─────────────────────────────────────────────────────────────────
+// 404 page
+// ─────────────────────────────────────────────────────────────────
+
+async function build404() {
+  const popular = [
+    { href: "/guides/installation.html", title: "Installation", desc: "Get BlastCSS into your project" },
+    { href: "/components/buttons.html", title: "Buttons", desc: "Solid, soft, ghost, outline" },
+    { href: "/components/forms.html", title: "Forms", desc: "Inputs, switches, validation" },
+    { href: "/playground.html", title: "Theme playground", desc: "Live token editor" }
+  ];
+  const currentPath = "/404.html";
+  const popularLinks = popular.map((p) => `<a class="docs-pn-card" href="${relativeHref(currentPath, p.href)}">
+    <span class="docs-pn-dir">→ Popular</span>
+    <span class="docs-pn-title">${escapeHtml(p.title)}</span>
+    <span style="color:var(--b-muted);font-size:var(--b-text-sm)">${escapeHtml(p.desc)}</span>
+  </a>`).join("");
+
+  const content = `<header class="docs-article-head" style="text-align:center; border:0; padding-block-start: var(--b-12)">
+    <div class="docs-eyebrow">Error 404</div>
+    <h1 style="font-size: clamp(2.5rem, 6vw, 4rem)">Page not found</h1>
+    <p class="docs-lede">The page you're looking for doesn't exist or has been moved. Try searching the docs, or pick one of the popular pages below.</p>
+    <div class="b-cluster" style="justify-content:center; margin-block-start: var(--b-5)">
+      <button class="b-btn" type="button" data-docs-search>Search docs (⌘K)</button>
+      <a class="b-btn b-btn-secondary" href="${relativeHref(currentPath, "/index.html")}">Back to home</a>
+    </div>
+  </header>
+  <h2 style="text-align:center; margin-block-start: var(--b-10)">Popular pages</h2>
+  <div class="docs-prev-next" style="grid-template-columns: repeat(auto-fit, minmax(min(100%, 14rem), 1fr)); margin-block-start: var(--b-4)">
+    ${popularLinks}
+  </div>`;
+
+  const page = shell({
+    title: "404 — Not found",
+    description: "The page you're looking for doesn't exist.",
+    content,
+    currentPath,
+    headings: [],
+    hideToc: true,
+    bodyClass: "docs-body docs-404",
+    isLanding: true
+  });
+  await writeFile(resolve(outDir, "404.html"), page);
+}
+
+// ─────────────────────────────────────────────────────────────────
+// What's new (CHANGELOG)
+// ─────────────────────────────────────────────────────────────────
+
+async function buildChangelogPage() {
+  const changelogPath = resolve(root, "CHANGELOG.md");
+  if (!await exists(changelogPath)) return;
+
+  const md = await readFile(changelogPath, "utf8");
+
+  // Split into version sections: ## 1.0.0, ## 0.4.0, etc.
+  const lines = md.split("\n");
+  const versions = [];
+  let current = null;
+  let inFirstHeading = true;
+
+  for (const line of lines) {
+    if (inFirstHeading && line.startsWith("# ")) { inFirstHeading = false; continue; }
+    if (line.startsWith("## ")) {
+      if (current) versions.push(current);
+      current = { title: line.slice(3).trim(), body: [] };
+    } else if (current) {
+      current.body.push(line);
+    }
+  }
+  if (current) versions.push(current);
+
+  const renderVersion = (v, isLatest) => {
+    const { html: bodyHtml } = parseMarkdown(v.body.join("\n"));
+    const slug = slugify(v.title);
+    return `<article class="docs-changelog-entry" id="v-${slug}">
+      <div class="docs-changelog-meta">
+        <h2><a class="b-anchor-link" href="#v-${slug}">${escapeHtml(v.title)}</a></h2>
+        ${isLatest ? `<span class="b-badge b-badge-success">Latest</span>` : ""}
+      </div>
+      <div class="docs-changelog-body">${bodyHtml}</div>
+    </article>`;
+  };
+
+  const articles = versions.map((v, i) => renderVersion(v, i === 0)).join("");
+
+  const articleHead = `<header class="docs-article-head">
+    <div class="docs-eyebrow">Tools</div>
+    <h1>What's new</h1>
+    <p class="docs-lede">Release history for BlastCSS — every feature, fix, and breaking change.</p>
+  </header>`;
+
+  const content = `${articleHead}<div class="docs-changelog">${articles}</div>`;
+
+  const page = shell({
+    title: "What's new",
+    description: "BlastCSS release notes and changelog.",
+    content,
+    currentPath: "/whats-new.html",
+    headings: versions.map((v) => ({ level: 2, text: v.title, id: "v-" + slugify(v.title) })),
+    hideToc: false,
+    bodyClass: "docs-body"
+  });
+  await writeFile(resolve(outDir, "whats-new.html"), page);
+}
+
+// ─────────────────────────────────────────────────────────────────
+// Sitemap + robots.txt
+// ─────────────────────────────────────────────────────────────────
+
+const SITE_BASE = "https://sitharaj88.github.io/blast-css";
+
+async function writeSitemap(pages) {
+  const today = new Date().toISOString().slice(0, 10);
+  const entries = pages.map((p) => {
+    const loc = SITE_BASE + (p.url.startsWith("/") ? p.url : "/" + p.url);
+    return `  <url>
+    <loc>${loc}</loc>
+    <lastmod>${today}</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>${p.url === "/index.html" ? "1.0" : "0.7"}</priority>
+  </url>`;
+  }).join("\n");
+  const xml = `<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+${entries}
+</urlset>
+`;
+  await writeFile(resolve(outDir, "sitemap.xml"), xml);
+}
+
+async function writeRobots() {
+  const txt = `User-agent: *
+Allow: /
+
+Sitemap: ${SITE_BASE}/sitemap.xml
+`;
+  await writeFile(resolve(outDir, "robots.txt"), txt);
+}
+
+// ─────────────────────────────────────────────────────────────────
+// Main
+// ─────────────────────────────────────────────────────────────────
+
 async function main() {
   await mkdir(outDir, { recursive: true });
 
   const mdFiles = await walkMd(srcDir);
+
+  // Pre-pass: collect frontmatter so navMarkup/info-bar see metadata.
+  META = await collectMetadata(mdFiles);
+
+  // Augment NAV with the auto-generated What's new entry under Tools.
+  NAV.find((s) => s.title === "Tools").items.push({ href: "/whats-new.html", title: "What's new" });
+  flatNav = flatNavList();
+
   const pages = [];
 
   for (const file of mdFiles) {
@@ -655,13 +896,19 @@ async function main() {
     pages.push({ url: "/showcase.html", title: "Showcase", description: "Realistic interfaces built with BlastCSS.", section: "Tools", headings: [] });
   }
 
+  await build404();
+  await buildChangelogPage();
+  pages.push({ url: "/whats-new.html", title: "What's new", description: "BlastCSS release notes and changelog.", section: "Tools", headings: [] });
+
   if (await exists(resolve(srcDir, "site.css"))) await copyAsset(resolve(srcDir, "site.css"), resolve(outDir, "site.css"));
   if (await exists(resolve(srcDir, "site.js"))) await copyAsset(resolve(srcDir, "site.js"), resolve(outDir, "site.js"));
 
   await writeFavicon();
   await writeSearchIndex(pages);
+  await writeSitemap(pages);
+  await writeRobots();
 
-  console.log(`docs:     ${pages.length} pages built`);
+  console.log(`docs:     ${pages.length} pages, sitemap.xml, robots.txt, 404.html, what's new`);
 }
 
 main().catch((err) => {

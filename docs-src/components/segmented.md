@@ -1,6 +1,10 @@
 ---
 title: Segmented control
 section: Components
+status: new
+keyboard: true
+screen-reader: tested
+browser: Evergreen
 lede: Pill-shaped multi-option toggle. Built on radio inputs — works without JavaScript.
 ---
 

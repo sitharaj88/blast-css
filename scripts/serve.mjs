@@ -49,6 +49,13 @@ const server = createServer(async (request, response) => {
   const file = await resolveFile(request.url);
 
   if (!file) {
+    // Serve docs/404.html if available, with a 404 status.
+    const fallback = resolve(root, "docs/404.html");
+    if (await tryFile(fallback)) {
+      response.writeHead(404, { "content-type": "text/html; charset=utf-8" });
+      createReadStream(fallback).pipe(response);
+      return;
+    }
     response.writeHead(404, { "content-type": "text/plain; charset=utf-8" });
     response.end("Not found");
     return;

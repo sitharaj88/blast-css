@@ -1,0 +1,213 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="BlastCSS release notes and changelog.">
+    <meta name="theme-color" content="#0c1016" media="(prefers-color-scheme: dark)">
+    <meta name="theme-color" content="#ffffff" media="(prefers-color-scheme: light)">
+    <meta property="og:title" content="What's new · BlastCSS">
+    <meta property="og:description" content="BlastCSS release notes and changelog.">
+    <meta property="og:type" content="website">
+    <meta property="og:image" content="https://opengraph.githubassets.com/1/sitharaj88/blast-css">
+    <meta name="twitter:card" content="summary_large_image">
+    <link rel="icon" type="image/svg+xml" href="./favicon.svg">
+    <title>What's new · BlastCSS</title>
+    <link rel="stylesheet" href="./../dist/blast.min.css">
+    <link rel="stylesheet" href="./site.css">
+    <script type="module" src="./../dist/blast.js"></script>
+    <script defer src="./site.js"></script>
+    <script>(function(){try{var t=localStorage.getItem("b-theme");if(t)document.documentElement.dataset.theme=t;}catch(e){}})();</script>
+  </head>
+  <body class="docs-body">
+    <a class="b-skip-link" href="#main">Skip to content</a>
+
+    <header class="docs-header">
+      <div class="docs-header-inner">
+        <a class="docs-brand" href="./index.html" aria-label="BlastCSS home">
+          <span class="docs-mark" aria-hidden="true"><svg viewBox="0 0 32 32" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="oklch(62% 0.22 264)"/>
+      <stop offset="100%" stop-color="oklch(58% 0.22 220)"/>
+    </linearGradient>
+  </defs>
+  <rect x="2" y="2" width="28" height="28" rx="8" fill="url(#bg)"/>
+  <path d="M11 9h7.5a4.5 4.5 0 0 1 2.4 8.3A5 5 0 0 1 18.5 23H11V9Zm3 3v3.2h4a1.6 1.6 0 1 0 0-3.2h-4Zm0 6v3.2h4.5a1.6 1.6 0 1 0 0-3.2H14Z" fill="#fff"/>
+</svg></span>
+          <span class="docs-brand-name">BlastCSS</span>
+          <span class="docs-version">v1.0.0</span>
+        </a>
+        <button class="docs-menu-btn b-icon-btn" type="button" aria-label="Toggle menu" data-docs-menu>
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 6h18M3 12h18M3 18h18"/></svg>
+        </button>
+        <div class="docs-search-wrap">
+          <button class="docs-search" type="button" data-docs-search>
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="7"/><path d="m21 21-4.3-4.3"/></svg>
+            <span>Search docs</span>
+            <kbd class="b-kbd">⌘K</kbd>
+          </button>
+        </div>
+        <nav class="docs-top-nav" aria-label="Primary">
+          <a href="./components/buttons.html">Components</a>
+          <a href="./guides/theming.html">Theming</a>
+          <a href="./playground.html">Playground</a>
+          <a href="https://github.com/sitharaj88/blast-css" rel="noopener" class="docs-top-github">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2C6.48 2 2 6.58 2 12.25c0 4.51 2.87 8.34 6.84 9.69.5.09.68-.22.68-.49 0-.24-.01-.88-.01-1.72-2.78.62-3.37-1.36-3.37-1.36-.45-1.18-1.11-1.49-1.11-1.49-.91-.63.07-.62.07-.62 1.01.07 1.54 1.06 1.54 1.06.89 1.57 2.34 1.12 2.91.85.09-.66.35-1.12.63-1.37-2.22-.26-4.55-1.14-4.55-5.06 0-1.12.39-2.03 1.03-2.74-.1-.26-.45-1.31.1-2.72 0 0 .84-.27 2.75 1.04A9.34 9.34 0 0 1 12 6.84c.85.01 1.71.12 2.51.34 1.91-1.31 2.75-1.04 2.75-1.04.55 1.41.2 2.46.1 2.72.64.71 1.03 1.62 1.03 2.74 0 3.93-2.34 4.79-4.57 5.05.36.31.68.93.68 1.88 0 1.36-.01 2.45-.01 2.79 0 .27.18.59.69.49 3.97-1.35 6.83-5.18 6.83-9.69C22 6.58 17.52 2 12 2Z"/></svg>
+            <span class="b-sr-only">GitHub</span>
+          </a>
+        </nav>
+        <button class="b-icon-btn docs-theme-toggle" type="button" data-b-toggle="theme" aria-label="Toggle dark mode">
+          <svg class="docs-icon-sun" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M4.93 19.07l1.41-1.41M17.66 6.34l1.41-1.41"/></svg>
+          <svg class="docs-icon-moon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79Z"/></svg>
+        </button>
+      </div>
+    </header>
+
+    <div class="docs-shell">
+      <aside class="docs-sidebar" data-docs-sidebar aria-label="Documentation">
+        <button class="docs-search docs-search-mobile" type="button" data-docs-search>
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="7"/><path d="m21 21-4.3-4.3"/></svg>
+          <span>Search docs</span>
+        </button>
+        <nav class="docs-nav"><div class="docs-nav-section"><div class="docs-nav-title">Get started</div><ul class="docs-nav-list"><li><a class="docs-nav-link" href="./index.html">Introduction</a></li><li><a class="docs-nav-link" href="./guides/installation.html">Installation</a></li><li><a class="docs-nav-link" href="./guides/quickstart.html">Quick start</a></li><li><a class="docs-nav-link" href="./guides/theming.html">Theming & tokens</a></li><li><a class="docs-nav-link" href="./guides/dark-mode.html">Dark mode</a></li><li><a class="docs-nav-link" href="./guides/frameworks.html">Framework integration</a></li></ul></div><div class="docs-nav-section"><div class="docs-nav-title">Foundations</div><ul class="docs-nav-list"><li><a class="docs-nav-link" href="./guides/layers.html">Cascade layers</a></li><li><a class="docs-nav-link" href="./guides/layout.html">Layout primitives</a></li><li><a class="docs-nav-link" href="./guides/typography.html">Typography</a></li><li><a class="docs-nav-link" href="./guides/colors.html">Colors</a></li><li><a class="docs-nav-link" href="./guides/motion.html">Motion & view transitions</a></li><li><a class="docs-nav-link" href="./guides/accessibility.html">Accessibility</a></li></ul></div><div class="docs-nav-section"><div class="docs-nav-title">Components</div><ul class="docs-nav-list"><li><a class="docs-nav-link" href="./components/buttons.html">Buttons</a></li><li><a class="docs-nav-link" href="./components/forms.html">Forms</a></li><li><a class="docs-nav-link" href="./components/cards.html">Cards</a></li><li><a class="docs-nav-link" href="./components/badges.html">Badges & chips</a></li><li><a class="docs-nav-link" href="./components/alerts.html">Alerts</a></li><li><a class="docs-nav-link" href="./components/dialog.html">Dialog & drawer</a></li><li><a class="docs-nav-link" href="./components/dropdown.html">Dropdown</a></li><li><a class="docs-nav-link" href="./components/popover.html">Popover<span class="docs-nav-status docs-nav-status-new" aria-label="New">New</span></a></li><li><a class="docs-nav-link" href="./components/tooltip.html">Tooltip</a></li><li><a class="docs-nav-link" href="./components/tabs.html">Tabs</a></li><li><a class="docs-nav-link" href="./components/segmented.html">Segmented control<span class="docs-nav-status docs-nav-status-new" aria-label="New">New</span></a></li><li><a class="docs-nav-link" href="./components/combobox.html">Combobox<span class="docs-nav-status docs-nav-status-new" aria-label="New">New</span></a></li><li><a class="docs-nav-link" href="./components/command.html">Command palette<span class="docs-nav-status docs-nav-status-new" aria-label="New">New</span></a></li><li><a class="docs-nav-link" href="./components/tag-input.html">Tag input<span class="docs-nav-status docs-nav-status-new" aria-label="New">New</span></a></li><li><a class="docs-nav-link" href="./components/stepper.html">Stepper<span class="docs-nav-status docs-nav-status-new" aria-label="New">New</span></a></li><li><a class="docs-nav-link" href="./components/accordion.html">Accordion</a></li><li><a class="docs-nav-link" href="./components/toast.html">Toast</a></li><li><a class="docs-nav-link" href="./components/table.html">Table</a></li><li><a class="docs-nav-link" href="./components/avatar.html">Avatar</a></li><li><a class="docs-nav-link" href="./components/pagination.html">Pagination</a></li><li><a class="docs-nav-link" href="./components/breadcrumb.html">Breadcrumb</a></li><li><a class="docs-nav-link" href="./components/progress.html">Progress & spinner</a></li><li><a class="docs-nav-link" href="./components/skeleton.html">Skeleton</a></li><li><a class="docs-nav-link" href="./components/empty.html">Empty state</a></li><li><a class="docs-nav-link" href="./components/stat.html">Stat</a></li></ul></div><div class="docs-nav-section"><div class="docs-nav-title">Utilities</div><ul class="docs-nav-list"><li><a class="docs-nav-link" href="./utilities/spacing.html">Spacing</a></li><li><a class="docs-nav-link" href="./utilities/flex-grid.html">Flexbox & grid</a></li><li><a class="docs-nav-link" href="./utilities/typography.html">Typography</a></li><li><a class="docs-nav-link" href="./utilities/colors.html">Colors & background</a></li><li><a class="docs-nav-link" href="./utilities/borders.html">Borders & shadows</a></li><li><a class="docs-nav-link" href="./utilities/responsive.html">Responsive & container</a></li></ul></div><div class="docs-nav-section"><div class="docs-nav-title">Tools</div><ul class="docs-nav-list"><li><a class="docs-nav-link" href="./playground.html">Theme playground</a></li><li><a class="docs-nav-link" href="./showcase.html">Showcase</a></li><li><a class="docs-nav-link is-active" href="./whats-new.html">What's new</a></li></ul></div></nav>
+      </aside>
+
+      <main id="main" class="docs-main">
+        <article class="docs-article">
+          <nav class="docs-breadcrumb" aria-label="Breadcrumb">
+    <ol>
+      <li><a href="./index.html">Docs</a></li>
+      <li>Tools</li>
+      <li aria-current="page">What's new</li>
+    </ol>
+  </nav>
+          <header class="docs-article-head">
+    <div class="docs-eyebrow">Tools</div>
+    <h1>What's new</h1>
+    <p class="docs-lede">Release history for BlastCSS — every feature, fix, and breaking change.</p>
+  </header><div class="docs-changelog"><article class="docs-changelog-entry" id="v-1-0-0">
+      <div class="docs-changelog-meta">
+        <h2><a class="b-anchor-link" href="#v-1-0-0">1.0.0</a></h2>
+        <span class="b-badge b-badge-success">Latest</span>
+      </div>
+      <div class="docs-changelog-body"><p>The first stable release. The public API surface is now committed:</p>
+<ul><li>Class names with the <code>b-</code> prefix (components) and unprefixed utilities are stable.</li><li>All <code>--b-*</code> design tokens are stable.</li><li>Module exports (<code>.</code>, <code>./core</code>, <code>./components</code>, <code>./components-extra</code>, <code>./utilities</code>, <code>./motion</code>, <code>./reset</code>, <code>./js</code>, <code>./tokens.json</code>, <code>./tokens.css</code>, <code>./tokens.ts</code>) are stable.</li><li>The optional JS helper API — <code>autoInit</code>, <code>initDialogs</code>, <code>initCollapse</code>, <code>initTabs</code>, <code>initDropdowns</code>, <code>initToasts</code>, <code>initPopovers</code>, <code>initSegmented</code>, <code>initCombobox</code>, <code>initTagInput</code>, <code>initCommand</code>, <code>initTheme</code>, <code>showToast</code>, <code>viewTransition</code>, <code>trapDialogFocus</code> — is stable.</li></ul>
+<p>Breaking changes will go through major version bumps from here.</p>
+<h3 id="foundations-modernized"><a class="b-anchor-link" href="#foundations-modernized" aria-label="Anchor link">Foundations modernized</a></h3>
+<ul><li>Migrated the entire color system to <strong>OKLCH</strong> with <code>light-dark()</code> so dark mode works without redefining variables.</li><li>Added <code>color-scheme: light dark</code> by default, with <code>[data-theme="dark"]</code> / <code>[data-theme="light"]</code> overriding.</li><li>Added <code>@supports not (color: light-dark(...))</code> fallback for older browsers.</li><li>Added fluid type scale (<code>--b-fluid-h1</code>, <code>--b-fluid-h2</code>, <code>--b-fluid-h3</code>, <code>--b-fluid-lead</code>).</li><li>Added fluid spacing (<code>--b-fluid-1</code>…<code>--b-fluid-5</code>) and expanded spacing scale (<code>--b-7</code>, <code>--b-14</code>, <code>--b-20</code>, <code>--b-24</code>, <code>--b-px</code>).</li><li>Added motion tokens (<code>--b-duration-instant/fast/slow/slower</code>, <code>--b-ease-in/out/spring</code>).</li><li>Added z-index scale (<code>--b-z-dropdown/sticky/popover/toast/modal/max</code>).</li><li>Added shadow tokens (<code>--b-shadow-xs/xl/ring/glow</code>).</li></ul>
+<h3 id="reset-base"><a class="b-anchor-link" href="#reset-base" aria-label="Anchor link">Reset &amp; base</a></h3>
+<ul><li>Added <code>interpolate-size: allow-keywords</code> for animating to/from <code>auto</code>.</li><li>Added <code>text-wrap: balance</code> on headings and <code>text-wrap: pretty</code> on paragraphs.</li><li>Added blockquote, mark, kbd, abbr, figure styling.</li><li>Added <code>:where()</code>-scoped resets to lower specificity.</li><li>Modernized scrollbar styling.</li></ul>
+<h3 id="layout"><a class="b-anchor-link" href="#layout" aria-label="Anchor link">Layout</a></h3>
+<ul><li>All <code>.b-container*</code> now have <code>container-type: inline-size</code> enabling container queries.</li><li>Added <code>.b-center</code>, <code>.b-cover</code>, <code>.b-switcher</code>, <code>.b-prose</code>, <code>.b-spacer</code>, <code>.b-subgrid</code>, <code>.b-sidebar-end</code>.</li><li>Added container-aware breakpoint variants via <code>@sm:</code>, <code>@md:</code>, <code>@lg:</code>.</li></ul>
+<h3 id="forms"><a class="b-anchor-link" href="#forms" aria-label="Anchor link">Forms</a></h3>
+<ul><li>Textareas now use <code>field-sizing: content</code> to grow with input.</li><li>Added <code>.b-input-sm</code> / <code>.b-input-lg</code>, <code>.b-search</code> (with icon), <code>.b-error</code>, <code>.b-fieldset</code>, <code>[data-required]</code> label.</li><li>Improved validation focus rings.</li></ul>
+<h3 id="components-modernized"><a class="b-anchor-link" href="#components-modernized" aria-label="Anchor link">Components — modernized</a></h3>
+<ul><li>Modals and drawers now use <code>@starting-style</code> + <code>transition-behavior: allow-discrete</code> for native open/close animations.</li><li>Popovers support the native <code>popover</code> attribute and CSS <code>anchor-name</code> / <code>position-anchor</code> where supported, with JS fallback.</li><li>Buttons gained <code>.b-btn-soft</code>, <code>.b-btn-outline</code>, <code>.b-btn-success</code>, <code>.b-btn-warning</code>, plus loading state via <code>aria-busy="true"</code>.</li><li>Cards now have <code>.b-card-interactive</code> and use container queries.</li><li>Tabs gained <code>.b-tabs-pill</code> variant.</li><li>Tables gained <code>.b-table-striped</code> and <code>.b-table-hover</code>.</li><li>Toasts entry-animate via <code>@starting-style</code>.</li><li>Navbar gained backdrop blur and <code>.b-navbar-sticky</code>.</li><li>Avatars gained sizes (<code>-sm/-lg/-xl</code>) and <code>.b-avatar-status</code> indicator.</li><li>Stat gained <code>.b-stat-trend</code> (and <code>-down</code> variant).</li><li>Progress gained <code>.b-progress-indeterminate</code>.</li><li>Added <code>.b-kbd</code> and <code>.b-divider</code>.</li><li>Added <code>.b-badge-info</code>, <code>.b-badge-neutral</code>, <code>.b-badge-dot</code>.</li></ul>
+<h3 id="new-components"><a class="b-anchor-link" href="#new-components" aria-label="Anchor link">New components</a></h3>
+<ul><li><strong>Segmented control</strong> (<code>.b-segmented</code>) — radio-based, accessible.</li><li><strong>Combobox</strong> (<code>.b-combobox</code>) — searchable input with arrow-key navigation.</li><li><strong>Command palette</strong> (<code>.b-command</code>) — Spotlight-style with global ⌘K shortcut.</li><li><strong>Tag input</strong> (<code>.b-tag-input</code>) — multi-value entry with chips.</li><li><strong>Stepper</strong> (<code>.b-stepper</code>, <code>.b-stepper-horizontal</code>) — auto-numbered via CSS counters.</li><li><strong>Code block</strong> (<code>.b-code</code>) with header, language label, and copy button.</li><li><strong>Hero</strong> (<code>.b-hero</code>, <code>.b-hero-grid</code>) for landing pages.</li></ul>
+<h3 id="motion-layer-new"><a class="b-anchor-link" href="#motion-layer-new" aria-label="Anchor link">Motion layer (new)</a></h3>
+<ul><li><code>@view-transition</code> enabled by default for cross-document SPA-style navigation.</li><li>Reusable named transitions: <code>.b-vt-name</code> with <code>--b-vt</code>.</li><li>Scroll-driven <code>b-reveal</code> animation where <code>animation-timeline</code> is supported.</li><li>Animation utilities: <code>.b-anim-fade-in</code>, <code>-slide-up</code>, <code>-scale-in</code>, <code>-pulse</code>.</li><li>Reduced-motion guard at the layer level.</li></ul>
+<h3 id="utilities"><a class="b-anchor-link" href="#utilities" aria-label="Anchor link">Utilities</a></h3>
+<ul><li>Container-query variants: <code>@sm:</code>, <code>@md:</code>, <code>@lg:</code> (e.g., <code>@md:grid-2</code>).</li><li>New utilities: <code>truncate</code>, <code>text-pretty</code>, <code>aspect-portrait</code>, <code>font-display</code>, <code>font-semi</code>, <code>tracking-<em></code>, <code>bg-soft-</em></code>, <code>bg-gradient-primary</code>, <code>border-strong</code>, <code>border-primary</code>, <code>border-t/-b</code>, <code>rounded-2xl</code>, <code>rounded-md</code>, <code>rounded-full</code>, <code>shadow-xs/-xl/-glow</code>, <code>scroll-snap-x/-y</code>, <code>snap-<em></code>, <code>content-auto</code>, <code>isolate</code>, <code>scheme-</em></code>, <code>motion-safe:<em></code>, <code>motion-reduce:</em></code>, expanded <code>gap-<em></code>, <code>col-span-</em></code>, <code>row-span-*</code>, <code>h-screen</code>, <code>min-h-screen</code>, <code>max-w-prose</code>, <code>w-fit</code>.</li></ul>
+<h3 id="javascript-new-helpers"><a class="b-anchor-link" href="#javascript-new-helpers" aria-label="Anchor link">JavaScript (new helpers)</a></h3>
+<ul><li><code>showToast({ title, body, variant, duration })</code> — programmatic toast API.</li><li><code>viewTransition(callback)</code> — wrap DOM mutations in a View Transition.</li><li><code>initSegmented</code>, <code>initCombobox</code>, <code>initTagInput</code>, <code>initCommand</code>, <code>initTheme</code> — auto-included in <code>autoInit()</code>.</li><li>Theme toggle (<code>data-b-toggle="theme"</code>) with <code>localStorage</code> persistence and <code>b:theme:change</code> event.</li><li>Popover anchor wiring via <code>anchor-name</code> where supported.</li></ul>
+<h3 id="documentation-site-rewritten"><a class="b-anchor-link" href="#documentation-site-rewritten" aria-label="Anchor link">Documentation site (rewritten)</a></h3>
+<ul><li>Brand-new generated docs site at <code>docs/</code> with sidebar nav, sticky header, command-palette search (⌘K), copy-to-clipboard on code blocks, scrollspy on each page, and live theme toggle.</li><li>New theme playground at <code>docs/playground.html</code> — interactive sliders for hue, chroma, radius, density, and weight; live CSS export.</li><li>New showcase at <code>docs/showcase.html</code> — three realistic interfaces (dashboard, marketing, settings form).</li><li>33 markdown content files in <code>docs-src/</code> (guides + components + utilities) authored from scratch.</li><li>Zero-dependency static generator at <code>scripts/build-docs.mjs</code>.</li></ul>
+<h3 id="build-tooling"><a class="b-anchor-link" href="#build-tooling" aria-label="Anchor link">Build &amp; tooling</a></h3>
+<ul><li>Build script now emits <code>blast.components-extra.min.css</code> and <code>blast.motion.min.css</code> bundles.</li><li>Token export rewritten to parse <code>light-dark()</code> calls and emit accurate light/dark JSON, CSS, and TypeScript.</li><li>Updated <code>npm run test:static</code> to also build docs.</li><li>Added <code>npm run build:docs</code> and <code>npm run build:all</code>.</li><li>Updated <code>serve.mjs</code> with smart fallback to <code>docs/</code> for arbitrary paths.</li></ul>
+<h3 id="browser-support"><a class="b-anchor-link" href="#browser-support" aria-label="Anchor link">Browser support</a></h3>
+<ul><li>Floor raised to evergreen (Chrome/Edge 125+, Safari 17.4+, Firefox 128+) for <code>light-dark()</code>, <code>@starting-style</code>, container queries, popover API.</li><li>Older browsers fall back to a static hex palette via <code>@supports</code>.</li></ul></div>
+    </article><article class="docs-changelog-entry" id="v-0-3-0">
+      <div class="docs-changelog-meta">
+        <h2><a class="b-anchor-link" href="#v-0-3-0">0.3.0</a></h2>
+        
+      </div>
+      <div class="docs-changelog-body"><ul><li>Added optional JavaScript helpers for dialogs, collapse, tabs, dropdown close behavior, toasts, and popovers.</li><li>Added spinner, drawer, collapse, popover, close button, input group, switch, range, and file input styling.</li><li>Added static docs site, theme playground, kitchen-sink example, benchmark fixtures, and starter templates.</li><li>Added generated token exports for CSS, JSON, and TypeScript.</li><li>Added package export checks, HTML fixture checks, visual manifest checks, and benchmark generation.</li><li>Added Playwright browser tests, axe scans, visual screenshot tests, and browser matrix CI.</li><li>Added Bootstrap migration guide, 1.0 readiness checklist, and release process docs.</li><li>Added release workflow with npm provenance publishing and package dry-run validation.</li></ul></div>
+    </article><article class="docs-changelog-entry" id="v-0-2-0">
+      <div class="docs-changelog-meta">
+        <h2><a class="b-anchor-link" href="#v-0-2-0">0.2.0</a></h2>
+        
+      </div>
+      <div class="docs-changelog-body"><ul><li>Expanded component coverage with dropdown, accordion, toast, tooltip, pagination, breadcrumb, avatars, chips, lists, stats, empty states, icon buttons, and button groups.</li><li>Expanded utility coverage for layout, sizing, aspect ratio, object fit, opacity, pointer events, positioning, and responsive grids.</li><li>Added quality checks for bundled exports and required selectors.</li><li>Tightened gzip size budgets.</li><li>Added architecture, components, frameworks, and quality docs.</li></ul></div>
+    </article><article class="docs-changelog-entry" id="v-0-1-0">
+      <div class="docs-changelog-meta">
+        <h2><a class="b-anchor-link" href="#v-0-1-0">0.1.0</a></h2>
+        
+      </div>
+      <div class="docs-changelog-body"><ul><li>Added the first CSS-only framework foundation.</li><li>Added tokens, reset, base styles, layout primitives, forms, accessibility helpers, components, and utilities.</li><li>Added dependency-free build script and gzip size checks.</li><li>Added static demo and README.</li></ul></div>
+    </article></div>
+          <div class="docs-article-foot">
+            <a class="docs-edit-link" href="https://github.com/sitharaj88/blast-css/edit/main/docs-src/whats-new.md" rel="noopener">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M11 4H4a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2v-7"/><path d="M18.5 2.5a2.121 2.121 0 0 1 3 3L12 15l-4 1 1-4 9.5-9.5Z"/></svg>
+              Edit this page
+            </a>
+            <nav class="docs-prev-next" aria-label="Pagination"><a class="docs-pn-card docs-pn-prev" href="./showcase.html">
+      <span class="docs-pn-dir">← Previous</span>
+      <span class="docs-pn-title">Showcase</span>
+    </a><div></div></nav>
+          </div>
+        </article>
+        <aside class="docs-toc" aria-label="On this page"><div class="docs-toc-title">On this page</div><ul><li class="docs-toc-2"><a href="#v-1-0-0">1.0.0</a></li><li class="docs-toc-2"><a href="#v-0-3-0">0.3.0</a></li><li class="docs-toc-2"><a href="#v-0-2-0">0.2.0</a></li><li class="docs-toc-2"><a href="#v-0-1-0">0.1.0</a></li></ul></aside>
+      </main>
+    </div>
+
+    <footer class="docs-footer" aria-label="Site footer">
+    <div class="docs-footer-inner">
+      <div class="docs-footer-brand">
+        <div class="docs-brand">
+          <span class="docs-mark" aria-hidden="true"><svg viewBox="0 0 32 32" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="oklch(62% 0.22 264)"/>
+      <stop offset="100%" stop-color="oklch(58% 0.22 220)"/>
+    </linearGradient>
+  </defs>
+  <rect x="2" y="2" width="28" height="28" rx="8" fill="url(#bg)"/>
+  <path d="M11 9h7.5a4.5 4.5 0 0 1 2.4 8.3A5 5 0 0 1 18.5 23H11V9Zm3 3v3.2h4a1.6 1.6 0 1 0 0-3.2h-4Zm0 6v3.2h4.5a1.6 1.6 0 1 0 0-3.2H14Z" fill="#fff"/>
+</svg></span>
+          <span class="docs-brand-name">BlastCSS</span>
+        </div>
+        <p>A modern, framework-agnostic CSS framework. MIT licensed.</p>
+        <div class="docs-footer-meta">
+          <span>v1.0.0</span>
+          <span>·</span>
+          <a href="https://github.com/sitharaj88/blast-css">GitHub</a>
+          <span>·</span>
+          <a href="https://github.com/sitharaj88/blast-css/issues">Issues</a>
+          <span>·</span>
+          <a href="https://github.com/sitharaj88/blast-css/blob/main/CHANGELOG.md">Changelog</a>
+        </div>
+      </div>
+      <div class="docs-footer-grid"><div class="docs-footer-col">
+      <div class="docs-footer-title">Get started</div>
+      <ul><li><a href="./index.html">Introduction</a></li><li><a href="./guides/installation.html">Installation</a></li><li><a href="./guides/quickstart.html">Quick start</a></li><li><a href="./guides/theming.html">Theming & tokens</a></li><li><a href="./guides/dark-mode.html">Dark mode</a></li><li><a href="./guides/frameworks.html">Framework integration</a></li></ul>
+    </div><div class="docs-footer-col">
+      <div class="docs-footer-title">Foundations</div>
+      <ul><li><a href="./guides/layers.html">Cascade layers</a></li><li><a href="./guides/layout.html">Layout primitives</a></li><li><a href="./guides/typography.html">Typography</a></li><li><a href="./guides/colors.html">Colors</a></li><li><a href="./guides/motion.html">Motion & view transitions</a></li><li><a href="./guides/accessibility.html">Accessibility</a></li></ul>
+    </div><div class="docs-footer-col">
+      <div class="docs-footer-title">Components</div>
+      <ul><li><a href="./components/buttons.html">Buttons</a></li><li><a href="./components/forms.html">Forms</a></li><li><a href="./components/cards.html">Cards</a></li><li><a href="./components/badges.html">Badges & chips</a></li><li><a href="./components/alerts.html">Alerts</a></li><li><a href="./components/dialog.html">Dialog & drawer</a></li></ul>
+    </div><div class="docs-footer-col">
+      <div class="docs-footer-title">Utilities</div>
+      <ul><li><a href="./utilities/spacing.html">Spacing</a></li><li><a href="./utilities/flex-grid.html">Flexbox & grid</a></li><li><a href="./utilities/typography.html">Typography</a></li><li><a href="./utilities/colors.html">Colors & background</a></li><li><a href="./utilities/borders.html">Borders & shadows</a></li><li><a href="./utilities/responsive.html">Responsive & container</a></li></ul>
+    </div><div class="docs-footer-col">
+      <div class="docs-footer-title">Tools</div>
+      <ul><li><a href="./playground.html">Theme playground</a></li><li><a href="./showcase.html">Showcase</a></li><li><a href="./whats-new.html">What's new</a></li></ul>
+    </div></div>
+    </div>
+    <div class="docs-footer-bottom">
+      <small>Built with BlastCSS · © 2026</small>
+    </div>
+  </footer>
+
+    <dialog id="docs-search-dialog" class="b-command" aria-label="Search documentation">
+      <div class="b-command-search">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="7"/><path d="m21 21-4.3-4.3"/></svg>
+        <input type="search" placeholder="Search components, utilities, guides…" aria-label="Search">
+        <kbd class="b-kbd">esc</kbd>
+      </div>
+      <ul class="b-command-list" data-docs-search-list></ul>
+    </dialog>
+  </body>
+</html>

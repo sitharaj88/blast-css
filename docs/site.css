@@ -1377,6 +1377,208 @@ dialog.b-command[open] { animation: b-scale-in var(--b-duration-fast) var(--b-ea
 }
 
 /* ─────────────────────────────────────────────────────────────
+   Callouts (> [!NOTE], > [!TIP], > [!WARNING], > [!IMPORTANT])
+   ───────────────────────────────────────────────────────────── */
+
+.docs-callout {
+  border: 1px solid var(--b-border);
+  border-inline-start-width: 3px;
+  border-radius: var(--b-radius);
+  display: grid;
+  gap: var(--b-2);
+  margin-block: var(--b-5);
+  padding: var(--b-3) var(--b-4);
+}
+
+.docs-callout-head {
+  align-items: center;
+  display: flex;
+  font-size: var(--b-text-sm);
+  font-weight: var(--b-weight-bold);
+  gap: var(--b-2);
+}
+
+.docs-callout-body {
+  color: var(--b-muted);
+  font-size: var(--b-text-sm);
+  line-height: var(--b-leading-snug);
+}
+
+.docs-callout-body a { color: var(--b-text); }
+
+.docs-callout-note {
+  background: color-mix(in oklch, var(--b-info-soft) 50%, transparent);
+  border-color: color-mix(in oklch, var(--b-info) 30%, transparent);
+  border-inline-start-color: var(--b-info);
+}
+.docs-callout-note .docs-callout-head { color: var(--b-info); }
+
+.docs-callout-tip {
+  background: color-mix(in oklch, var(--b-success-soft) 50%, transparent);
+  border-color: color-mix(in oklch, var(--b-success) 30%, transparent);
+  border-inline-start-color: var(--b-success);
+}
+.docs-callout-tip .docs-callout-head { color: var(--b-success); }
+
+.docs-callout-warning {
+  background: color-mix(in oklch, var(--b-warning-soft) 50%, transparent);
+  border-color: color-mix(in oklch, var(--b-warning) 30%, transparent);
+  border-inline-start-color: var(--b-warning);
+}
+.docs-callout-warning .docs-callout-head { color: var(--b-warning); }
+
+.docs-callout-important {
+  background: color-mix(in oklch, var(--b-primary-soft) 50%, transparent);
+  border-color: color-mix(in oklch, var(--b-primary) 30%, transparent);
+  border-inline-start-color: var(--b-primary);
+}
+.docs-callout-important .docs-callout-head { color: var(--b-primary); }
+
+.docs-callout-danger {
+  background: color-mix(in oklch, var(--b-danger-soft) 50%, transparent);
+  border-color: color-mix(in oklch, var(--b-danger) 30%, transparent);
+  border-inline-start-color: var(--b-danger);
+}
+.docs-callout-danger .docs-callout-head { color: var(--b-danger); }
+
+/* ─────────────────────────────────────────────────────────────
+   Info bar (component meta: status, keyboard, screen reader, browser)
+   ───────────────────────────────────────────────────────────── */
+
+.docs-info-bar {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--b-2);
+  margin-block-start: var(--b-3);
+}
+
+.docs-info-pill {
+  align-items: center;
+  background: var(--b-surface);
+  border: 1px solid var(--b-border);
+  border-radius: var(--b-radius-pill);
+  color: var(--b-muted);
+  display: inline-flex;
+  font-size: var(--b-text-xs);
+  font-weight: var(--b-weight-semi);
+  gap: var(--b-1);
+  padding: .25rem .65rem .25rem .55rem;
+}
+
+.docs-info-status {
+  background: var(--b-success-soft);
+  border-color: color-mix(in oklch, var(--b-success) 30%, transparent);
+  color: var(--b-success);
+}
+
+.docs-info-status-beta { background: var(--b-warning-soft); border-color: color-mix(in oklch, var(--b-warning) 30%, transparent); color: var(--b-warning); }
+.docs-info-status-new { background: var(--b-primary-soft); border-color: color-mix(in oklch, var(--b-primary) 30%, transparent); color: var(--b-primary-strong); }
+.docs-info-status-preview { background: var(--b-info-soft); border-color: color-mix(in oklch, var(--b-info) 30%, transparent); color: var(--b-info); }
+.docs-info-status-deprecated { background: var(--b-danger-soft); border-color: color-mix(in oklch, var(--b-danger) 30%, transparent); color: var(--b-danger); }
+
+.docs-info-dot {
+  background: currentColor;
+  block-size: .35rem;
+  border-radius: 999px;
+  display: inline-block;
+  inline-size: .35rem;
+}
+
+/* ─────────────────────────────────────────────────────────────
+   Sidebar status badges
+   ───────────────────────────────────────────────────────────── */
+
+.docs-nav-link { align-items: center; display: flex !important; gap: var(--b-2); justify-content: space-between; }
+
+.docs-nav-status {
+  background: var(--b-primary-soft);
+  border-radius: var(--b-radius-pill);
+  color: var(--b-primary-strong);
+  flex-shrink: 0;
+  font-family: var(--b-font-sans);
+  font-size: .6rem;
+  font-weight: var(--b-weight-bold);
+  letter-spacing: var(--b-tracking-wide);
+  padding: .1rem .4rem;
+  text-transform: uppercase;
+}
+
+.docs-nav-status-beta {
+  background: var(--b-warning-soft);
+  color: var(--b-warning);
+}
+
+.docs-nav-status-new {
+  background: var(--b-primary-soft);
+  color: var(--b-primary-strong);
+}
+
+/* ─────────────────────────────────────────────────────────────
+   Changelog timeline
+   ───────────────────────────────────────────────────────────── */
+
+.docs-changelog {
+  display: grid;
+  gap: var(--b-8);
+}
+
+.docs-changelog-entry {
+  border-inline-start: 2px solid var(--b-border);
+  padding-inline-start: var(--b-6);
+  position: relative;
+}
+
+.docs-changelog-entry::before {
+  background: var(--b-elevated);
+  border: 2px solid var(--b-primary);
+  border-radius: 999px;
+  block-size: .9rem;
+  content: "";
+  inline-size: .9rem;
+  inset-block-start: .35rem;
+  inset-inline-start: -.55rem;
+  position: absolute;
+}
+
+.docs-changelog-entry:first-child::before {
+  background: var(--b-primary);
+}
+
+.docs-changelog-meta {
+  align-items: center;
+  display: flex;
+  gap: var(--b-3);
+  margin-block-end: var(--b-4);
+}
+
+.docs-changelog-meta h2 {
+  margin: 0 !important;
+  font-size: var(--b-text-2xl);
+}
+
+.docs-changelog-body :where(h3) {
+  font-size: var(--b-text-md);
+  margin-block-start: var(--b-5);
+  margin-block-end: var(--b-2);
+}
+
+/* ─────────────────────────────────────────────────────────────
+   404 page
+   ───────────────────────────────────────────────────────────── */
+
+.docs-404 .docs-shell {
+  display: block;
+  max-inline-size: 60rem;
+  padding-block: var(--b-12);
+}
+
+.docs-404 .docs-sidebar { display: none !important; }
+.docs-404 .docs-main { padding: 0; }
+.docs-404 .docs-toc { display: none; }
+.docs-404 .docs-article { max-inline-size: none; }
+.docs-404 .docs-article > p { text-align: center; max-inline-size: 50ch; margin-inline: auto; }
+
+/* ─────────────────────────────────────────────────────────────
    View transitions
    ───────────────────────────────────────────────────────────── */
 

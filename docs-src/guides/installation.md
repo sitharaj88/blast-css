@@ -57,6 +57,9 @@ For server-rendered apps, frameworks without a bundler, or quick prototypes — 
 <script type="module" src="/blast.min.js"></script>
 ```
 
+> [!TIP]
+> Use `blastcss/core + blastcss/components` for the smallest install when you don't need utilities or motion. That brings the bundle to under 9 KB gzip.
+
 ## Verify
 
 After installation, this snippet should render a styled button with a focus ring, hover state, and dark-mode aware colors:

@@ -1,6 +1,10 @@
 ---
 title: Popover
 section: Components
+status: new
+keyboard: true
+screen-reader: tested
+browser: Chrome 125+, Firefox 128+, Safari 17.4+
 lede: Floating panel that anchors to a trigger. Uses the native HTML `popover` attribute and CSS anchor positioning where supported.
 ---
 

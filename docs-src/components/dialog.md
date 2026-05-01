@@ -1,6 +1,10 @@
 ---
 title: Dialog & drawer
 section: Components
+status: stable
+keyboard: true
+screen-reader: tested
+browser: Evergreen
 lede: Modal dialogs and slide-in drawers built on the native `<dialog>` element with `@starting-style` animations.
 ---
 

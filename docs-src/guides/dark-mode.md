@@ -33,6 +33,9 @@ Add a theme toggle anywhere — the bundled JS handles it:
 <button class="b-icon-btn" data-b-toggle="theme" aria-label="Toggle dark mode">🌗</button>
 ```
 
+> [!NOTE]
+> The toggle calls `initTheme()` which fires `b:theme:change` events on `document`. Listen for those if you need to react to theme changes elsewhere in your app.
+
 ## Persisting the choice
 
 The toggle saves to `localStorage` under `b-theme` and restores on next visit. To prevent a flash before the script runs, inline this in `<head>`:

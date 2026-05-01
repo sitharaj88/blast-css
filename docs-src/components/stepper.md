@@ -1,6 +1,8 @@
 ---
 title: Stepper
 section: Components
+status: new
+browser: Evergreen
 lede: Vertical or horizontal step indicator for multi-step flows. Auto-numbered.
 ---
 

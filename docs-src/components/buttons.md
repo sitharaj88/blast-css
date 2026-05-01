@@ -1,6 +1,10 @@
 ---
 title: Buttons
 section: Components
+status: stable
+keyboard: true
+screen-reader: tested
+browser: Evergreen
 lede: Solid, secondary, soft, outline, ghost — sized small, default, and large. With loading and disabled states.
 ---
 

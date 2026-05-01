@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://sitharaj88.github.io/blast-css/sitemap.xml

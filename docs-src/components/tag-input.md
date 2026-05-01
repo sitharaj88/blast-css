@@ -1,6 +1,10 @@
 ---
 title: Tag input
 section: Components
+status: new
+keyboard: true
+screen-reader: tested
+browser: Evergreen
 lede: Multi-value input that converts each entry into a removable chip.
 ---
 
