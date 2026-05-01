@@ -4,8 +4,15 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="description" content="BlastCSS is a tiny, modern, framework-agnostic CSS framework built on cascade layers, OKLCH tokens, and container queries.">
-    <meta name="theme-color" content="#0c1016">
-    <title>Theming &amp; tokens — BlastCSS</title>
+    <meta name="theme-color" content="#0c1016" media="(prefers-color-scheme: dark)">
+    <meta name="theme-color" content="#ffffff" media="(prefers-color-scheme: light)">
+    <meta property="og:title" content="Theming &amp; tokens · BlastCSS">
+    <meta property="og:description" content="BlastCSS is a tiny, modern, framework-agnostic CSS framework built on cascade layers, OKLCH tokens, and container queries.">
+    <meta property="og:type" content="website">
+    <meta property="og:image" content="https://opengraph.githubassets.com/1/sitharaj88/blast-css">
+    <meta name="twitter:card" content="summary_large_image">
+    <link rel="icon" type="image/svg+xml" href="../favicon.svg">
+    <title>Theming &amp; tokens · BlastCSS</title>
     <link rel="stylesheet" href="../../dist/blast.min.css">
     <link rel="stylesheet" href="../site.css">
     <script type="module" src="../../dist/blast.js"></script>
@@ -18,9 +25,18 @@
     <header class="docs-header">
       <div class="docs-header-inner">
         <a class="docs-brand" href="../index.html" aria-label="BlastCSS home">
-          <span class="docs-mark" aria-hidden="true">B</span>
+          <span class="docs-mark" aria-hidden="true"><svg viewBox="0 0 32 32" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="oklch(62% 0.22 264)"/>
+      <stop offset="100%" stop-color="oklch(58% 0.22 220)"/>
+    </linearGradient>
+  </defs>
+  <rect x="2" y="2" width="28" height="28" rx="8" fill="url(#bg)"/>
+  <path d="M11 9h7.5a4.5 4.5 0 0 1 2.4 8.3A5 5 0 0 1 18.5 23H11V9Zm3 3v3.2h4a1.6 1.6 0 1 0 0-3.2h-4Zm0 6v3.2h4.5a1.6 1.6 0 1 0 0-3.2H14Z" fill="#fff"/>
+</svg></span>
           <span class="docs-brand-name">BlastCSS</span>
-          <span class="b-badge b-badge-neutral docs-version">v1.0.0</span>
+          <span class="docs-version">v1.0.0</span>
         </a>
         <button class="docs-menu-btn b-icon-btn" type="button" aria-label="Toggle menu" data-docs-menu>
           <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 6h18M3 12h18M3 18h18"/></svg>
@@ -36,7 +52,10 @@
           <a href="../components/buttons.html">Components</a>
           <a href="../guides/theming.html">Theming</a>
           <a href="../playground.html">Playground</a>
-          <a href="https://github.com/blastcss/blastcss" rel="noopener">GitHub</a>
+          <a href="https://github.com/sitharaj88/blast-css" rel="noopener" class="docs-top-github">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2C6.48 2 2 6.58 2 12.25c0 4.51 2.87 8.34 6.84 9.69.5.09.68-.22.68-.49 0-.24-.01-.88-.01-1.72-2.78.62-3.37-1.36-3.37-1.36-.45-1.18-1.11-1.49-1.11-1.49-.91-.63.07-.62.07-.62 1.01.07 1.54 1.06 1.54 1.06.89 1.57 2.34 1.12 2.91.85.09-.66.35-1.12.63-1.37-2.22-.26-4.55-1.14-4.55-5.06 0-1.12.39-2.03 1.03-2.74-.1-.26-.45-1.31.1-2.72 0 0 .84-.27 2.75 1.04A9.34 9.34 0 0 1 12 6.84c.85.01 1.71.12 2.51.34 1.91-1.31 2.75-1.04 2.75-1.04.55 1.41.2 2.46.1 2.72.64.71 1.03 1.62 1.03 2.74 0 3.93-2.34 4.79-4.57 5.05.36.31.68.93.68 1.88 0 1.36-.01 2.45-.01 2.79 0 .27.18.59.69.49 3.97-1.35 6.83-5.18 6.83-9.69C22 6.58 17.52 2 12 2Z"/></svg>
+            <span class="b-sr-only">GitHub</span>
+          </a>
         </nav>
         <button class="b-icon-btn docs-theme-toggle" type="button" data-b-toggle="theme" aria-label="Toggle dark mode">
           <svg class="docs-icon-sun" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M4.93 19.07l1.41-1.41M17.66 6.34l1.41-1.41"/></svg>
@@ -56,62 +75,203 @@
 
       <main id="main" class="docs-main">
         <article class="docs-article">
+          <nav class="docs-breadcrumb" aria-label="Breadcrumb">
+    <ol>
+      <li><a href="../index.html">Docs</a></li>
+      <li>Get started</li>
+      <li aria-current="page">Theming &amp; tokens</li>
+    </ol>
+  </nav>
           <header class="docs-article-head">
     <div class="docs-eyebrow">Get started</div>
     <h1>Theming &amp; tokens</h1>
     <p class="docs-lede">Override CSS variables to retheme. Tokens travel as JSON, CSS, and TypeScript for design pipelines.</p>
   </header><h2 id="how-theming-works"><a class="b-anchor-link" href="#how-theming-works" aria-label="Anchor link">How theming works</a></h2>
 <p>BlastCSS exposes ~80 CSS custom properties. They live in the <code>blast.tokens</code> cascade layer, so any <code>:root</code> rule in your app overrides them without specificity tricks.</p>
-<div class="b-code"><div class="b-code-head"><span>css</span><button class="b-code-copy" type="button" data-b-copy>Copy</button></div><pre tabindex="0"><code>:root {
-  --b-primary: oklch(60% 0.2 150);  /* green */
-  --b-radius: .375rem;
-  --b-font-sans: "Geist", system-ui;
-}</code></pre></div>
+<figure class="b-code" data-lang="css">
+    <figcaption class="b-code-head">
+      <span class="b-code-lang">css</span>
+      <button class="b-code-copy" type="button" data-b-copy aria-label="Copy code">
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="9" y="9" width="13" height="13" rx="2"/><path d="M5 15V5a2 2 0 0 1 2-2h10"/></svg>
+        <span>Copy</span>
+      </button>
+    </figcaption>
+    <pre tabindex="0"><code><span class="t-selector">:root</span> {
+  <span class="t-property">--b-primary</span>: <span class="t-func">oklch</span>(<span class="t-number">60</span>% <span class="t-number">0.2</span> <span class="t-number">150</span>);  <span class="t-comment">/* green */</span>
+  <span class="t-property">--b-radius</span>: <span class="t-number">.375rem</span>;
+  <span class="t-property">--b-font-sans</span>: <span class="t-string">"Geist"</span>, system-ui;
+}</code></pre>
+  </figure>
 <h2 id="oklch-everywhere"><a class="b-anchor-link" href="#oklch-everywhere" aria-label="Anchor link">OKLCH everywhere</a></h2>
 <p>Every color is defined in OKLCH for perceptually uniform tinting and shading. The framework derives soft and strong variants automatically using <code>color-mix()</code>, so a single hue change retunes hovers, focus rings, badges, alerts, and more.</p>
-<div class="b-code"><div class="b-code-head"><span>css</span><button class="b-code-copy" type="button" data-b-copy>Copy</button></div><pre tabindex="0"><code>:root {
-  --b-primary-h: 264;     /* hue 0–360 */
-  --b-primary-c: 0.21;    /* chroma 0–0.4 */
-}</code></pre></div>
+<figure class="b-code" data-lang="css">
+    <figcaption class="b-code-head">
+      <span class="b-code-lang">css</span>
+      <button class="b-code-copy" type="button" data-b-copy aria-label="Copy code">
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="9" y="9" width="13" height="13" rx="2"/><path d="M5 15V5a2 2 0 0 1 2-2h10"/></svg>
+        <span>Copy</span>
+      </button>
+    </figcaption>
+    <pre tabindex="0"><code><span class="t-selector">:root</span> {
+  <span class="t-property">--b-primary-h</span>: <span class="t-number">264</span>;     <span class="t-comment">/* hue 0–360 */</span>
+  <span class="t-property">--b-primary-c</span>: <span class="t-number">0.21</span>;    <span class="t-comment">/* chroma 0–0.4 */</span>
+}</code></pre>
+  </figure>
 <h2 id="light-dark-with-light-dark"><a class="b-anchor-link" href="#light-dark-with-light-dark" aria-label="Anchor link">Light &amp; dark with <code>light-dark()</code></a></h2>
 <p>Most colors are wrapped in <code>light-dark(lightValue, darkValue)</code>. The active value depends on <code>color-scheme</code>:</p>
 <ul><li><code>color-scheme: light</code> → light value</li><li><code>color-scheme: dark</code> → dark value</li><li><code>color-scheme: light dark</code> → follows <code>prefers-color-scheme</code></li></ul>
 <p>Toggle dark mode by setting <code>data-theme</code> on <code>&lt;html&gt;</code>:</p>
-<div class="b-code"><div class="b-code-head"><span>html</span><button class="b-code-copy" type="button" data-b-copy>Copy</button></div><pre tabindex="0"><code>&lt;html data-theme="dark"&gt;</code></pre></div>
+<figure class="b-code" data-lang="html">
+    <figcaption class="b-code-head">
+      <span class="b-code-lang">html</span>
+      <button class="b-code-copy" type="button" data-b-copy aria-label="Copy code">
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="9" y="9" width="13" height="13" rx="2"/><path d="M5 15V5a2 2 0 0 1 2-2h10"/></svg>
+        <span>Copy</span>
+      </button>
+    </figcaption>
+    <pre tabindex="0"><code><span class="t-tag">&lt;html</span><span class="t-attr"> data-theme</span>=<span class="t-string">"dark"</span><span class="t-punc">&gt;</span></code></pre>
+  </figure>
 <p>The bundled JS auto-saves the user's choice to <code>localStorage</code> under the key <code>b-theme</code> and restores it on next visit. Trigger it manually:</p>
-<div class="b-code"><div class="b-code-head"><span>html</span><button class="b-code-copy" type="button" data-b-copy>Copy</button></div><pre tabindex="0"><code>&lt;button class="b-icon-btn" data-b-toggle="theme" aria-label="Toggle theme"&gt;
-  &lt;!-- icon --&gt;
-&lt;/button&gt;</code></pre></div>
+<figure class="b-code" data-lang="html">
+    <figcaption class="b-code-head">
+      <span class="b-code-lang">html</span>
+      <button class="b-code-copy" type="button" data-b-copy aria-label="Copy code">
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="9" y="9" width="13" height="13" rx="2"/><path d="M5 15V5a2 2 0 0 1 2-2h10"/></svg>
+        <span>Copy</span>
+      </button>
+    </figcaption>
+    <pre tabindex="0"><code><span class="t-tag">&lt;button</span><span class="t-attr"> class</span>=<span class="t-string">"b-icon-btn"</span><span class="t-attr"> data-b-toggle</span>=<span class="t-string">"theme"</span><span class="t-attr"> aria-label</span>=<span class="t-string">"Toggle theme"</span><span class="t-punc">&gt;</span>
+  <span class="t-comment">&lt;!-- icon --&gt;</span>
+<span class="t-tag">&lt;/button</span><span class="t-punc">&gt;</span></code></pre>
+  </figure>
 <p>See the <a href="./dark-mode.html">dark mode</a> guide for more.</p>
 <h2 id="token-categories"><a class="b-anchor-link" href="#token-categories" aria-label="Anchor link">Token categories</a></h2>
 <p>| Prefix | What it controls | | --- | --- | | <code>--b-bg</code>, <code>--b-surface</code>, <code>--b-elevated</code> | Page surfaces | | <code>--b-text</code>, <code>--b-muted</code>, <code>--b-subtle</code> | Text colors | | <code>--b-primary</code>, <code>--b-success</code>, <code>--b-warning</code>, <code>--b-danger</code>, <code>--b-info</code> | Brand &amp; status colors | | <code>--b-border</code>, <code>--b-border-strong</code> | Lines &amp; dividers | | <code>--b-1</code>…<code>--b-24</code> | Spacing scale (rem-based) | | <code>--b-fluid-1</code>…<code>--b-fluid-5</code> | Fluid spacing for hero sections | | <code>--b-text-xs</code>…<code>--b-text-5xl</code> | Type scale | | <code>--b-fluid-h1</code>, <code>--b-fluid-h2</code>, <code>--b-fluid-h3</code> | Fluid heading sizes | | <code>--b-radius-xs</code>…<code>--b-radius-2xl</code>, <code>--b-radius-pill</code> | Border radii | | <code>--b-shadow-xs</code>…<code>--b-shadow-xl</code>, <code>--b-shadow-ring</code>, <code>--b-shadow-glow</code> | Elevation | | <code>--b-duration<em></code>, <code>--b-ease</em></code> | Motion | | <code>--b-z-<em></code> | z-index scale (dropdown, popover, toast, modal) | | <code>--b-container</em></code> | Container max widths | | <code>--b-control</code>, <code>--b-control-sm</code>, <code>--b-control-lg</code> | Form/button heights |</p>
 <h2 id="per-component-theming"><a class="b-anchor-link" href="#per-component-theming" aria-label="Anchor link">Per-component theming</a></h2>
 <p>Many components also expose private properties for one-off tweaks:</p>
-<div class="b-code"><div class="b-code-head"><span>html</span><button class="b-code-copy" type="button" data-b-copy>Copy</button></div><pre tabindex="0"><code>&lt;div class="b-grid" style="--b-grid-min:18rem; --b-grid-gap:var(--b-6)"&gt;
+<figure class="b-code" data-lang="html">
+    <figcaption class="b-code-head">
+      <span class="b-code-lang">html</span>
+      <button class="b-code-copy" type="button" data-b-copy aria-label="Copy code">
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="9" y="9" width="13" height="13" rx="2"/><path d="M5 15V5a2 2 0 0 1 2-2h10"/></svg>
+        <span>Copy</span>
+      </button>
+    </figcaption>
+    <pre tabindex="0"><code><span class="t-tag">&lt;div</span><span class="t-attr"> class</span>=<span class="t-string">"b-grid"</span><span class="t-attr"> style</span>=<span class="t-string">"--b-grid-min:18rem; --b-grid-gap:var(--b-6)"</span><span class="t-punc">&gt;</span>
   ...
-&lt;/div&gt;
+<span class="t-tag">&lt;/div</span><span class="t-punc">&gt;</span>
 
-&lt;div class="b-stack" style="--b-stack-gap: var(--b-2)"&gt;
+<span class="t-tag">&lt;div</span><span class="t-attr"> class</span>=<span class="t-string">"b-stack"</span><span class="t-attr"> style</span>=<span class="t-string">"--b-stack-gap: var(--b-2)"</span><span class="t-punc">&gt;</span>
   ...
-&lt;/div&gt;
+<span class="t-tag">&lt;/div</span><span class="t-punc">&gt;</span>
 
-&lt;span class="b-avatar" style="--b-avatar-size: 4rem"&gt;JD&lt;/span&gt;</code></pre></div>
+<span class="t-tag">&lt;span</span><span class="t-attr"> class</span>=<span class="t-string">"b-avatar"</span><span class="t-attr"> style</span>=<span class="t-string">"--b-avatar-size: 4rem"</span><span class="t-punc">&gt;</span>JD<span class="t-tag">&lt;/span</span><span class="t-punc">&gt;</span></code></pre>
+  </figure>
 <h2 id="exported-formats"><a class="b-anchor-link" href="#exported-formats" aria-label="Anchor link">Exported formats</a></h2>
 <p>The build emits tokens in three formats — pick whichever matches your design pipeline:</p>
-<div class="b-code"><div class="b-code-head"><span>js</span><button class="b-code-copy" type="button" data-b-copy>Copy</button></div><pre tabindex="0"><code>import tokens from "blastcss/tokens.json";   // { light: { ... }, dark: { ... } }
-import { tokens } from "blastcss/tokens.ts"; // typed</code></pre></div>
-<div class="b-code"><div class="b-code-head"><span>css</span><button class="b-code-copy" type="button" data-b-copy>Copy</button></div><pre tabindex="0"><code>@import "blastcss/tokens.css";</code></pre></div>
+<figure class="b-code" data-lang="js">
+    <figcaption class="b-code-head">
+      <span class="b-code-lang">js</span>
+      <button class="b-code-copy" type="button" data-b-copy aria-label="Copy code">
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="9" y="9" width="13" height="13" rx="2"/><path d="M5 15V5a2 2 0 0 1 2-2h10"/></svg>
+        <span>Copy</span>
+      </button>
+    </figcaption>
+    <pre tabindex="0"><code><span class="t-keyword">import</span> tokens <span class="t-keyword">from</span> <span class="t-string">"blastcss/tokens.json"</span>;   <span class="t-comment">// { light: { ... }, dark: { ... } }</span>
+<span class="t-keyword">import</span> { tokens } <span class="t-keyword">from</span> <span class="t-string">"blastcss/tokens.ts"</span>; <span class="t-comment">// typed</span></code></pre>
+  </figure>
+<figure class="b-code" data-lang="css">
+    <figcaption class="b-code-head">
+      <span class="b-code-lang">css</span>
+      <button class="b-code-copy" type="button" data-b-copy aria-label="Copy code">
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="9" y="9" width="13" height="13" rx="2"/><path d="M5 15V5a2 2 0 0 1 2-2h10"/></svg>
+        <span>Copy</span>
+      </button>
+    </figcaption>
+    <pre tabindex="0"><code><span class="t-atrule">@import</span> <span class="t-string">"blastcss/tokens.css"</span>;</code></pre>
+  </figure>
 <h2 id="brand-recipe"><a class="b-anchor-link" href="#brand-recipe" aria-label="Anchor link">Brand recipe</a></h2>
 <p>Match a brand color in three lines of CSS:</p>
-<div class="b-code"><div class="b-code-head"><span>css</span><button class="b-code-copy" type="button" data-b-copy>Copy</button></div><pre tabindex="0"><code>:root {
-  --b-primary: oklch(from #5B33FF l c h);  /* convert any hex to OKLCH */
-  --b-primary-soft: oklch(from var(--b-primary) 0.96 0.05 h);
-  --b-primary-strong: oklch(from var(--b-primary) 0.45 c h);
-}</code></pre></div>
+<figure class="b-code" data-lang="css">
+    <figcaption class="b-code-head">
+      <span class="b-code-lang">css</span>
+      <button class="b-code-copy" type="button" data-b-copy aria-label="Copy code">
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="9" y="9" width="13" height="13" rx="2"/><path d="M5 15V5a2 2 0 0 1 2-2h10"/></svg>
+        <span>Copy</span>
+      </button>
+    </figcaption>
+    <pre tabindex="0"><code><span class="t-selector">:root</span> {
+  <span class="t-property">--b-primary</span>: <span class="t-func">oklch</span>(from <span class="t-number">#5B33FF</span> l c h);  <span class="t-comment">/* convert any hex to OKLCH */</span>
+  <span class="t-property">--b-primary-soft</span>: <span class="t-func">oklch</span>(from <span class="t-func">var</span>(<span class="t-property">--b-primary</span>) <span class="t-number">0.96</span> <span class="t-number">0.05</span> h);
+  <span class="t-property">--b-primary-strong</span>: <span class="t-func">oklch</span>(from <span class="t-func">var</span>(<span class="t-property">--b-primary</span>) <span class="t-number">0.45</span> c h);
+}</code></pre>
+  </figure>
+          <div class="docs-article-foot">
+            <a class="docs-edit-link" href="https://github.com/sitharaj88/blast-css/edit/main/docs-src/guides/theming.md" rel="noopener">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M11 4H4a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2v-7"/><path d="M18.5 2.5a2.121 2.121 0 0 1 3 3L12 15l-4 1 1-4 9.5-9.5Z"/></svg>
+              Edit this page
+            </a>
+            <nav class="docs-prev-next" aria-label="Pagination"><a class="docs-pn-card docs-pn-prev" href="./quickstart.html">
+      <span class="docs-pn-dir">← Previous</span>
+      <span class="docs-pn-title">Quick start</span>
+    </a><a class="docs-pn-card docs-pn-next" href="./dark-mode.html">
+      <span class="docs-pn-dir">→ Next</span>
+      <span class="docs-pn-title">Dark mode</span>
+    </a></nav>
+          </div>
         </article>
         <aside class="docs-toc" aria-label="On this page"><div class="docs-toc-title">On this page</div><ul><li class="docs-toc-2"><a href="#how-theming-works">How theming works</a></li><li class="docs-toc-2"><a href="#oklch-everywhere">OKLCH everywhere</a></li><li class="docs-toc-2"><a href="#light-dark-with-light-dark">Light &amp; dark with `light-dark()`</a></li><li class="docs-toc-2"><a href="#token-categories">Token categories</a></li><li class="docs-toc-2"><a href="#per-component-theming">Per-component theming</a></li><li class="docs-toc-2"><a href="#exported-formats">Exported formats</a></li><li class="docs-toc-2"><a href="#brand-recipe">Brand recipe</a></li></ul></aside>
       </main>
     </div>
+
+    <footer class="docs-footer" aria-label="Site footer">
+    <div class="docs-footer-inner">
+      <div class="docs-footer-brand">
+        <div class="docs-brand">
+          <span class="docs-mark" aria-hidden="true"><svg viewBox="0 0 32 32" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="oklch(62% 0.22 264)"/>
+      <stop offset="100%" stop-color="oklch(58% 0.22 220)"/>
+    </linearGradient>
+  </defs>
+  <rect x="2" y="2" width="28" height="28" rx="8" fill="url(#bg)"/>
+  <path d="M11 9h7.5a4.5 4.5 0 0 1 2.4 8.3A5 5 0 0 1 18.5 23H11V9Zm3 3v3.2h4a1.6 1.6 0 1 0 0-3.2h-4Zm0 6v3.2h4.5a1.6 1.6 0 1 0 0-3.2H14Z" fill="#fff"/>
+</svg></span>
+          <span class="docs-brand-name">BlastCSS</span>
+        </div>
+        <p>A modern, framework-agnostic CSS framework. MIT licensed.</p>
+        <div class="docs-footer-meta">
+          <span>v1.0.0</span>
+          <span>·</span>
+          <a href="https://github.com/sitharaj88/blast-css">GitHub</a>
+          <span>·</span>
+          <a href="https://github.com/sitharaj88/blast-css/issues">Issues</a>
+          <span>·</span>
+          <a href="https://github.com/sitharaj88/blast-css/blob/main/CHANGELOG.md">Changelog</a>
+        </div>
+      </div>
+      <div class="docs-footer-grid"><div class="docs-footer-col">
+      <div class="docs-footer-title">Get started</div>
+      <ul><li><a href="../index.html">Introduction</a></li><li><a href="./installation.html">Installation</a></li><li><a href="./quickstart.html">Quick start</a></li><li><a href="./theming.html">Theming & tokens</a></li><li><a href="./dark-mode.html">Dark mode</a></li><li><a href="./frameworks.html">Framework integration</a></li></ul>
+    </div><div class="docs-footer-col">
+      <div class="docs-footer-title">Foundations</div>
+      <ul><li><a href="./layers.html">Cascade layers</a></li><li><a href="./layout.html">Layout primitives</a></li><li><a href="./typography.html">Typography</a></li><li><a href="./colors.html">Colors</a></li><li><a href="./motion.html">Motion & view transitions</a></li><li><a href="./accessibility.html">Accessibility</a></li></ul>
+    </div><div class="docs-footer-col">
+      <div class="docs-footer-title">Components</div>
+      <ul><li><a href="../components/buttons.html">Buttons</a></li><li><a href="../components/forms.html">Forms</a></li><li><a href="../components/cards.html">Cards</a></li><li><a href="../components/badges.html">Badges & chips</a></li><li><a href="../components/alerts.html">Alerts</a></li><li><a href="../components/dialog.html">Dialog & drawer</a></li></ul>
+    </div><div class="docs-footer-col">
+      <div class="docs-footer-title">Utilities</div>
+      <ul><li><a href="../utilities/spacing.html">Spacing</a></li><li><a href="../utilities/flex-grid.html">Flexbox & grid</a></li><li><a href="../utilities/typography.html">Typography</a></li><li><a href="../utilities/colors.html">Colors & background</a></li><li><a href="../utilities/borders.html">Borders & shadows</a></li><li><a href="../utilities/responsive.html">Responsive & container</a></li></ul>
+    </div><div class="docs-footer-col">
+      <div class="docs-footer-title">Tools</div>
+      <ul><li><a href="../playground.html">Theme playground</a></li><li><a href="../showcase.html">Showcase</a></li></ul>
+    </div></div>
+    </div>
+    <div class="docs-footer-bottom">
+      <small>Built with BlastCSS · © 2026</small>
+    </div>
+  </footer>
 
     <dialog id="docs-search-dialog" class="b-command" aria-label="Search documentation">
       <div class="b-command-search">

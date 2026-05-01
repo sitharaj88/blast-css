@@ -4,8 +4,15 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="description" content="BlastCSS is a tiny, modern, framework-agnostic CSS framework built on cascade layers, OKLCH tokens, and container queries.">
-    <meta name="theme-color" content="#0c1016">
-    <title>Segmented control — BlastCSS</title>
+    <meta name="theme-color" content="#0c1016" media="(prefers-color-scheme: dark)">
+    <meta name="theme-color" content="#ffffff" media="(prefers-color-scheme: light)">
+    <meta property="og:title" content="Segmented control · BlastCSS">
+    <meta property="og:description" content="BlastCSS is a tiny, modern, framework-agnostic CSS framework built on cascade layers, OKLCH tokens, and container queries.">
+    <meta property="og:type" content="website">
+    <meta property="og:image" content="https://opengraph.githubassets.com/1/sitharaj88/blast-css">
+    <meta name="twitter:card" content="summary_large_image">
+    <link rel="icon" type="image/svg+xml" href="../favicon.svg">
+    <title>Segmented control · BlastCSS</title>
     <link rel="stylesheet" href="../../dist/blast.min.css">
     <link rel="stylesheet" href="../site.css">
     <script type="module" src="../../dist/blast.js"></script>
@@ -18,9 +25,18 @@
     <header class="docs-header">
       <div class="docs-header-inner">
         <a class="docs-brand" href="../index.html" aria-label="BlastCSS home">
-          <span class="docs-mark" aria-hidden="true">B</span>
+          <span class="docs-mark" aria-hidden="true"><svg viewBox="0 0 32 32" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="oklch(62% 0.22 264)"/>
+      <stop offset="100%" stop-color="oklch(58% 0.22 220)"/>
+    </linearGradient>
+  </defs>
+  <rect x="2" y="2" width="28" height="28" rx="8" fill="url(#bg)"/>
+  <path d="M11 9h7.5a4.5 4.5 0 0 1 2.4 8.3A5 5 0 0 1 18.5 23H11V9Zm3 3v3.2h4a1.6 1.6 0 1 0 0-3.2h-4Zm0 6v3.2h4.5a1.6 1.6 0 1 0 0-3.2H14Z" fill="#fff"/>
+</svg></span>
           <span class="docs-brand-name">BlastCSS</span>
-          <span class="b-badge b-badge-neutral docs-version">v1.0.0</span>
+          <span class="docs-version">v1.0.0</span>
         </a>
         <button class="docs-menu-btn b-icon-btn" type="button" aria-label="Toggle menu" data-docs-menu>
           <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 6h18M3 12h18M3 18h18"/></svg>
@@ -36,7 +52,10 @@
           <a href="../components/buttons.html">Components</a>
           <a href="../guides/theming.html">Theming</a>
           <a href="../playground.html">Playground</a>
-          <a href="https://github.com/blastcss/blastcss" rel="noopener">GitHub</a>
+          <a href="https://github.com/sitharaj88/blast-css" rel="noopener" class="docs-top-github">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2C6.48 2 2 6.58 2 12.25c0 4.51 2.87 8.34 6.84 9.69.5.09.68-.22.68-.49 0-.24-.01-.88-.01-1.72-2.78.62-3.37-1.36-3.37-1.36-.45-1.18-1.11-1.49-1.11-1.49-.91-.63.07-.62.07-.62 1.01.07 1.54 1.06 1.54 1.06.89 1.57 2.34 1.12 2.91.85.09-.66.35-1.12.63-1.37-2.22-.26-4.55-1.14-4.55-5.06 0-1.12.39-2.03 1.03-2.74-.1-.26-.45-1.31.1-2.72 0 0 .84-.27 2.75 1.04A9.34 9.34 0 0 1 12 6.84c.85.01 1.71.12 2.51.34 1.91-1.31 2.75-1.04 2.75-1.04.55 1.41.2 2.46.1 2.72.64.71 1.03 1.62 1.03 2.74 0 3.93-2.34 4.79-4.57 5.05.36.31.68.93.68 1.88 0 1.36-.01 2.45-.01 2.79 0 .27.18.59.69.49 3.97-1.35 6.83-5.18 6.83-9.69C22 6.58 17.52 2 12 2Z"/></svg>
+            <span class="b-sr-only">GitHub</span>
+          </a>
         </nav>
         <button class="b-icon-btn docs-theme-toggle" type="button" data-b-toggle="theme" aria-label="Toggle dark mode">
           <svg class="docs-icon-sun" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M4.93 19.07l1.41-1.41M17.66 6.34l1.41-1.41"/></svg>
@@ -56,35 +75,138 @@
 
       <main id="main" class="docs-main">
         <article class="docs-article">
+          <nav class="docs-breadcrumb" aria-label="Breadcrumb">
+    <ol>
+      <li><a href="../index.html">Docs</a></li>
+      <li>Components</li>
+      <li aria-current="page">Segmented control</li>
+    </ol>
+  </nav>
           <header class="docs-article-head">
     <div class="docs-eyebrow">Components</div>
     <h1>Segmented control</h1>
     <p class="docs-lede">Pill-shaped multi-option toggle. Built on radio inputs — works without JavaScript.</p>
-  </header><section class="b-demo"><div class="b-demo-preview"><div class="b-segmented" role="radiogroup" aria-label="View density">
+  </header><section class="b-demo">
+    <div class="b-demo-tabs" role="tablist">
+      <button class="b-demo-tab is-active" type="button" role="tab" aria-selected="true" data-tab="preview">Preview</button>
+      <button class="b-demo-tab" type="button" role="tab" aria-selected="false" data-tab="code">Code</button>
+    </div>
+    <div class="b-demo-preview" role="tabpanel" data-panel="preview"><div class="b-segmented" role="radiogroup" aria-label="View density">
   <input type="radio" name="density" id="d-comfy" checked><label for="d-comfy">Comfortable</label>
   <input type="radio" name="density" id="d-cozy"><label for="d-cozy">Cozy</label>
   <input type="radio" name="density" id="d-tight"><label for="d-tight">Compact</label>
-</div></div><div class="b-code"><div class="b-code-head"><span>html</span><button class="b-code-copy" type="button" data-b-copy>Copy</button></div><pre tabindex="0"><code>&lt;div class="b-segmented" role="radiogroup" aria-label="View density"&gt;
-  &lt;input type="radio" name="density" id="d-comfy" checked&gt;&lt;label for="d-comfy"&gt;Comfortable&lt;/label&gt;
-  &lt;input type="radio" name="density" id="d-cozy"&gt;&lt;label for="d-cozy"&gt;Cozy&lt;/label&gt;
-  &lt;input type="radio" name="density" id="d-tight"&gt;&lt;label for="d-tight"&gt;Compact&lt;/label&gt;
-&lt;/div&gt;</code></pre></div></section>
-<div class="b-code"><div class="b-code-head"><span>html</span><button class="b-code-copy" type="button" data-b-copy>Copy</button></div><pre tabindex="0"><code>&lt;div class="b-segmented" role="radiogroup" aria-label="..."&gt;
-  &lt;input type="radio" name="x" id="a" checked&gt;&lt;label for="a"&gt;A&lt;/label&gt;
-  &lt;input type="radio" name="x" id="b"&gt;&lt;label for="b"&gt;B&lt;/label&gt;
-  &lt;input type="radio" name="x" id="c"&gt;&lt;label for="c"&gt;C&lt;/label&gt;
-&lt;/div&gt;</code></pre></div>
+</div></div>
+    <div class="b-demo-code" role="tabpanel" data-panel="code" hidden><figure class="b-code" data-lang="html">
+    <figcaption class="b-code-head">
+      <span class="b-code-lang">html</span>
+      <button class="b-code-copy" type="button" data-b-copy aria-label="Copy code">
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="9" y="9" width="13" height="13" rx="2"/><path d="M5 15V5a2 2 0 0 1 2-2h10"/></svg>
+        <span>Copy</span>
+      </button>
+    </figcaption>
+    <pre tabindex="0"><code><span class="t-tag">&lt;div</span><span class="t-attr"> class</span>=<span class="t-string">"b-segmented"</span><span class="t-attr"> role</span>=<span class="t-string">"radiogroup"</span><span class="t-attr"> aria-label</span>=<span class="t-string">"View density"</span><span class="t-punc">&gt;</span>
+  <span class="t-tag">&lt;input</span><span class="t-attr"> type</span>=<span class="t-string">"radio"</span><span class="t-attr"> name</span>=<span class="t-string">"density"</span><span class="t-attr"> id</span>=<span class="t-string">"d-comfy"</span> checked<span class="t-punc">&gt;</span><span class="t-tag">&lt;label</span><span class="t-attr"> for</span>=<span class="t-string">"d-comfy"</span><span class="t-punc">&gt;</span>Comfortable<span class="t-tag">&lt;/label</span><span class="t-punc">&gt;</span>
+  <span class="t-tag">&lt;input</span><span class="t-attr"> type</span>=<span class="t-string">"radio"</span><span class="t-attr"> name</span>=<span class="t-string">"density"</span><span class="t-attr"> id</span>=<span class="t-string">"d-cozy"</span><span class="t-punc">&gt;</span><span class="t-tag">&lt;label</span><span class="t-attr"> for</span>=<span class="t-string">"d-cozy"</span><span class="t-punc">&gt;</span>Cozy<span class="t-tag">&lt;/label</span><span class="t-punc">&gt;</span>
+  <span class="t-tag">&lt;input</span><span class="t-attr"> type</span>=<span class="t-string">"radio"</span><span class="t-attr"> name</span>=<span class="t-string">"density"</span><span class="t-attr"> id</span>=<span class="t-string">"d-tight"</span><span class="t-punc">&gt;</span><span class="t-tag">&lt;label</span><span class="t-attr"> for</span>=<span class="t-string">"d-tight"</span><span class="t-punc">&gt;</span>Compact<span class="t-tag">&lt;/label</span><span class="t-punc">&gt;</span>
+<span class="t-tag">&lt;/div</span><span class="t-punc">&gt;</span></code></pre>
+  </figure></div>
+  </section>
+<figure class="b-code" data-lang="html">
+    <figcaption class="b-code-head">
+      <span class="b-code-lang">html</span>
+      <button class="b-code-copy" type="button" data-b-copy aria-label="Copy code">
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="9" y="9" width="13" height="13" rx="2"/><path d="M5 15V5a2 2 0 0 1 2-2h10"/></svg>
+        <span>Copy</span>
+      </button>
+    </figcaption>
+    <pre tabindex="0"><code><span class="t-tag">&lt;div</span><span class="t-attr"> class</span>=<span class="t-string">"b-segmented"</span><span class="t-attr"> role</span>=<span class="t-string">"radiogroup"</span><span class="t-attr"> aria-label</span>=<span class="t-string">"..."</span><span class="t-punc">&gt;</span>
+  <span class="t-tag">&lt;input</span><span class="t-attr"> type</span>=<span class="t-string">"radio"</span><span class="t-attr"> name</span>=<span class="t-string">"x"</span><span class="t-attr"> id</span>=<span class="t-string">"a"</span> checked<span class="t-punc">&gt;</span><span class="t-tag">&lt;label</span><span class="t-attr"> for</span>=<span class="t-string">"a"</span><span class="t-punc">&gt;</span>A<span class="t-tag">&lt;/label</span><span class="t-punc">&gt;</span>
+  <span class="t-tag">&lt;input</span><span class="t-attr"> type</span>=<span class="t-string">"radio"</span><span class="t-attr"> name</span>=<span class="t-string">"x"</span><span class="t-attr"> id</span>=<span class="t-string">"b"</span><span class="t-punc">&gt;</span><span class="t-tag">&lt;label</span><span class="t-attr"> for</span>=<span class="t-string">"b"</span><span class="t-punc">&gt;</span>B<span class="t-tag">&lt;/label</span><span class="t-punc">&gt;</span>
+  <span class="t-tag">&lt;input</span><span class="t-attr"> type</span>=<span class="t-string">"radio"</span><span class="t-attr"> name</span>=<span class="t-string">"x"</span><span class="t-attr"> id</span>=<span class="t-string">"c"</span><span class="t-punc">&gt;</span><span class="t-tag">&lt;label</span><span class="t-attr"> for</span>=<span class="t-string">"c"</span><span class="t-punc">&gt;</span>C<span class="t-tag">&lt;/label</span><span class="t-punc">&gt;</span>
+<span class="t-tag">&lt;/div</span><span class="t-punc">&gt;</span></code></pre>
+  </figure>
 <h2 id="listening-for-changes"><a class="b-anchor-link" href="#listening-for-changes" aria-label="Anchor link">Listening for changes</a></h2>
-<div class="b-code"><div class="b-code-head"><span>js</span><button class="b-code-copy" type="button" data-b-copy>Copy</button></div><pre tabindex="0"><code>document.addEventListener("b:segmented:change", (e) =&gt; {
-  console.log("Selected:", e.detail.value);
-});</code></pre></div>
+<figure class="b-code" data-lang="js">
+    <figcaption class="b-code-head">
+      <span class="b-code-lang">js</span>
+      <button class="b-code-copy" type="button" data-b-copy aria-label="Copy code">
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="9" y="9" width="13" height="13" rx="2"/><path d="M5 15V5a2 2 0 0 1 2-2h10"/></svg>
+        <span>Copy</span>
+      </button>
+    </figcaption>
+    <pre tabindex="0"><code>document.<span class="t-func">addEventListener</span>(<span class="t-string">"b:segmented:change"</span>, (e) =&gt; {
+  console.<span class="t-func">log</span>(<span class="t-string">"Selected:"</span>, e.detail.value);
+});</code></pre>
+  </figure>
 <h2 id="api"><a class="b-anchor-link" href="#api" aria-label="Anchor link">API</a></h2>
 <p>| Class | Effect | | --- | --- | | <code>.b-segmented</code> | Wrapper | | <code>input[type=radio]</code> + <code>label</code> pairs | Each segment |</p>
 <p>The control is fully accessible — radios are exposed to screen readers, and arrow-key navigation comes for free.</p>
+          <div class="docs-article-foot">
+            <a class="docs-edit-link" href="https://github.com/sitharaj88/blast-css/edit/main/docs-src/components/segmented.md" rel="noopener">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M11 4H4a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2v-7"/><path d="M18.5 2.5a2.121 2.121 0 0 1 3 3L12 15l-4 1 1-4 9.5-9.5Z"/></svg>
+              Edit this page
+            </a>
+            <nav class="docs-prev-next" aria-label="Pagination"><a class="docs-pn-card docs-pn-prev" href="./tabs.html">
+      <span class="docs-pn-dir">← Previous</span>
+      <span class="docs-pn-title">Tabs</span>
+    </a><a class="docs-pn-card docs-pn-next" href="./combobox.html">
+      <span class="docs-pn-dir">→ Next</span>
+      <span class="docs-pn-title">Combobox</span>
+    </a></nav>
+          </div>
         </article>
         <aside class="docs-toc" aria-label="On this page"><div class="docs-toc-title">On this page</div><ul><li class="docs-toc-2"><a href="#listening-for-changes">Listening for changes</a></li><li class="docs-toc-2"><a href="#api">API</a></li></ul></aside>
       </main>
     </div>
+
+    <footer class="docs-footer" aria-label="Site footer">
+    <div class="docs-footer-inner">
+      <div class="docs-footer-brand">
+        <div class="docs-brand">
+          <span class="docs-mark" aria-hidden="true"><svg viewBox="0 0 32 32" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="oklch(62% 0.22 264)"/>
+      <stop offset="100%" stop-color="oklch(58% 0.22 220)"/>
+    </linearGradient>
+  </defs>
+  <rect x="2" y="2" width="28" height="28" rx="8" fill="url(#bg)"/>
+  <path d="M11 9h7.5a4.5 4.5 0 0 1 2.4 8.3A5 5 0 0 1 18.5 23H11V9Zm3 3v3.2h4a1.6 1.6 0 1 0 0-3.2h-4Zm0 6v3.2h4.5a1.6 1.6 0 1 0 0-3.2H14Z" fill="#fff"/>
+</svg></span>
+          <span class="docs-brand-name">BlastCSS</span>
+        </div>
+        <p>A modern, framework-agnostic CSS framework. MIT licensed.</p>
+        <div class="docs-footer-meta">
+          <span>v1.0.0</span>
+          <span>·</span>
+          <a href="https://github.com/sitharaj88/blast-css">GitHub</a>
+          <span>·</span>
+          <a href="https://github.com/sitharaj88/blast-css/issues">Issues</a>
+          <span>·</span>
+          <a href="https://github.com/sitharaj88/blast-css/blob/main/CHANGELOG.md">Changelog</a>
+        </div>
+      </div>
+      <div class="docs-footer-grid"><div class="docs-footer-col">
+      <div class="docs-footer-title">Get started</div>
+      <ul><li><a href="../index.html">Introduction</a></li><li><a href="../guides/installation.html">Installation</a></li><li><a href="../guides/quickstart.html">Quick start</a></li><li><a href="../guides/theming.html">Theming & tokens</a></li><li><a href="../guides/dark-mode.html">Dark mode</a></li><li><a href="../guides/frameworks.html">Framework integration</a></li></ul>
+    </div><div class="docs-footer-col">
+      <div class="docs-footer-title">Foundations</div>
+      <ul><li><a href="../guides/layers.html">Cascade layers</a></li><li><a href="../guides/layout.html">Layout primitives</a></li><li><a href="../guides/typography.html">Typography</a></li><li><a href="../guides/colors.html">Colors</a></li><li><a href="../guides/motion.html">Motion & view transitions</a></li><li><a href="../guides/accessibility.html">Accessibility</a></li></ul>
+    </div><div class="docs-footer-col">
+      <div class="docs-footer-title">Components</div>
+      <ul><li><a href="./buttons.html">Buttons</a></li><li><a href="./forms.html">Forms</a></li><li><a href="./cards.html">Cards</a></li><li><a href="./badges.html">Badges & chips</a></li><li><a href="./alerts.html">Alerts</a></li><li><a href="./dialog.html">Dialog & drawer</a></li></ul>
+    </div><div class="docs-footer-col">
+      <div class="docs-footer-title">Utilities</div>
+      <ul><li><a href="../utilities/spacing.html">Spacing</a></li><li><a href="../utilities/flex-grid.html">Flexbox & grid</a></li><li><a href="../utilities/typography.html">Typography</a></li><li><a href="../utilities/colors.html">Colors & background</a></li><li><a href="../utilities/borders.html">Borders & shadows</a></li><li><a href="../utilities/responsive.html">Responsive & container</a></li></ul>
+    </div><div class="docs-footer-col">
+      <div class="docs-footer-title">Tools</div>
+      <ul><li><a href="../playground.html">Theme playground</a></li><li><a href="../showcase.html">Showcase</a></li></ul>
+    </div></div>
+    </div>
+    <div class="docs-footer-bottom">
+      <small>Built with BlastCSS · © 2026</small>
+    </div>
+  </footer>
 
     <dialog id="docs-search-dialog" class="b-command" aria-label="Search documentation">
       <div class="b-command-search">

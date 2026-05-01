@@ -1,153 +1,264 @@
 <section class="landing-hero">
-  <span class="landing-hero-eyebrow">
-    <span class="b-spinner b-spinner-sm" aria-hidden="true"></span>
-    BlastCSS v1.0 — modern CSS, ready today
-  </span>
-  <h1>Production UI, <span class="grad">tiny CSS</span>, every framework.</h1>
-  <p class="lede">A modern CSS framework built on cascade layers, OKLCH tokens, container queries, and the popover API. Zero build step required, zero runtime dependencies, zero JavaScript needed for most components.</p>
-  <div class="landing-hero-actions">
-    <a class="b-btn b-btn-lg" href="./guides/installation.html">Get started</a>
-    <a class="b-btn b-btn-secondary b-btn-lg" href="./components/buttons.html">Browse components</a>
-  </div>
-</section>
-
-<section class="landing-stats">
-  <div class="landing-stat"><strong>~12 KB</strong><span>Full bundle gzipped</span></div>
-  <div class="landing-stat"><strong>0 deps</strong><span>No PostCSS, no Sass, no JS framework</span></div>
-  <div class="landing-stat"><strong>40+</strong><span>Production components</span></div>
-  <div class="landing-stat"><strong>100%</strong><span>Native HTML &amp; CSS standards</span></div>
-</section>
-
-<section class="landing-section">
-  <div class="landing-section-head">
-    <span class="b-badge">Built on web standards, not abstractions</span>
-    <h2>Modern CSS, today. Without compilers.</h2>
-    <p>BlastCSS leans on the platform: cascade layers for predictable specificity, OKLCH for accurate colors, <code>light-dark()</code> for effortless theming, container queries for truly modular components, and the popover &amp; anchor positioning APIs for primitives that used to need JavaScript.</p>
+  <div class="landing-hero-bg" aria-hidden="true">
+    <div class="landing-hero-grid"></div>
+    <div class="landing-hero-orb landing-hero-orb-1"></div>
+    <div class="landing-hero-orb landing-hero-orb-2"></div>
+    <div class="landing-hero-orb landing-hero-orb-3"></div>
   </div>
 
-  <div class="landing-features">
-    <article class="landing-feature">
-      <div class="landing-feature-icon">
-        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 12h18M3 6h18M3 18h18"/></svg>
-      </div>
-      <h3>Cascade layers</h3>
-      <p>Tokens, reset, base, layout, forms, components, and utilities each live in a named layer. Override anything from app code without specificity wars.</p>
-    </article>
-
-    <article class="landing-feature">
-      <div class="landing-feature-icon">
-        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3a14 14 0 0 1 0 18M12 3a14 14 0 0 0 0 18"/></svg>
-      </div>
-      <h3>OKLCH design tokens</h3>
-      <p>A perceptually uniform palette with <code>light-dark()</code> swaps. Set a custom hue and the whole theme retunes — soft, strong, hover, ring, all in lockstep.</p>
-    </article>
-
-    <article class="landing-feature">
-      <div class="landing-feature-icon">
-        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M9 3v18M15 3v18M3 9h18M3 15h18"/></svg>
-      </div>
-      <h3>Container queries</h3>
-      <p>Components respond to <em>their own size</em>, not the viewport. Drop a card into a sidebar or a hero and it adapts without breakpoint gymnastics.</p>
-    </article>
-
-    <article class="landing-feature">
-      <div class="landing-feature-icon">
-        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2v4M12 18v4M4.93 4.93l2.83 2.83M16.24 16.24l2.83 2.83M2 12h4M18 12h4M4.93 19.07l2.83-2.83M16.24 7.76l2.83-2.83"/></svg>
-      </div>
-      <h3>Native popover &amp; dialog</h3>
-      <p>Dropdowns, popovers, command palettes, and modals built on the HTML <code>popover</code> attribute and <code>&lt;dialog&gt;</code> element with <code>@starting-style</code> animations.</p>
-    </article>
-
-    <article class="landing-feature">
-      <div class="landing-feature-icon">
-        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
-      </div>
-      <h3>View Transitions</h3>
-      <p>Cross-document and same-document view transitions out of the box. Use <code>view-transition-name</code> utilities and a single API call to animate route changes.</p>
-    </article>
-
-    <article class="landing-feature">
-      <div class="landing-feature-icon">
-        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 12c0 4.97-4.03 9-9 9s-9-4.03-9-9 4.03-9 9-9c2.39 0 4.69.94 6.36 2.64"/><path d="M22 4l-10 10-3-3"/></svg>
-      </div>
-      <h3>Accessible by default</h3>
-      <p>Focus rings, reduced-motion, semantic HTML, ARIA on every interactive component, and Axe checks gated in CI.</p>
-    </article>
-  </div>
-</section>
-
-<section class="landing-section">
-  <div class="landing-section-head">
-    <h2>One import, a complete UI vocabulary.</h2>
-    <p>Pick the bundle that fits — full, layered, or per-section. Tree-shake what you don't need. Tokens travel as JSON, CSS, or TypeScript for design pipelines.</p>
-  </div>
-
-  <div class="landing-showcase">
-    <div class="landing-window">
-      <div class="landing-window-bar"><span></span><span></span><span></span></div>
-      <div class="landing-window-body">
-        <div class="b-cluster">
-          <button class="b-btn">Primary</button>
-          <button class="b-btn b-btn-secondary">Secondary</button>
-          <button class="b-btn b-btn-soft">Soft</button>
-          <button class="b-btn b-btn-outline">Outline</button>
-          <button class="b-btn b-btn-ghost">Ghost</button>
-          <button class="b-btn b-btn-success">Save</button>
+  <div class="landing-shell">
+    <div class="landing-hero-grid-layout">
+      <div class="landing-hero-copy">
+        <a class="landing-hero-eyebrow" href="./guides/installation.html">
+          <span class="landing-hero-eyebrow-dot"></span>
+          <span><strong>v1.0 stable</strong> · ready for production</span>
+          <span class="landing-hero-eyebrow-arrow">→</span>
+        </a>
+        <h1>Production UI, <span class="grad">tiny CSS</span>, every framework.</h1>
+        <p class="lede">A modern CSS framework built on cascade layers, OKLCH tokens, container queries, and the popover API. Zero build step. Zero runtime dependencies. Zero JavaScript needed for most components.</p>
+        <div class="landing-hero-actions">
+          <a class="b-btn b-btn-lg" href="./guides/installation.html">Get started</a>
+          <a class="b-btn b-btn-secondary b-btn-lg" href="./components/buttons.html">Browse components</a>
         </div>
-        <div class="b-grid" style="--b-grid-min:14rem;">
-          <article class="b-card">
-            <div class="b-card-header"><strong>Release health</strong><span class="b-badge b-badge-success b-badge-dot">Passing</span></div>
-            <div class="b-card-body b-stack">
-              <div class="b-progress" role="progressbar" aria-label="Coverage" aria-valuemin="0" aria-valuemax="100" aria-valuenow="92"><span style="--b-progress: 92%"></span></div>
-              <div class="b-cluster">
-                <span class="b-chip">Chromium</span>
-                <span class="b-chip">Firefox</span>
-                <span class="b-chip">WebKit</span>
-              </div>
+        <div class="landing-hero-install">
+          <code>npm install blastcss</code>
+          <button type="button" class="b-icon-btn" data-b-copy aria-label="Copy install command" data-copy-text="npm install blastcss">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="9" y="9" width="13" height="13" rx="2"/><path d="M5 15V5a2 2 0 0 1 2-2h10"/></svg>
+          </button>
+        </div>
+      </div>
+
+      <div class="landing-hero-product">
+        <div class="landing-window">
+          <div class="landing-window-bar">
+            <span></span><span></span><span></span>
+            <div class="landing-window-tab">app.blast.css</div>
+          </div>
+          <div class="landing-window-body">
+            <div class="b-cluster" style="gap: var(--b-2)">
+              <button class="b-btn b-btn-sm">New project</button>
+              <button class="b-btn b-btn-soft b-btn-sm">Import</button>
+              <button class="b-btn b-btn-ghost b-btn-sm">Templates</button>
+              <span class="b-badge b-badge-success b-badge-dot" style="margin-inline-start:auto">Live</span>
             </div>
-          </article>
-          <article class="b-stat">
-            <span class="b-stat-label">Bundle size</span>
-            <strong class="b-stat-value">11.7</strong>
-            <span class="b-stat-trend">↓ 24% vs Bootstrap</span>
-          </article>
-          <article class="b-stat">
-            <span class="b-stat-label">Components</span>
-            <strong class="b-stat-value">40+</strong>
-            <span class="b-stat-trend">CSS-first</span>
-          </article>
+            <article class="b-card">
+              <div class="b-card-header">
+                <strong>Active deployments</strong>
+                <span class="b-badge b-badge-neutral">3</span>
+              </div>
+              <div class="b-card-body" style="display:grid; gap: var(--b-3)">
+                <div class="b-split">
+                  <div class="b-cluster" style="gap: var(--b-2)">
+                    <span class="b-avatar b-avatar-sm">AC</span>
+                    <span><strong>web-prod</strong> · main</span>
+                  </div>
+                  <span class="b-badge b-badge-success b-badge-dot">Healthy</span>
+                </div>
+                <div class="b-progress" role="progressbar" aria-label="Coverage" aria-valuenow="92"><span style="--b-progress: 92%"></span></div>
+                <div class="b-cluster" style="gap: var(--b-2)">
+                  <span class="b-chip">Edge</span>
+                  <span class="b-chip">Postgres</span>
+                  <span class="b-chip">Redis</span>
+                </div>
+              </div>
+            </article>
+            <div class="b-grid" style="--b-grid-min:7rem; --b-grid-gap: var(--b-2)">
+              <article class="b-stat" style="padding: var(--b-3)">
+                <span class="b-stat-label">Bundle</span>
+                <strong class="b-stat-value" style="font-size: var(--b-text-xl)">11.7 KB</strong>
+              </article>
+              <article class="b-stat" style="padding: var(--b-3)">
+                <span class="b-stat-label">Components</span>
+                <strong class="b-stat-value" style="font-size: var(--b-text-xl)">40+</strong>
+              </article>
+              <article class="b-stat" style="padding: var(--b-3)">
+                <span class="b-stat-label">Build step</span>
+                <strong class="b-stat-value" style="font-size: var(--b-text-xl)">None</strong>
+              </article>
+            </div>
+          </div>
         </div>
-        <div class="b-segmented" role="radiogroup" aria-label="Plan">
-          <input type="radio" name="plan-demo" id="plan-month" checked><label for="plan-month">Monthly</label>
-          <input type="radio" name="plan-demo" id="plan-year"><label for="plan-year">Yearly</label>
-          <input type="radio" name="plan-demo" id="plan-lifetime"><label for="plan-lifetime">Lifetime</label>
+        <div class="landing-window landing-window-bottom">
+          <div class="landing-window-bar">
+            <span></span><span></span><span></span>
+            <div class="landing-window-tab">theme.css</div>
+          </div>
+          <pre tabindex="0"><code><span class="t-selector">:root</span> <span class="t-punc">{</span>
+  <span class="t-property">--b-primary-h</span>: <span class="t-number">200</span>;
+  <span class="t-property">--b-radius</span>: <span class="t-number">.375rem</span>;
+  <span class="t-property">--b-control</span>: <span class="t-number">2.75rem</span>;
+<span class="t-punc">}</span></code></pre>
         </div>
       </div>
     </div>
 
-    <div class="b-stack">
-      <div class="b-card">
-        <div class="b-card-header"><strong>Install</strong><span class="b-badge">npm</span></div>
-        <div class="b-card-body">
-          <pre tabindex="0"><code>npm install blastcss</code></pre>
-        </div>
+    <div class="landing-trust">
+      <span class="landing-trust-label">Works with</span>
+      <div class="landing-trust-marks" role="list" aria-label="Compatible frameworks">
+        <span role="listitem">React</span>
+        <span role="listitem">Vue</span>
+        <span role="listitem">Svelte</span>
+        <span role="listitem">Astro</span>
+        <span role="listitem">Solid</span>
+        <span role="listitem">Angular</span>
+        <span role="listitem">Rails</span>
+        <span role="listitem">Laravel</span>
+        <span role="listitem">Django</span>
       </div>
-      <div class="b-card">
-        <div class="b-card-header"><strong>Use</strong><span class="b-badge">any framework</span></div>
-        <div class="b-card-body">
-          <pre tabindex="0"><code>import "blastcss";
-import { autoInit } from "blastcss/js";
+    </div>
+  </div>
+</section>
 
-autoInit();</code></pre>
+<section class="landing-stats-band">
+  <div class="landing-shell">
+    <div class="landing-stats">
+      <div class="landing-stat">
+        <strong>~12 KB</strong>
+        <span>Full bundle gzipped — about 2.4× smaller than Bootstrap</span>
+      </div>
+      <div class="landing-stat">
+        <strong>0 deps</strong>
+        <span>No PostCSS, no Sass, no JavaScript framework</span>
+      </div>
+      <div class="landing-stat">
+        <strong>40+</strong>
+        <span>Production components, all keyboard- and screen-reader-tested</span>
+      </div>
+      <div class="landing-stat">
+        <strong>100%</strong>
+        <span>Native HTML &amp; CSS standards. Nothing proprietary.</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="landing-section">
+  <div class="landing-shell">
+    <div class="landing-section-head">
+      <span class="b-badge">Built on web standards, not abstractions</span>
+      <h2>Modern CSS, today. Without compilers.</h2>
+      <p>BlastCSS leans on the platform: cascade layers for predictable specificity, OKLCH for accurate colors, <code>light-dark()</code> for effortless theming, container queries for truly modular components, and the popover &amp; anchor positioning APIs for primitives that used to need JavaScript.</p>
+    </div>
+
+    <div class="landing-features">
+      <article class="landing-feature">
+        <div class="landing-feature-icon">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 12h18M3 6h18M3 18h18"/></svg>
+        </div>
+        <h3>Cascade layers</h3>
+        <p>Tokens, reset, base, layout, forms, components, and utilities each live in a named layer. Override anything from app code without specificity wars.</p>
+      </article>
+
+      <article class="landing-feature">
+        <div class="landing-feature-icon">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3a14 14 0 0 1 0 18M12 3a14 14 0 0 0 0 18"/></svg>
+        </div>
+        <h3>OKLCH design tokens</h3>
+        <p>A perceptually uniform palette with <code>light-dark()</code> swaps. Set a custom hue and the whole theme retunes — soft, strong, hover, ring, all in lockstep.</p>
+      </article>
+
+      <article class="landing-feature">
+        <div class="landing-feature-icon">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M9 3v18M15 3v18M3 9h18M3 15h18"/></svg>
+        </div>
+        <h3>Container queries</h3>
+        <p>Components respond to <em>their own size</em>, not the viewport. Drop a card into a sidebar or a hero and it adapts without breakpoint gymnastics.</p>
+      </article>
+
+      <article class="landing-feature">
+        <div class="landing-feature-icon">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2v4M12 18v4M4.93 4.93l2.83 2.83M16.24 16.24l2.83 2.83M2 12h4M18 12h4M4.93 19.07l2.83-2.83M16.24 7.76l2.83-2.83"/></svg>
+        </div>
+        <h3>Native popover &amp; dialog</h3>
+        <p>Dropdowns, popovers, command palettes, and modals built on the HTML <code>popover</code> attribute and <code>&lt;dialog&gt;</code> element with <code>@starting-style</code> animations.</p>
+      </article>
+
+      <article class="landing-feature">
+        <div class="landing-feature-icon">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+        </div>
+        <h3>View Transitions</h3>
+        <p>Cross-document and same-document view transitions out of the box. Use <code>view-transition-name</code> utilities and a single API call to animate route changes.</p>
+      </article>
+
+      <article class="landing-feature">
+        <div class="landing-feature-icon">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 12c0 4.97-4.03 9-9 9s-9-4.03-9-9 4.03-9 9-9c2.39 0 4.69.94 6.36 2.64"/><path d="M22 4l-10 10-3-3"/></svg>
+        </div>
+        <h3>Accessible by default</h3>
+        <p>Focus rings, reduced-motion, semantic HTML, ARIA on every interactive component, and Axe checks gated in CI on five browser profiles.</p>
+      </article>
+    </div>
+  </div>
+</section>
+
+<section class="landing-section landing-section-tinted">
+  <div class="landing-shell">
+    <div class="landing-section-head">
+      <h2>One import, a complete UI vocabulary.</h2>
+      <p>Pick the bundle that fits — full, layered, or per-section. Tree-shake what you don't need. Tokens travel as JSON, CSS, or TypeScript for design pipelines.</p>
+    </div>
+
+    <div class="landing-showcase">
+      <div class="landing-window landing-window-tall">
+        <div class="landing-window-bar"><span></span><span></span><span></span><div class="landing-window-tab">live preview</div></div>
+        <div class="landing-window-body">
+          <div class="b-cluster">
+            <button class="b-btn">Primary</button>
+            <button class="b-btn b-btn-secondary">Secondary</button>
+            <button class="b-btn b-btn-soft">Soft</button>
+            <button class="b-btn b-btn-outline">Outline</button>
+            <button class="b-btn b-btn-ghost">Ghost</button>
+          </div>
+          <div class="b-grid" style="--b-grid-min:14rem; --b-grid-gap: var(--b-3)">
+            <article class="b-card">
+              <div class="b-card-header"><strong>Health</strong><span class="b-badge b-badge-success b-badge-dot">Passing</span></div>
+              <div class="b-card-body" style="display:grid; gap:var(--b-3)">
+                <div class="b-progress" role="progressbar" aria-label="Coverage" aria-valuenow="92"><span style="--b-progress: 92%"></span></div>
+                <div class="b-cluster">
+                  <span class="b-chip">Chromium</span>
+                  <span class="b-chip">Firefox</span>
+                  <span class="b-chip">WebKit</span>
+                </div>
+              </div>
+            </article>
+            <article class="b-stat">
+              <span class="b-stat-label">Bundle size</span>
+              <strong class="b-stat-value">11.7</strong>
+              <span class="b-stat-trend">↓ 24% vs Bootstrap</span>
+            </article>
+            <article class="b-stat">
+              <span class="b-stat-label">Components</span>
+              <strong class="b-stat-value">40+</strong>
+              <span class="b-stat-trend">CSS-first</span>
+            </article>
+          </div>
+          <div class="b-segmented" role="radiogroup" aria-label="Plan">
+            <input type="radio" name="plan-demo" id="plan-month" checked><label for="plan-month">Monthly</label>
+            <input type="radio" name="plan-demo" id="plan-year"><label for="plan-year">Yearly</label>
+            <input type="radio" name="plan-demo" id="plan-lifetime"><label for="plan-lifetime">Lifetime</label>
+          </div>
         </div>
       </div>
-      <div class="b-card">
-        <div class="b-card-header"><strong>Theme</strong><span class="b-badge">CSS variables</span></div>
-        <div class="b-card-body">
-          <pre tabindex="0"><code>:root {
-  --b-primary-h: 200; /* shift hue */
-  --b-radius: .375rem;
-}</code></pre>
+
+      <div class="landing-snippets">
+        <div class="landing-snippet">
+          <div class="landing-snippet-title">Install</div>
+          <pre tabindex="0"><code><span class="t-keyword">npm</span> <span class="t-flag">install</span> blastcss</code></pre>
+        </div>
+        <div class="landing-snippet">
+          <div class="landing-snippet-title">Use</div>
+          <pre tabindex="0"><code><span class="t-keyword">import</span> <span class="t-string">"blastcss"</span>;
+<span class="t-keyword">import</span> <span class="t-punc">{</span> autoInit <span class="t-punc">}</span> <span class="t-keyword">from</span> <span class="t-string">"blastcss/js"</span>;
+
+<span class="t-func">autoInit</span>();</code></pre>
+        </div>
+        <div class="landing-snippet">
+          <div class="landing-snippet-title">Theme</div>
+          <pre tabindex="0"><code><span class="t-selector">:root</span> <span class="t-punc">{</span>
+  <span class="t-property">--b-primary-h</span>: <span class="t-number">200</span>;
+  <span class="t-property">--b-radius</span>: <span class="t-number">.375rem</span>;
+<span class="t-punc">}</span></code></pre>
         </div>
       </div>
     </div>
@@ -155,48 +266,48 @@ autoInit();</code></pre>
 </section>
 
 <section class="landing-section">
-  <div class="landing-section-head">
-    <h2>How it stacks up.</h2>
-    <p>BlastCSS is the smallest framework that still ships ready-to-use components, with the lowest learning curve and the fewest decisions to defer.</p>
-  </div>
+  <div class="landing-shell">
+    <div class="landing-section-head">
+      <h2>How it stacks up.</h2>
+      <p>The smallest framework that still ships ready-to-use components, with the lowest learning curve and the fewest decisions to defer.</p>
+    </div>
 
-  <div class="landing-compare b-card" tabindex="0" role="region" aria-label="Framework comparison">
-    <table class="b-table b-table-hover">
-      <thead>
-        <tr>
-          <th scope="col"><span class="b-sr-only">Feature</span></th>
-          <th scope="col">BlastCSS</th>
-          <th scope="col">Tailwind</th>
-          <th scope="col">Bootstrap</th>
-          <th scope="col">Pico</th>
-        </tr>
-      </thead>
-      <tbody>
-        <tr><td><strong>Full bundle (gzip)</strong></td><td class="win">~12 KB</td><td>~10–45 KB*</td><td>~28 KB</td><td>~7 KB</td></tr>
-        <tr><td><strong>Build step required</strong></td><td class="win">No</td><td>Yes</td><td>No</td><td>No</td></tr>
-        <tr><td><strong>Pre-built components</strong></td><td class="win">40+</td><td>0 (utility-only)</td><td>40+</td><td>~12</td></tr>
-        <tr><td><strong>OKLCH tokens</strong></td><td class="win">Yes</td><td>Yes (v4+)</td><td>No</td><td>No</td></tr>
-        <tr><td><strong>Cascade layers</strong></td><td class="win">Yes</td><td>Yes (v4+)</td><td>No</td><td>No</td></tr>
-        <tr><td><strong>Container queries</strong></td><td class="win">Yes</td><td>Yes</td><td>No</td><td>No</td></tr>
-        <tr><td><strong>Popover API</strong></td><td class="win">Yes</td><td>No</td><td>No</td><td>No</td></tr>
-        <tr><td><strong>View Transitions</strong></td><td class="win">Yes</td><td>No</td><td>No</td><td>No</td></tr>
-      </tbody>
-    </table>
-    <p style="padding:0 var(--b-4) var(--b-4); color:var(--b-muted); font-size:var(--b-text-xs);">* depending on JIT output and components used</p>
-  </div>
-</section>
-
-<section class="landing-section">
-  <div class="landing-cta">
-    <h2 style="margin:0">Ship modern UI. Today.</h2>
-    <p class="docs-lede" style="margin-block: var(--b-3) var(--b-5)">Production-ready CSS with the smallest API surface in its class. Open the playground to fork the theme, or jump into installation.</p>
-    <div class="b-cluster" style="justify-content:center">
-      <a class="b-btn b-btn-lg" href="./guides/installation.html">Install BlastCSS</a>
-      <a class="b-btn b-btn-secondary b-btn-lg" href="./playground.html">Try the playground</a>
+    <div class="landing-compare b-card" tabindex="0" role="region" aria-label="Framework comparison">
+      <table class="b-table b-table-hover">
+        <thead>
+          <tr>
+            <th scope="col"><span class="b-sr-only">Feature</span></th>
+            <th scope="col">BlastCSS</th>
+            <th scope="col">Tailwind</th>
+            <th scope="col">Bootstrap</th>
+            <th scope="col">Pico</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr><td><strong>Full bundle (gzip)</strong></td><td class="win">~12 KB</td><td>~10–45 KB*</td><td>~28 KB</td><td>~7 KB</td></tr>
+          <tr><td><strong>Build step required</strong></td><td class="win">No</td><td>Yes</td><td>No</td><td>No</td></tr>
+          <tr><td><strong>Pre-built components</strong></td><td class="win">40+</td><td>0 (utility-only)</td><td>40+</td><td>~12</td></tr>
+          <tr><td><strong>OKLCH tokens</strong></td><td class="win">Yes</td><td>Yes (v4+)</td><td>No</td><td>No</td></tr>
+          <tr><td><strong>Cascade layers</strong></td><td class="win">Yes</td><td>Yes (v4+)</td><td>No</td><td>No</td></tr>
+          <tr><td><strong>Container queries</strong></td><td class="win">Yes</td><td>Yes</td><td>No</td><td>No</td></tr>
+          <tr><td><strong>Popover API</strong></td><td class="win">Yes</td><td>No</td><td>No</td><td>No</td></tr>
+          <tr><td><strong>View Transitions</strong></td><td class="win">Yes</td><td>No</td><td>No</td><td>No</td></tr>
+        </tbody>
+      </table>
+      <p style="padding:0 var(--b-4) var(--b-4); color:var(--b-muted); font-size:var(--b-text-xs);">* depending on JIT output and components used</p>
     </div>
   </div>
 </section>
 
-<footer class="docs-footer">
-  <p>MIT licensed · <a href="https://github.com/blastcss/blastcss">GitHub</a> · <a href="./guides/installation.html">Docs</a> · <a href="./playground.html">Playground</a></p>
-</footer>
+<section class="landing-section">
+  <div class="landing-shell">
+    <div class="landing-cta">
+      <h2>Ship modern UI. Today.</h2>
+      <p>Production-ready CSS with the smallest API surface in its class. Open the playground to fork the theme, or jump into installation.</p>
+      <div class="b-cluster" style="justify-content:center">
+        <a class="b-btn b-btn-lg" href="./guides/installation.html">Install BlastCSS</a>
+        <a class="b-btn b-btn-secondary b-btn-lg" href="./playground.html">Try the playground</a>
+      </div>
+    </div>
+  </div>
+</section>
