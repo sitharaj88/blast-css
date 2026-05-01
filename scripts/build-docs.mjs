@@ -768,13 +768,14 @@ async function buildLanding() {
 async function buildPlayground() {
   const html = await readFile(resolve(srcDir, "_playground.html"), "utf8");
   const out = shell({
-    title: "Theme Playground",
-    description: "Live theme playground for BlastCSS — adjust tokens and copy them into your project.",
+    title: "Playground",
+    description: "Live HTML + CSS editor with token controls. Edit, preview, share — all in the browser.",
     content: html,
     currentPath: "/playground.html",
     headings: [],
     hideToc: true,
-    bodyClass: "docs-body"
+    bodyClass: "docs-body docs-playground",
+    isLanding: true
   });
   await writeFile(resolve(outDir, "playground.html"), out);
 }
@@ -1023,6 +1024,7 @@ async function main() {
 
   if (await exists(resolve(srcDir, "site.css"))) await copyAsset(resolve(srcDir, "site.css"), resolve(outDir, "site.css"));
   if (await exists(resolve(srcDir, "site.js"))) await copyAsset(resolve(srcDir, "site.js"), resolve(outDir, "site.js"));
+  if (await exists(resolve(srcDir, "playground.js"))) await copyAsset(resolve(srcDir, "playground.js"), resolve(outDir, "playground.js"));
 
   await writeFavicon();
   await writeSearchIndex(pages);

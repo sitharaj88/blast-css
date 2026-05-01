@@ -1,141 +1,114 @@
-<header class="docs-article-head">
+<header class="docs-article-head" style="border:0; padding-block-end: var(--b-4); margin-block-end: var(--b-4)">
   <div class="docs-eyebrow">Tools</div>
-  <h1>Theme playground</h1>
-  <p class="docs-lede">Tune the design tokens live. The whole UI re-themes as you go. Copy the snippet at the bottom into your project's CSS.</p>
+  <h1>Playground</h1>
+  <p class="docs-lede">Live HTML + CSS editor with token controls. Edit on the left, preview on the right. Share a link that restores everything.</p>
 </header>
 
-<div class="playground-grid">
-  <div class="playground-controls" aria-label="Theme tokens">
-    <div class="playground-control">
-      <label for="pg-hue">Primary hue (<span data-out="hue">264</span>°)</label>
-      <input id="pg-hue" type="range" class="b-range" min="0" max="360" value="264" data-pg="hue">
+<div class="pg" data-pg-root>
+  <header class="pg-toolbar">
+    <div class="pg-toolbar-group pg-toolbar-presets">
+      <span class="pg-toolbar-label">Preset</span>
+      <select class="b-select b-input-sm" data-pg-preset aria-label="Choose preset">
+        <option value="buttons">Buttons</option>
+        <option value="form">Form</option>
+        <option value="card">Card</option>
+        <option value="dashboard">Dashboard</option>
+        <option value="hero">Hero</option>
+      </select>
     </div>
-    <div class="playground-control">
-      <label for="pg-chroma">Chroma (<span data-out="chroma">0.21</span>)</label>
-      <input id="pg-chroma" type="range" class="b-range" min="0" max="0.4" step="0.01" value="0.21" data-pg="chroma">
+
+    <div class="pg-toolbar-group pg-toolbar-bp" role="radiogroup" aria-label="Preview viewport">
+      <button type="button" class="pg-bp is-active" data-pg-bp="full" aria-label="Full width">
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="4" width="20" height="14" rx="2"/><path d="M6 22h12"/></svg>
+      </button>
+      <button type="button" class="pg-bp" data-pg-bp="tablet" aria-label="Tablet">
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="4" y="2" width="16" height="20" rx="2"/></svg>
+      </button>
+      <button type="button" class="pg-bp" data-pg-bp="mobile" aria-label="Mobile">
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="6" y="2" width="12" height="20" rx="2"/><path d="M11 18h2"/></svg>
+      </button>
     </div>
-    <div class="playground-control">
-      <label for="pg-radius">Radius (<span data-out="radius">0.5</span>rem)</label>
-      <input id="pg-radius" type="range" class="b-range" min="0" max="1.5" step="0.05" value="0.5" data-pg="radius">
+
+    <div class="pg-toolbar-group pg-toolbar-actions">
+      <button type="button" class="b-btn b-btn-ghost b-btn-sm" data-pg-theme>
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79Z"/></svg>
+        <span>Theme</span>
+      </button>
+      <button type="button" class="b-btn b-btn-ghost b-btn-sm" data-pg-tokens-toggle aria-expanded="true">
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="3"/><path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 1 1-2.83 2.83l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 1 1-4 0v-.09a1.65 1.65 0 0 0-1-1.51 1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 1 1-2.83-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1.51-1H3a2 2 0 1 1 0-4h.09a1.65 1.65 0 0 0 1.51-1 1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 1 1 2.83-2.83l.06.06a1.65 1.65 0 0 0 1.82.33h0a1.65 1.65 0 0 0 1-1.51V3a2 2 0 1 1 4 0v.09a1.65 1.65 0 0 0 1 1.51h0a1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 1 1 2.83 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82v0a1.65 1.65 0 0 0 1.51 1H21a2 2 0 1 1 0 4h-.09a1.65 1.65 0 0 0-1.51 1z"/></svg>
+        <span>Tokens</span>
+      </button>
+      <button type="button" class="b-btn b-btn-secondary b-btn-sm" data-pg-share>
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="18" cy="5" r="3"/><circle cx="6" cy="12" r="3"/><circle cx="18" cy="19" r="3"/><path d="m8.59 13.51 6.83 3.98M15.41 6.51l-6.82 3.98"/></svg>
+        <span>Share</span>
+      </button>
+      <button type="button" class="b-btn b-btn-secondary b-btn-sm" data-pg-reset>Reset</button>
     </div>
-    <div class="playground-control">
-      <label for="pg-density">Control height (<span data-out="density">2.5</span>rem)</label>
-      <input id="pg-density" type="range" class="b-range" min="2" max="3.25" step="0.05" value="2.5" data-pg="density">
+  </header>
+
+  <div class="pg-body">
+    <div class="pg-editor-pane">
+      <div class="pg-editor-bar">
+        <div class="pg-editor-tabs" role="tablist">
+          <button type="button" class="pg-editor-tab is-active" role="tab" aria-selected="true" data-pg-tab="html">
+            <span class="pg-tab-dot" style="background: oklch(72% 0.16 24)"></span>
+            HTML
+          </button>
+          <button type="button" class="pg-editor-tab" role="tab" aria-selected="false" data-pg-tab="css">
+            <span class="pg-tab-dot" style="background: oklch(72% 0.18 264)"></span>
+            CSS
+          </button>
+        </div>
+        <div class="pg-editor-status" data-pg-status>Ready</div>
+      </div>
+
+      <div class="pg-editor-area">
+        <textarea class="pg-editor" data-pg-editor="html" aria-label="HTML editor" spellcheck="false" autocomplete="off" autocorrect="off" autocapitalize="off"></textarea>
+        <textarea class="pg-editor" data-pg-editor="css" aria-label="CSS editor" spellcheck="false" autocomplete="off" autocorrect="off" autocapitalize="off" hidden></textarea>
+      </div>
     </div>
-    <div class="playground-control">
-      <label for="pg-font">Heading weight (<span data-out="font">720</span>)</label>
-      <input id="pg-font" type="range" class="b-range" min="500" max="900" step="10" value="720" data-pg="font">
-    </div>
-    <div class="b-cluster">
-      <button class="b-btn b-btn-secondary" type="button" data-pg-reset>Reset</button>
-      <button class="b-btn" type="button" data-pg-copy>Copy CSS</button>
+
+    <div class="pg-preview-pane">
+      <div class="pg-preview-bar">
+        <div class="pg-preview-window">
+          <span></span><span></span><span></span>
+          <span class="pg-preview-url" data-pg-preview-url>preview · auto</span>
+        </div>
+        <div class="pg-preview-meta">
+          <span data-pg-bp-label>Full</span>
+        </div>
+      </div>
+      <div class="pg-preview-stage" data-pg-preview-stage>
+        <iframe class="pg-preview-frame" data-pg-preview title="Live preview" sandbox="allow-scripts"></iframe>
+      </div>
     </div>
   </div>
 
-  <div class="playground-preview">
-    <article class="b-card">
-      <div class="b-card-header">
-        <strong>Account</strong>
-        <span class="b-badge b-badge-success b-badge-dot">Active</span>
+  <div class="pg-tokens" data-pg-tokens hidden role="region" aria-label="Design tokens">
+    <div class="pg-tokens-head">Design tokens</div>
+    <div class="pg-tokens-body">
+      <div class="playground-control">
+        <label for="pg-hue">Primary hue (<span data-out="hue">264</span>°)</label>
+        <input id="pg-hue" type="range" class="b-range" min="0" max="360" value="264" data-pg-token="hue">
       </div>
-      <div class="b-card-body b-stack">
-        <div class="b-cluster">
-          <button class="b-btn">Primary</button>
-          <button class="b-btn b-btn-secondary">Secondary</button>
-          <button class="b-btn b-btn-soft">Soft</button>
-          <button class="b-btn b-btn-outline">Outline</button>
-          <button class="b-btn b-btn-danger">Delete</button>
-        </div>
-        <div class="b-field">
-          <label class="b-label" for="pg-email">Email</label>
-          <input class="b-input" id="pg-email" type="email" placeholder="you@company.com">
-          <span class="b-help">We'll never share this address.</span>
-        </div>
-        <div class="b-field">
-          <label class="b-label" for="pg-bio">Bio</label>
-          <textarea class="b-textarea" id="pg-bio" placeholder="A few sentences about you."></textarea>
-        </div>
-        <div class="b-cluster">
-          <span class="b-chip">React</span>
-          <span class="b-chip">Vue</span>
-          <span class="b-chip">Svelte</span>
-          <span class="b-chip">Astro</span>
-        </div>
-        <div class="b-progress" role="progressbar" aria-label="Profile completion" aria-valuemin="0" aria-valuemax="100" aria-valuenow="74"><span style="--b-progress: 74%"></span></div>
+      <div class="playground-control">
+        <label for="pg-chroma">Chroma (<span data-out="chroma">0.21</span>)</label>
+        <input id="pg-chroma" type="range" class="b-range" min="0" max="0.4" step="0.01" value="0.21" data-pg-token="chroma">
       </div>
-    </article>
-
-    <article class="b-card">
-      <div class="b-card-body b-stack">
-        <h2 style="margin:0; font-size: var(--b-text-xl)">Typography</h2>
-        <p>Letters set in fluid <code>clamp()</code> sizes that respond to viewport width without media queries.</p>
-        <h1 style="margin:0">Display heading</h1>
-        <h2 style="margin:0">Section heading</h2>
-        <h3 style="margin:0">Subsection heading</h3>
-        <p class="text-muted">Body text in <code>--b-text-md</code> with pretty wrapping. The lede sets a slightly larger size with snug leading.</p>
+      <div class="playground-control">
+        <label for="pg-radius">Radius (<span data-out="radius">0.5</span>rem)</label>
+        <input id="pg-radius" type="range" class="b-range" min="0" max="1.5" step="0.05" value="0.5" data-pg-token="radius">
       </div>
-    </article>
-
-    <article class="b-card">
-      <div class="b-card-body">
-        <h2 style="margin:0 0 var(--b-3); font-size: var(--b-text-xl)">Generated CSS</h2>
-        <pre tabindex="0"><code data-pg-output>:root {
-  --b-primary-h: 264;
-  --b-primary-c: 0.21;
-  --b-radius: 0.5rem;
-  --b-control: 2.5rem;
-}</code></pre>
+      <div class="playground-control">
+        <label for="pg-density">Control height (<span data-out="density">2.5</span>rem)</label>
+        <input id="pg-density" type="range" class="b-range" min="2" max="3.25" step="0.05" value="2.5" data-pg-token="density">
       </div>
-    </article>
+      <div class="playground-control">
+        <label for="pg-font">Heading weight (<span data-out="font">720</span>)</label>
+        <input id="pg-font" type="range" class="b-range" min="500" max="900" step="10" value="720" data-pg-token="font">
+      </div>
+    </div>
   </div>
 </div>
 
-<script>
-  (function () {
-    const inputs = document.querySelectorAll("[data-pg]");
-    const output = document.querySelector("[data-pg-output]");
-    const root = document.documentElement;
-    const reset = document.querySelector("[data-pg-reset]");
-    const copy = document.querySelector("[data-pg-copy]");
-
-    function update() {
-      const values = {};
-      for (const input of inputs) {
-        const key = input.dataset.pg;
-        values[key] = input.value;
-        const out = document.querySelector(`[data-out='${key}']`);
-        if (out) out.textContent = input.value;
-      }
-      root.style.setProperty("--b-primary-h", values.hue);
-      root.style.setProperty("--b-primary-c", values.chroma);
-      root.style.setProperty("--b-radius", values.radius + "rem");
-      root.style.setProperty("--b-radius-lg", (Number(values.radius) * 1.5).toFixed(2) + "rem");
-      root.style.setProperty("--b-control", values.density + "rem");
-      root.style.setProperty("--b-weight-bold", values.font);
-      root.style.setProperty("--b-weight-black", String(Math.min(900, Number(values.font) + 100)));
-
-      if (output) {
-        output.textContent = `:root {
-  --b-primary-h: ${values.hue};
-  --b-primary-c: ${values.chroma};
-  --b-radius: ${values.radius}rem;
-  --b-radius-lg: ${(Number(values.radius) * 1.5).toFixed(2)}rem;
-  --b-control: ${values.density}rem;
-  --b-weight-bold: ${values.font};
-}`;
-      }
-    }
-
-    inputs.forEach((i) => i.addEventListener("input", update));
-    reset?.addEventListener("click", () => {
-      const defaults = { hue: 264, chroma: 0.21, radius: 0.5, density: 2.5, font: 720 };
-      for (const input of inputs) input.value = defaults[input.dataset.pg];
-      update();
-      ["--b-primary-h","--b-primary-c","--b-radius","--b-radius-lg","--b-control","--b-weight-bold","--b-weight-black"].forEach((p) => root.style.removeProperty(p));
-    });
-    copy?.addEventListener("click", async () => {
-      try { await navigator.clipboard.writeText(output.textContent); copy.textContent = "Copied"; setTimeout(() => copy.textContent = "Copy CSS", 1500); } catch {}
-    });
-    update();
-  })();
-</script>
+<script defer src="./playground.js"></script>
