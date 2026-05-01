@@ -1,0 +1,113 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="BlastCSS is a tiny, modern, framework-agnostic CSS framework built on cascade layers, OKLCH tokens, and container queries.">
+    <meta name="theme-color" content="#0c1016">
+    <title>Motion &amp; view transitions — BlastCSS</title>
+    <link rel="stylesheet" href="../../dist/blast.min.css">
+    <link rel="stylesheet" href="../site.css">
+    <script type="module" src="../../dist/blast.js"></script>
+    <script defer src="../site.js"></script>
+    <script>(function(){try{var t=localStorage.getItem("b-theme");if(t)document.documentElement.dataset.theme=t;}catch(e){}})();</script>
+  </head>
+  <body class="docs-body">
+    <a class="b-skip-link" href="#main">Skip to content</a>
+
+    <header class="docs-header">
+      <div class="docs-header-inner">
+        <a class="docs-brand" href="../index.html" aria-label="BlastCSS home">
+          <span class="docs-mark" aria-hidden="true">B</span>
+          <span class="docs-brand-name">BlastCSS</span>
+          <span class="b-badge b-badge-neutral docs-version">v0.4.0</span>
+        </a>
+        <button class="docs-menu-btn b-icon-btn" type="button" aria-label="Toggle menu" data-docs-menu>
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 6h18M3 12h18M3 18h18"/></svg>
+        </button>
+        <div class="docs-search-wrap">
+          <button class="docs-search" type="button" data-docs-search>
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="7"/><path d="m21 21-4.3-4.3"/></svg>
+            <span>Search docs</span>
+            <kbd class="b-kbd">⌘K</kbd>
+          </button>
+        </div>
+        <nav class="docs-top-nav" aria-label="Primary">
+          <a href="../components/buttons.html">Components</a>
+          <a href="../guides/theming.html">Theming</a>
+          <a href="../playground.html">Playground</a>
+          <a href="https://github.com/blastcss/blastcss" rel="noopener">GitHub</a>
+        </nav>
+        <button class="b-icon-btn docs-theme-toggle" type="button" data-b-toggle="theme" aria-label="Toggle dark mode">
+          <svg class="docs-icon-sun" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M4.93 19.07l1.41-1.41M17.66 6.34l1.41-1.41"/></svg>
+          <svg class="docs-icon-moon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79Z"/></svg>
+        </button>
+      </div>
+    </header>
+
+    <div class="docs-shell">
+      <aside class="docs-sidebar" data-docs-sidebar aria-label="Documentation">
+        <nav class="docs-nav"><div class="docs-nav-section"><div class="docs-nav-title">Get started</div><ul class="docs-nav-list"><li><a class="docs-nav-link" href="../index.html">Introduction</a></li><li><a class="docs-nav-link" href="./installation.html">Installation</a></li><li><a class="docs-nav-link" href="./quickstart.html">Quick start</a></li><li><a class="docs-nav-link" href="./theming.html">Theming & tokens</a></li><li><a class="docs-nav-link" href="./dark-mode.html">Dark mode</a></li><li><a class="docs-nav-link" href="./frameworks.html">Framework integration</a></li></ul></div><div class="docs-nav-section"><div class="docs-nav-title">Foundations</div><ul class="docs-nav-list"><li><a class="docs-nav-link" href="./layers.html">Cascade layers</a></li><li><a class="docs-nav-link" href="./layout.html">Layout primitives</a></li><li><a class="docs-nav-link" href="./typography.html">Typography</a></li><li><a class="docs-nav-link" href="./colors.html">Colors</a></li><li><a class="docs-nav-link is-active" href="./motion.html">Motion & view transitions</a></li><li><a class="docs-nav-link" href="./accessibility.html">Accessibility</a></li></ul></div><div class="docs-nav-section"><div class="docs-nav-title">Components</div><ul class="docs-nav-list"><li><a class="docs-nav-link" href="../components/buttons.html">Buttons</a></li><li><a class="docs-nav-link" href="../components/forms.html">Forms</a></li><li><a class="docs-nav-link" href="../components/cards.html">Cards</a></li><li><a class="docs-nav-link" href="../components/badges.html">Badges & chips</a></li><li><a class="docs-nav-link" href="../components/alerts.html">Alerts</a></li><li><a class="docs-nav-link" href="../components/dialog.html">Dialog & drawer</a></li><li><a class="docs-nav-link" href="../components/dropdown.html">Dropdown</a></li><li><a class="docs-nav-link" href="../components/popover.html">Popover</a></li><li><a class="docs-nav-link" href="../components/tooltip.html">Tooltip</a></li><li><a class="docs-nav-link" href="../components/tabs.html">Tabs</a></li><li><a class="docs-nav-link" href="../components/segmented.html">Segmented control</a></li><li><a class="docs-nav-link" href="../components/combobox.html">Combobox</a></li><li><a class="docs-nav-link" href="../components/command.html">Command palette</a></li><li><a class="docs-nav-link" href="../components/tag-input.html">Tag input</a></li><li><a class="docs-nav-link" href="../components/stepper.html">Stepper</a></li><li><a class="docs-nav-link" href="../components/accordion.html">Accordion</a></li><li><a class="docs-nav-link" href="../components/toast.html">Toast</a></li><li><a class="docs-nav-link" href="../components/table.html">Table</a></li><li><a class="docs-nav-link" href="../components/avatar.html">Avatar</a></li><li><a class="docs-nav-link" href="../components/pagination.html">Pagination</a></li><li><a class="docs-nav-link" href="../components/breadcrumb.html">Breadcrumb</a></li><li><a class="docs-nav-link" href="../components/progress.html">Progress & spinner</a></li><li><a class="docs-nav-link" href="../components/skeleton.html">Skeleton</a></li><li><a class="docs-nav-link" href="../components/empty.html">Empty state</a></li><li><a class="docs-nav-link" href="../components/stat.html">Stat</a></li></ul></div><div class="docs-nav-section"><div class="docs-nav-title">Utilities</div><ul class="docs-nav-list"><li><a class="docs-nav-link" href="../utilities/spacing.html">Spacing</a></li><li><a class="docs-nav-link" href="../utilities/flex-grid.html">Flexbox & grid</a></li><li><a class="docs-nav-link" href="../utilities/typography.html">Typography</a></li><li><a class="docs-nav-link" href="../utilities/colors.html">Colors & background</a></li><li><a class="docs-nav-link" href="../utilities/borders.html">Borders & shadows</a></li><li><a class="docs-nav-link" href="../utilities/responsive.html">Responsive & container</a></li></ul></div><div class="docs-nav-section"><div class="docs-nav-title">Tools</div><ul class="docs-nav-list"><li><a class="docs-nav-link" href="../playground.html">Theme playground</a></li><li><a class="docs-nav-link" href="../showcase.html">Showcase</a></li></ul></div></nav>
+      </aside>
+
+      <main id="main" class="docs-main">
+        <article class="docs-article">
+          <header class="docs-article-head">
+    <div class="docs-eyebrow">Foundations</div>
+    <h1>Motion &amp; view transitions</h1>
+    <p class="docs-lede">Tasteful default transitions, animation utilities, and one-line view transitions for SPA-style routing.</p>
+  </header><p>All animations honor <code>prefers-reduced-motion: reduce</code> — falling to near-zero duration without disabling functionality.</p>
+<h2 id="duration-easing-tokens"><a class="b-anchor-link" href="#duration-easing-tokens" aria-label="Anchor link">Duration &amp; easing tokens</a></h2>
+<div class="b-code"><div class="b-code-head"><span>css</span><button class="b-code-copy" type="button" data-b-copy>Copy</button></div><pre tabindex="0"><code>--b-duration-instant: 80ms;
+--b-duration-fast: 140ms;
+--b-duration: 200ms;
+--b-duration-slow: 320ms;
+--b-duration-slower: 480ms;
+
+--b-ease: cubic-bezier(.2, 0, 0, 1);
+--b-ease-in: cubic-bezier(.4, 0, 1, 1);
+--b-ease-out: cubic-bezier(0, 0, .2, 1);
+--b-ease-spring: cubic-bezier(.34, 1.56, .64, 1);</code></pre></div>
+<h2 id="built-in-animations"><a class="b-anchor-link" href="#built-in-animations" aria-label="Anchor link">Built-in animations</a></h2>
+<p>Used by components like dialog, drawer, popover, and toast via <code>@starting-style</code>:</p>
+<p>| Class | Effect | | --- | --- | | <code>b-anim-fade-in</code> | Opacity 0 → 1 | | <code>b-anim-slide-up</code> | Translate from below + fade | | <code>b-anim-scale-in</code> | Scale from 96% with spring ease | | <code>b-anim-pulse</code> | Gentle pulse loop |</p>
+<section class="b-demo"><div class="b-demo-preview"><button class="b-btn b-anim-scale-in">Animated in</button></div><div class="b-code"><div class="b-code-head"><span>html</span><button class="b-code-copy" type="button" data-b-copy>Copy</button></div><pre tabindex="0"><code>&lt;button class="b-btn b-anim-scale-in"&gt;Animated in&lt;/button&gt;</code></pre></div></section>
+<h2 id="view-transitions"><a class="b-anchor-link" href="#view-transitions" aria-label="Anchor link">View Transitions</a></h2>
+<p>The motion layer enables cross-document view transitions in supporting browsers:</p>
+<div class="b-code"><div class="b-code-head"><span>css</span><button class="b-code-copy" type="button" data-b-copy>Copy</button></div><pre tabindex="0"><code>@view-transition { navigation: auto; }</code></pre></div>
+<p>Click a link → the browser snapshots the old DOM, swaps it for the new, then crossfades. No SPA framework required.</p>
+<p>For same-document changes, use the <code>viewTransition</code> helper:</p>
+<div class="b-code"><div class="b-code-head"><span>js</span><button class="b-code-copy" type="button" data-b-copy>Copy</button></div><pre tabindex="0"><code>import { viewTransition } from "blastcss/js";
+
+viewTransition(() =&gt; {
+  // mutate the DOM here
+  document.querySelector("#tab-panel").classList.toggle("is-active");
+});</code></pre></div>
+<p>To preserve element identity across the transition, give it a <code>view-transition-name</code>:</p>
+<div class="b-code"><div class="b-code-head"><span>html</span><button class="b-code-copy" type="button" data-b-copy>Copy</button></div><pre tabindex="0"><code>&lt;img id="hero" src="..." style="view-transition-name: hero-image"&gt;</code></pre></div>
+<p>Or use the utility class with a CSS variable:</p>
+<div class="b-code"><div class="b-code-head"><span>html</span><button class="b-code-copy" type="button" data-b-copy>Copy</button></div><pre tabindex="0"><code>&lt;img class="b-vt-name" style="--b-vt: hero-image" src="..."&gt;</code></pre></div>
+<h2 id="scroll-driven-reveals"><a class="b-anchor-link" href="#scroll-driven-reveals" aria-label="Anchor link">Scroll-driven reveals</a></h2>
+<p>Where <code>animation-timeline</code> is supported (Chrome 115+, Firefox behind a flag):</p>
+<div class="b-code"><div class="b-code-head"><span>html</span><button class="b-code-copy" type="button" data-b-copy>Copy</button></div><pre tabindex="0"><code>&lt;section class="b-reveal"&gt;...&lt;/section&gt;</code></pre></div>
+<p>The element fades and slides in as it scrolls into view, native — no IntersectionObserver, no JS.</p>
+<h2 id="disabling-motion"><a class="b-anchor-link" href="#disabling-motion" aria-label="Anchor link">Disabling motion</a></h2>
+<p>Users with <code>prefers-reduced-motion: reduce</code> automatically get:</p>
+<ul><li>Animation duration capped at 0.01ms</li><li>Transitions capped at 0.01ms</li><li>View transitions disabled (<code>view-transition-name: none</code>)</li><li><code>scroll-behavior</code> set to <code>auto</code></li></ul>
+<p>You can opt content out manually with the utility:</p>
+<div class="b-code"><div class="b-code-head"><span>html</span><button class="b-code-copy" type="button" data-b-copy>Copy</button></div><pre tabindex="0"><code>&lt;div class="motion-reduce:d-none"&gt;Hidden when motion is reduced&lt;/div&gt;</code></pre></div>
+        </article>
+        <aside class="docs-toc" aria-label="On this page"><div class="docs-toc-title">On this page</div><ul><li class="docs-toc-2"><a href="#duration-easing-tokens">Duration &amp; easing tokens</a></li><li class="docs-toc-2"><a href="#built-in-animations">Built-in animations</a></li><li class="docs-toc-2"><a href="#view-transitions">View Transitions</a></li><li class="docs-toc-2"><a href="#scroll-driven-reveals">Scroll-driven reveals</a></li><li class="docs-toc-2"><a href="#disabling-motion">Disabling motion</a></li></ul></aside>
+      </main>
+    </div>
+
+    <dialog id="docs-search-dialog" class="b-command" aria-label="Search documentation">
+      <div class="b-command-search">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="7"/><path d="m21 21-4.3-4.3"/></svg>
+        <input type="search" placeholder="Search components, utilities, guides…" aria-label="Search">
+        <kbd class="b-kbd">esc</kbd>
+      </div>
+      <ul class="b-command-list" data-docs-search-list></ul>
+    </dialog>
+  </body>
+</html>

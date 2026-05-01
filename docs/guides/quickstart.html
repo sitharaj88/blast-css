@@ -1,0 +1,154 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="BlastCSS is a tiny, modern, framework-agnostic CSS framework built on cascade layers, OKLCH tokens, and container queries.">
+    <meta name="theme-color" content="#0c1016">
+    <title>Quick start — BlastCSS</title>
+    <link rel="stylesheet" href="../../dist/blast.min.css">
+    <link rel="stylesheet" href="../site.css">
+    <script type="module" src="../../dist/blast.js"></script>
+    <script defer src="../site.js"></script>
+    <script>(function(){try{var t=localStorage.getItem("b-theme");if(t)document.documentElement.dataset.theme=t;}catch(e){}})();</script>
+  </head>
+  <body class="docs-body">
+    <a class="b-skip-link" href="#main">Skip to content</a>
+
+    <header class="docs-header">
+      <div class="docs-header-inner">
+        <a class="docs-brand" href="../index.html" aria-label="BlastCSS home">
+          <span class="docs-mark" aria-hidden="true">B</span>
+          <span class="docs-brand-name">BlastCSS</span>
+          <span class="b-badge b-badge-neutral docs-version">v0.4.0</span>
+        </a>
+        <button class="docs-menu-btn b-icon-btn" type="button" aria-label="Toggle menu" data-docs-menu>
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 6h18M3 12h18M3 18h18"/></svg>
+        </button>
+        <div class="docs-search-wrap">
+          <button class="docs-search" type="button" data-docs-search>
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="7"/><path d="m21 21-4.3-4.3"/></svg>
+            <span>Search docs</span>
+            <kbd class="b-kbd">⌘K</kbd>
+          </button>
+        </div>
+        <nav class="docs-top-nav" aria-label="Primary">
+          <a href="../components/buttons.html">Components</a>
+          <a href="../guides/theming.html">Theming</a>
+          <a href="../playground.html">Playground</a>
+          <a href="https://github.com/blastcss/blastcss" rel="noopener">GitHub</a>
+        </nav>
+        <button class="b-icon-btn docs-theme-toggle" type="button" data-b-toggle="theme" aria-label="Toggle dark mode">
+          <svg class="docs-icon-sun" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M4.93 19.07l1.41-1.41M17.66 6.34l1.41-1.41"/></svg>
+          <svg class="docs-icon-moon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79Z"/></svg>
+        </button>
+      </div>
+    </header>
+
+    <div class="docs-shell">
+      <aside class="docs-sidebar" data-docs-sidebar aria-label="Documentation">
+        <nav class="docs-nav"><div class="docs-nav-section"><div class="docs-nav-title">Get started</div><ul class="docs-nav-list"><li><a class="docs-nav-link" href="../index.html">Introduction</a></li><li><a class="docs-nav-link" href="./installation.html">Installation</a></li><li><a class="docs-nav-link is-active" href="./quickstart.html">Quick start</a></li><li><a class="docs-nav-link" href="./theming.html">Theming & tokens</a></li><li><a class="docs-nav-link" href="./dark-mode.html">Dark mode</a></li><li><a class="docs-nav-link" href="./frameworks.html">Framework integration</a></li></ul></div><div class="docs-nav-section"><div class="docs-nav-title">Foundations</div><ul class="docs-nav-list"><li><a class="docs-nav-link" href="./layers.html">Cascade layers</a></li><li><a class="docs-nav-link" href="./layout.html">Layout primitives</a></li><li><a class="docs-nav-link" href="./typography.html">Typography</a></li><li><a class="docs-nav-link" href="./colors.html">Colors</a></li><li><a class="docs-nav-link" href="./motion.html">Motion & view transitions</a></li><li><a class="docs-nav-link" href="./accessibility.html">Accessibility</a></li></ul></div><div class="docs-nav-section"><div class="docs-nav-title">Components</div><ul class="docs-nav-list"><li><a class="docs-nav-link" href="../components/buttons.html">Buttons</a></li><li><a class="docs-nav-link" href="../components/forms.html">Forms</a></li><li><a class="docs-nav-link" href="../components/cards.html">Cards</a></li><li><a class="docs-nav-link" href="../components/badges.html">Badges & chips</a></li><li><a class="docs-nav-link" href="../components/alerts.html">Alerts</a></li><li><a class="docs-nav-link" href="../components/dialog.html">Dialog & drawer</a></li><li><a class="docs-nav-link" href="../components/dropdown.html">Dropdown</a></li><li><a class="docs-nav-link" href="../components/popover.html">Popover</a></li><li><a class="docs-nav-link" href="../components/tooltip.html">Tooltip</a></li><li><a class="docs-nav-link" href="../components/tabs.html">Tabs</a></li><li><a class="docs-nav-link" href="../components/segmented.html">Segmented control</a></li><li><a class="docs-nav-link" href="../components/combobox.html">Combobox</a></li><li><a class="docs-nav-link" href="../components/command.html">Command palette</a></li><li><a class="docs-nav-link" href="../components/tag-input.html">Tag input</a></li><li><a class="docs-nav-link" href="../components/stepper.html">Stepper</a></li><li><a class="docs-nav-link" href="../components/accordion.html">Accordion</a></li><li><a class="docs-nav-link" href="../components/toast.html">Toast</a></li><li><a class="docs-nav-link" href="../components/table.html">Table</a></li><li><a class="docs-nav-link" href="../components/avatar.html">Avatar</a></li><li><a class="docs-nav-link" href="../components/pagination.html">Pagination</a></li><li><a class="docs-nav-link" href="../components/breadcrumb.html">Breadcrumb</a></li><li><a class="docs-nav-link" href="../components/progress.html">Progress & spinner</a></li><li><a class="docs-nav-link" href="../components/skeleton.html">Skeleton</a></li><li><a class="docs-nav-link" href="../components/empty.html">Empty state</a></li><li><a class="docs-nav-link" href="../components/stat.html">Stat</a></li></ul></div><div class="docs-nav-section"><div class="docs-nav-title">Utilities</div><ul class="docs-nav-list"><li><a class="docs-nav-link" href="../utilities/spacing.html">Spacing</a></li><li><a class="docs-nav-link" href="../utilities/flex-grid.html">Flexbox & grid</a></li><li><a class="docs-nav-link" href="../utilities/typography.html">Typography</a></li><li><a class="docs-nav-link" href="../utilities/colors.html">Colors & background</a></li><li><a class="docs-nav-link" href="../utilities/borders.html">Borders & shadows</a></li><li><a class="docs-nav-link" href="../utilities/responsive.html">Responsive & container</a></li></ul></div><div class="docs-nav-section"><div class="docs-nav-title">Tools</div><ul class="docs-nav-list"><li><a class="docs-nav-link" href="../playground.html">Theme playground</a></li><li><a class="docs-nav-link" href="../showcase.html">Showcase</a></li></ul></div></nav>
+      </aside>
+
+      <main id="main" class="docs-main">
+        <article class="docs-article">
+          <header class="docs-article-head">
+    <div class="docs-eyebrow">Get started</div>
+    <h1>Quick start</h1>
+    <p class="docs-lede">A 2-minute tour through the BlastCSS conventions — tokens, layout primitives, components, and utilities.</p>
+  </header><h2 id="1-tokens-drive-everything"><a class="b-anchor-link" href="#1-tokens-drive-everything" aria-label="Anchor link">1. Tokens drive everything</a></h2>
+<p>All visual decisions live in CSS custom properties prefixed with <code>--b-</code>. Override them anywhere — <code>:root</code>, a wrapper element, or even a single component instance.</p>
+<div class="b-code"><div class="b-code-head"><span>css</span><button class="b-code-copy" type="button" data-b-copy>Copy</button></div><pre tabindex="0"><code>:root {
+  --b-primary-h: 200;     /* shift the hue */
+  --b-radius: .375rem;    /* tighter corners */
+  --b-control: 2.75rem;   /* taller controls */
+}</code></pre></div>
+<p>See <a href="./theming.html">theming &amp; tokens</a> for the full list.</p>
+<h2 id="2-layout-primitives"><a class="b-anchor-link" href="#2-layout-primitives" aria-label="Anchor link">2. Layout primitives</a></h2>
+<p>Compose pages with semantic layout classes. Each is a single-purpose primitive:</p>
+<section class="b-demo"><div class="b-demo-preview"><div class="b-stack" style="--b-stack-gap: var(--b-3)">
+  <div class="b-cluster">
+    <span class="b-chip">Stack</span>
+    <span class="b-chip">Cluster</span>
+    <span class="b-chip">Split</span>
+    <span class="b-chip">Grid</span>
+    <span class="b-chip">Sidebar</span>
+  </div>
+  <div class="b-grid" style="--b-grid-min:8rem;">
+    <div class="b-card"><div class="b-card-body">A</div></div>
+    <div class="b-card"><div class="b-card-body">B</div></div>
+    <div class="b-card"><div class="b-card-body">C</div></div>
+  </div>
+</div></div><div class="b-code"><div class="b-code-head"><span>html</span><button class="b-code-copy" type="button" data-b-copy>Copy</button></div><pre tabindex="0"><code>&lt;div class="b-stack" style="--b-stack-gap: var(--b-3)"&gt;
+  &lt;div class="b-cluster"&gt;
+    &lt;span class="b-chip"&gt;Stack&lt;/span&gt;
+    &lt;span class="b-chip"&gt;Cluster&lt;/span&gt;
+    &lt;span class="b-chip"&gt;Split&lt;/span&gt;
+    &lt;span class="b-chip"&gt;Grid&lt;/span&gt;
+    &lt;span class="b-chip"&gt;Sidebar&lt;/span&gt;
+  &lt;/div&gt;
+  &lt;div class="b-grid" style="--b-grid-min:8rem;"&gt;
+    &lt;div class="b-card"&gt;&lt;div class="b-card-body"&gt;A&lt;/div&gt;&lt;/div&gt;
+    &lt;div class="b-card"&gt;&lt;div class="b-card-body"&gt;B&lt;/div&gt;&lt;/div&gt;
+    &lt;div class="b-card"&gt;&lt;div class="b-card-body"&gt;C&lt;/div&gt;&lt;/div&gt;
+  &lt;/div&gt;
+&lt;/div&gt;</code></pre></div></section>
+<h2 id="3-components-are-html-class-names"><a class="b-anchor-link" href="#3-components-are-html-class-names" aria-label="Anchor link">3. Components are HTML + class names</a></h2>
+<p>No JSX, no slots, no hydration: a button is <code>&lt;button class="b-btn"&gt;</code>. Extend by adding modifier classes (<code>b-btn-secondary</code>, <code>b-btn-soft</code>, <code>b-btn-lg</code>).</p>
+<section class="b-demo"><div class="b-demo-preview"><div class="b-cluster">
+  <button class="b-btn">Primary</button>
+  <button class="b-btn b-btn-secondary">Secondary</button>
+  <button class="b-btn b-btn-soft">Soft</button>
+  <button class="b-btn b-btn-outline">Outline</button>
+  <button class="b-btn b-btn-ghost">Ghost</button>
+</div></div><div class="b-code"><div class="b-code-head"><span>html</span><button class="b-code-copy" type="button" data-b-copy>Copy</button></div><pre tabindex="0"><code>&lt;div class="b-cluster"&gt;
+  &lt;button class="b-btn"&gt;Primary&lt;/button&gt;
+  &lt;button class="b-btn b-btn-secondary"&gt;Secondary&lt;/button&gt;
+  &lt;button class="b-btn b-btn-soft"&gt;Soft&lt;/button&gt;
+  &lt;button class="b-btn b-btn-outline"&gt;Outline&lt;/button&gt;
+  &lt;button class="b-btn b-btn-ghost"&gt;Ghost&lt;/button&gt;
+&lt;/div&gt;</code></pre></div></section>
+<h2 id="4-utilities-for-one-offs"><a class="b-anchor-link" href="#4-utilities-for-one-offs" aria-label="Anchor link">4. Utilities for one-offs</a></h2>
+<p>Short, opt-in helpers for spacing, layout, typography, and color. They live in a dedicated cascade layer so they never fight components.</p>
+<section class="b-demo"><div class="b-demo-preview"><div class="d-flex items-center gap-3 p-4 rounded-lg bg-soft-primary">
+  <div class="b-avatar">JD</div>
+  <div class="b-stack" style="--b-stack-gap: 0">
+    <strong>Jane Doe</strong>
+    <span class="text-muted text-sm">jane@blast.css</span>
+  </div>
+  <button class="b-btn b-btn-sm ms-auto">Edit</button>
+</div></div><div class="b-code"><div class="b-code-head"><span>html</span><button class="b-code-copy" type="button" data-b-copy>Copy</button></div><pre tabindex="0"><code>&lt;div class="d-flex items-center gap-3 p-4 rounded-lg bg-soft-primary"&gt;
+  &lt;div class="b-avatar"&gt;JD&lt;/div&gt;
+  &lt;div class="b-stack" style="--b-stack-gap: 0"&gt;
+    &lt;strong&gt;Jane Doe&lt;/strong&gt;
+    &lt;span class="text-muted text-sm"&gt;jane@blast.css&lt;/span&gt;
+  &lt;/div&gt;
+  &lt;button class="b-btn b-btn-sm ms-auto"&gt;Edit&lt;/button&gt;
+&lt;/div&gt;</code></pre></div></section>
+<h2 id="5-optional-js-for-behavior"><a class="b-anchor-link" href="#5-optional-js-for-behavior" aria-label="Anchor link">5. Optional JS for behavior</a></h2>
+<p>CSS owns the look. A small (3 KB gzip) helper script wires up native interactivity — <code>&lt;dialog&gt;</code>, popovers, tabs, toasts, command palettes — when CSS alone can't.</p>
+<div class="b-code"><div class="b-code-head"><span>html</span><button class="b-code-copy" type="button" data-b-copy>Copy</button></div><pre tabindex="0"><code>&lt;button class="b-btn" data-b-toggle="dialog" data-b-target="#welcome"&gt;Open&lt;/button&gt;
+
+&lt;dialog id="welcome" class="b-modal"&gt;
+  &lt;div class="b-card-header"&gt;
+    &lt;strong&gt;Welcome&lt;/strong&gt;
+    &lt;button class="b-close" data-b-dismiss="dialog" aria-label="Close"&gt;×&lt;/button&gt;
+  &lt;/div&gt;
+  &lt;div class="b-card-body"&gt;It just works.&lt;/div&gt;
+&lt;/dialog&gt;</code></pre></div>
+<p>Continue with <a href="./theming.html">theming</a>, or browse <a href="../components/buttons.html">components</a>.</p>
+        </article>
+        <aside class="docs-toc" aria-label="On this page"><div class="docs-toc-title">On this page</div><ul><li class="docs-toc-2"><a href="#1-tokens-drive-everything">1. Tokens drive everything</a></li><li class="docs-toc-2"><a href="#2-layout-primitives">2. Layout primitives</a></li><li class="docs-toc-2"><a href="#3-components-are-html-class-names">3. Components are HTML + class names</a></li><li class="docs-toc-2"><a href="#4-utilities-for-one-offs">4. Utilities for one-offs</a></li><li class="docs-toc-2"><a href="#5-optional-js-for-behavior">5. Optional JS for behavior</a></li></ul></aside>
+      </main>
+    </div>
+
+    <dialog id="docs-search-dialog" class="b-command" aria-label="Search documentation">
+      <div class="b-command-search">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="7"/><path d="m21 21-4.3-4.3"/></svg>
+        <input type="search" placeholder="Search components, utilities, guides…" aria-label="Search">
+        <kbd class="b-kbd">esc</kbd>
+      </div>
+      <ul class="b-command-list" data-docs-search-list></ul>
+    </dialog>
+  </body>
+</html>

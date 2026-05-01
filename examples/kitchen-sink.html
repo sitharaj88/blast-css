@@ -1,0 +1,63 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>BlastCSS Kitchen Sink</title>
+    <link rel="stylesheet" href="../dist/blast.min.css">
+    <script type="module" src="../dist/blast.js"></script>
+  </head>
+  <body>
+    <main class="b-container py-8 b-stack" style="--b-stack-gap: var(--b-8)">
+      <section class="b-split">
+        <div>
+          <h1>Kitchen Sink</h1>
+          <p class="text-muted mb-0">A dense page for checking component coverage and visual consistency.</p>
+        </div>
+        <button class="b-btn" data-b-toggle="dialog" data-b-target="#drawer">Open drawer</button>
+      </section>
+
+      <section class="b-grid lg:grid-4">
+        <div class="b-stat"><span class="b-stat-label">Full CSS</span><strong class="b-stat-value">5.3</strong><span class="text-muted">KB gzip</span></div>
+        <div class="b-stat"><span class="b-stat-label">Components</span><strong class="b-stat-value">3</strong><span class="text-muted">KB gzip</span></div>
+        <div class="b-stat"><span class="b-stat-label">Runtime</span><strong class="b-stat-value">0</strong><span class="text-muted">required JS</span></div>
+        <div class="b-stat"><span class="b-stat-label">Exports</span><strong class="b-stat-value">7</strong><span class="text-muted">package paths</span></div>
+      </section>
+
+      <section class="b-grid">
+        <form class="b-card">
+          <div class="b-card-header"><strong>Form</strong><span class="b-badge">Inputs</span></div>
+          <div class="b-card-body b-stack">
+            <label class="b-field"><span class="b-label">Email</span><input class="b-input" type="email" placeholder="you@example.com"></label>
+            <label class="b-field"><span class="b-label">Plan</span><select class="b-select"><option>Starter</option><option>Pro</option></select></label>
+            <label class="b-switch"><input type="checkbox" checked><span>Enable alerts</span></label>
+            <label class="b-field"><span class="b-label">Usage</span><input class="b-range" type="range" value="60"></label>
+            <label class="b-field">
+              <span class="b-label">Domain</span>
+              <span class="b-input-group"><span class="b-addon">https://</span><input class="b-input" value="blastcss.dev"></span>
+            </label>
+            <label class="b-field"><span class="b-label">Asset</span><input class="b-file" type="file"></label>
+          </div>
+        </form>
+
+        <article class="b-card">
+          <div class="b-card-header"><strong>Feedback</strong><button class="b-close" aria-label="Close">x</button></div>
+          <div class="b-card-body b-stack">
+            <div class="b-alert b-alert-success">Saved successfully.</div>
+            <button class="b-btn is-loading">Publishing</button>
+            <span class="b-spinner" role="status" aria-label="Loading"></span>
+            <div class="b-empty"><strong>No records</strong><span>Create the first item to continue.</span></div>
+          </div>
+        </article>
+      </section>
+
+      <dialog id="drawer" class="b-drawer" data-side="right" aria-labelledby="drawer-title">
+        <div class="b-card-header"><strong id="drawer-title">Drawer</strong><button class="b-close" data-b-dismiss="dialog" aria-label="Close">x</button></div>
+        <div class="b-card-body b-stack">
+          <p class="text-muted">Drawers use native dialog behavior with side-specific styling.</p>
+          <button class="b-btn b-btn-secondary" data-b-dismiss="dialog">Close</button>
+        </div>
+      </dialog>
+    </main>
+  </body>
+</html>

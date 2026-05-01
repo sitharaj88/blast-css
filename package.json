@@ -1,0 +1,82 @@
+{
+  "name": "blastcss",
+  "version": "0.4.0",
+  "description": "A modern, framework-agnostic CSS framework built on cascade layers, OKLCH tokens, container queries, and the popover API.",
+  "type": "module",
+  "homepage": "https://github.com/blastcss/blastcss#readme",
+  "bugs": {
+    "url": "https://github.com/blastcss/blastcss/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/blastcss/blastcss.git"
+  },
+  "sideEffects": [
+    "*.css"
+  ],
+  "style": "./dist/blast.min.css",
+  "exports": {
+    ".": "./dist/blast.min.css",
+    "./full": "./dist/blast.min.css",
+    "./core": "./dist/blast.core.min.css",
+    "./components": "./dist/blast.components.min.css",
+    "./components-extra": "./dist/blast.components-extra.min.css",
+    "./utilities": "./dist/blast.utilities.min.css",
+    "./motion": "./dist/blast.motion.min.css",
+    "./reset": "./dist/blast.reset.min.css",
+    "./js": "./dist/blast.js",
+    "./js/min": "./dist/blast.min.js",
+    "./tokens.json": "./dist/tokens.json",
+    "./tokens.css": "./dist/tokens.css",
+    "./tokens.ts": "./dist/tokens.ts"
+  },
+  "files": [
+    "dist",
+    "src",
+    "docs",
+    "docs-src",
+    "examples",
+    "benchmarks",
+    "starters",
+    "README.md",
+    "CHANGELOG.md",
+    "CONTRIBUTING.md",
+    "LICENSE",
+    "SECURITY.md"
+  ],
+  "scripts": {
+    "benchmark": "node scripts/benchmark.mjs",
+    "build": "node scripts/build.mjs",
+    "build:docs": "node scripts/build-docs.mjs",
+    "build:all": "npm run build && npm run build:docs",
+    "check:exports": "node scripts/export-check.mjs",
+    "check:html": "node scripts/html-check.mjs",
+    "check:quality": "node scripts/quality-check.mjs",
+    "check:size": "node scripts/size-check.mjs",
+    "check:visual-manifest": "node scripts/visual-manifest-check.mjs",
+    "test": "npm run test:static",
+    "serve": "node scripts/serve.mjs",
+    "test:browser": "playwright test",
+    "test:browser:chromium": "playwright test --project=chromium",
+    "test:static": "npm run build && npm run build:docs && npm run benchmark && npm run check:size && npm run check:quality && npm run check:exports && npm run check:html && npm run check:visual-manifest",
+    "test:visual:update": "playwright test tests/browser/visual.spec.js --project=chromium --update-snapshots",
+    "verify": "npm run test:static && npm run test:browser"
+  },
+  "keywords": [
+    "css",
+    "framework",
+    "ui",
+    "design-system",
+    "oklch",
+    "container-queries",
+    "popover",
+    "cascade-layers",
+    "view-transitions",
+    "tokens"
+  ],
+  "license": "MIT",
+  "devDependencies": {
+    "@axe-core/playwright": "^4.11.2",
+    "@playwright/test": "^1.59.1"
+  }
+}

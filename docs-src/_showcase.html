@@ -1,0 +1,125 @@
+<header class="docs-article-head">
+  <div class="docs-eyebrow">Tools</div>
+  <h1>Showcase</h1>
+  <p class="docs-lede">Three realistic interfaces — admin dashboard, marketing landing, and form-heavy settings page — built entirely with BlastCSS classes.</p>
+</header>
+
+<div class="b-tabs" role="tablist" aria-label="Showcase">
+  <button class="b-tab" role="tab" aria-selected="true" aria-controls="sc-dash" id="sc-dash-t">Dashboard</button>
+  <button class="b-tab" role="tab" aria-selected="false" aria-controls="sc-mkt" id="sc-mkt-t">Marketing</button>
+  <button class="b-tab" role="tab" aria-selected="false" aria-controls="sc-form" id="sc-form-t">Settings form</button>
+</div>
+
+<section id="sc-dash" class="b-tab-panel" role="tabpanel" aria-labelledby="sc-dash-t">
+  <div class="showcase-section">
+    <div class="b-grid" style="--b-grid-min:14rem;">
+      <article class="b-stat">
+        <span class="b-stat-label">Monthly revenue</span>
+        <strong class="b-stat-value">$48,920</strong>
+        <span class="b-stat-trend">↑ 12.4% vs last month</span>
+      </article>
+      <article class="b-stat">
+        <span class="b-stat-label">Active users</span>
+        <strong class="b-stat-value">12,840</strong>
+        <span class="b-stat-trend">↑ 4.1%</span>
+      </article>
+      <article class="b-stat">
+        <span class="b-stat-label">Churn</span>
+        <strong class="b-stat-value">1.8%</strong>
+        <span class="b-stat-trend b-stat-trend-down">↓ 0.3%</span>
+      </article>
+      <article class="b-stat">
+        <span class="b-stat-label">NPS</span>
+        <strong class="b-stat-value">62</strong>
+        <span class="b-stat-trend">↑ 5</span>
+      </article>
+    </div>
+
+    <div class="b-grid" style="--b-grid-min:24rem;">
+      <article class="b-card">
+        <div class="b-card-header"><strong>Recent activity</strong><a class="b-btn b-btn-ghost b-btn-sm" href="#">View all</a></div>
+        <div class="b-card-body">
+          <table class="b-table b-table-hover">
+            <thead><tr><th>User</th><th>Plan</th><th>Status</th><th>MRR</th></tr></thead>
+            <tbody>
+              <tr><td><div class="b-cluster"><span class="b-avatar b-avatar-sm">AC</span>Anya Chen</div></td><td>Pro</td><td><span class="b-badge b-badge-success b-badge-dot">Active</span></td><td>$49</td></tr>
+              <tr><td><div class="b-cluster"><span class="b-avatar b-avatar-sm">JM</span>Jordan Moss</div></td><td>Team</td><td><span class="b-badge b-badge-warning b-badge-dot">Trial</span></td><td>$0</td></tr>
+              <tr><td><div class="b-cluster"><span class="b-avatar b-avatar-sm">RG</span>Rita Gomez</div></td><td>Pro</td><td><span class="b-badge b-badge-success b-badge-dot">Active</span></td><td>$49</td></tr>
+              <tr><td><div class="b-cluster"><span class="b-avatar b-avatar-sm">DP</span>Dev Patel</div></td><td>Free</td><td><span class="b-badge b-badge-neutral">Free</span></td><td>—</td></tr>
+            </tbody>
+          </table>
+        </div>
+      </article>
+
+      <article class="b-card">
+        <div class="b-card-header"><strong>Onboarding</strong></div>
+        <div class="b-card-body">
+          <ol class="b-stepper">
+            <li class="b-step" data-state="done"><div><div class="b-step-title">Create workspace</div><div class="b-step-desc">Done 2h ago</div></div></li>
+            <li class="b-step" data-state="done"><div><div class="b-step-title">Invite teammates</div><div class="b-step-desc">3 invitations sent</div></div></li>
+            <li class="b-step" data-state="current"><div><div class="b-step-title">Connect billing</div><div class="b-step-desc">In progress</div></div></li>
+            <li class="b-step"><div><div class="b-step-title">Ship first deploy</div><div class="b-step-desc">Pending</div></div></li>
+          </ol>
+        </div>
+      </article>
+    </div>
+  </div>
+</section>
+
+<section id="sc-mkt" class="b-tab-panel" role="tabpanel" aria-labelledby="sc-mkt-t" hidden>
+  <div class="showcase-section">
+    <article class="b-card" style="padding: var(--b-8); text-align:center; background: radial-gradient(ellipse at top, color-mix(in oklch, var(--b-primary) 18%, transparent), transparent 60%);">
+      <span class="b-badge">Launching today</span>
+      <h2 class="text-balance" style="margin-block: var(--b-3)">Ship interfaces 10× faster with a CSS framework that gets out of the way.</h2>
+      <p class="text-muted text-pretty" style="max-inline-size:42rem; margin-inline:auto;">A modern foundation: cascade layers, OKLCH tokens, container queries, view transitions, and a popover-native dialog primitive. Bring your own framework — or none at all.</p>
+      <div class="b-cluster" style="justify-content:center; margin-block-start: var(--b-5)">
+        <button class="b-btn b-btn-lg">Get started free</button>
+        <button class="b-btn b-btn-secondary b-btn-lg">Watch demo</button>
+      </div>
+    </article>
+
+    <div class="b-grid" style="--b-grid-min:18rem;">
+      <article class="b-card"><div class="b-card-body b-stack"><strong>Composable</strong><p class="text-muted">Each layer is independently importable.</p></div></article>
+      <article class="b-card"><div class="b-card-body b-stack"><strong>Themeable</strong><p class="text-muted">Override one variable, rethemed everywhere.</p></div></article>
+      <article class="b-card"><div class="b-card-body b-stack"><strong>Accessible</strong><p class="text-muted">Focus rings, reduced motion, semantic HTML.</p></div></article>
+    </div>
+  </div>
+</section>
+
+<section id="sc-form" class="b-tab-panel" role="tabpanel" aria-labelledby="sc-form-t" hidden>
+  <div class="showcase-section">
+    <article class="b-card">
+      <div class="b-card-header"><strong>Profile settings</strong></div>
+      <div class="b-card-body">
+        <form class="b-stack" style="--b-stack-gap: var(--b-5)">
+          <div class="b-grid" style="--b-grid-min:18rem;">
+            <div class="b-field">
+              <label class="b-label" data-required for="set-name">Full name</label>
+              <input class="b-input" id="set-name" value="Anya Chen">
+            </div>
+            <div class="b-field">
+              <label class="b-label" for="set-handle">Handle</label>
+              <div class="b-input-group">
+                <span class="b-addon">@</span>
+                <input class="b-input" id="set-handle" value="anya">
+              </div>
+            </div>
+          </div>
+          <div class="b-field">
+            <label class="b-label" for="set-bio">Bio</label>
+            <textarea class="b-textarea" id="set-bio">Designer &amp; engineer building developer tools.</textarea>
+          </div>
+          <div class="b-field">
+            <label class="b-label">Notifications</label>
+            <label class="b-switch"><input type="checkbox" checked> <span>Product updates</span></label>
+            <label class="b-switch"><input type="checkbox"> <span>Marketing emails</span></label>
+          </div>
+          <div class="b-cluster" style="justify-content:flex-end">
+            <button type="button" class="b-btn b-btn-secondary">Cancel</button>
+            <button type="submit" class="b-btn">Save changes</button>
+          </div>
+        </form>
+      </div>
+    </article>
+  </div>
+</section>

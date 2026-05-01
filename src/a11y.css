@@ -1,0 +1,49 @@
+@layer blast.a11y {
+  .b-sr-only {
+    block-size: 1px;
+    border: 0;
+    clip: rect(0, 0, 0, 0);
+    inline-size: 1px;
+    margin: -1px;
+    overflow: hidden;
+    padding: 0;
+    position: absolute;
+    white-space: nowrap;
+  }
+
+  .b-not-sr-only {
+    block-size: auto;
+    clip: auto;
+    inline-size: auto;
+    margin: 0;
+    overflow: visible;
+    padding: 0;
+    position: static;
+    white-space: normal;
+  }
+
+  .b-skip-link {
+    background: var(--b-elevated);
+    border: 1px solid var(--b-border);
+    border-radius: var(--b-radius);
+    box-shadow: var(--b-shadow);
+    color: var(--b-text);
+    inset-block-start: var(--b-3);
+    inset-inline-start: var(--b-3);
+    padding: var(--b-2) var(--b-3);
+    position: fixed;
+    transform: translateY(-150%);
+    transition: transform var(--b-duration-fast) var(--b-ease);
+    z-index: var(--b-z-max);
+  }
+
+  .b-skip-link:focus {
+    transform: translateY(0);
+  }
+
+  /* Focus ring helpers */
+  .b-focus-ring:focus-visible {
+    box-shadow: var(--b-shadow-ring);
+    outline: 0;
+  }
+}

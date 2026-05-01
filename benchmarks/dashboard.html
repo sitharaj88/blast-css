@@ -1,0 +1,39 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>BlastCSS Dashboard Benchmark</title>
+    <link rel="stylesheet" href="../dist/blast.min.css">
+  </head>
+  <body>
+    <main class="b-container-lg py-8 b-stack" style="--b-stack-gap: var(--b-6)">
+      <section class="b-split">
+        <div>
+          <h1>Dashboard Benchmark</h1>
+          <p class="text-muted mb-0">Cards, stats, tables, filters, and responsive grids.</p>
+        </div>
+        <button class="b-btn">Export</button>
+      </section>
+      <section class="b-grid lg:grid-4">
+        <div class="b-stat"><span class="b-stat-label">Revenue</span><strong class="b-stat-value">$84k</strong></div>
+        <div class="b-stat"><span class="b-stat-label">Users</span><strong class="b-stat-value">12k</strong></div>
+        <div class="b-stat"><span class="b-stat-label">Conversion</span><strong class="b-stat-value">8.4%</strong></div>
+        <div class="b-stat"><span class="b-stat-label">Latency</span><strong class="b-stat-value">94ms</strong></div>
+      </section>
+      <section class="b-card">
+        <div class="b-card-header"><strong>Recent activity</strong><span class="b-badge">Live</span></div>
+        <div class="b-table overflow-auto">
+          <table>
+            <thead><tr><th>Project</th><th>Status</th><th>Owner</th><th>Updated</th></tr></thead>
+            <tbody>
+              <tr><td>Checkout</td><td><span class="b-badge b-badge-success">Ready</span></td><td>Sitha</td><td>Today</td></tr>
+              <tr><td>Analytics</td><td><span class="b-badge b-badge-warning">Review</span></td><td>Team</td><td>Yesterday</td></tr>
+              <tr><td>Docs</td><td><span class="b-badge">Draft</span></td><td>Core</td><td>Monday</td></tr>
+            </tbody>
+          </table>
+        </div>
+      </section>
+    </main>
+  </body>
+</html>

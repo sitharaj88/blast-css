@@ -1,0 +1,24 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>BlastCSS Form Benchmark</title>
+    <link rel="stylesheet" href="../dist/blast.min.css">
+  </head>
+  <body>
+    <main class="b-container-sm py-8">
+      <form class="b-card">
+        <div class="b-card-header"><h1 class="text-xl">Form Benchmark</h1><span class="b-badge">Controls</span></div>
+        <div class="b-card-body b-stack">
+          <label class="b-field"><span class="b-label">Name</span><input class="b-input" placeholder="Project name"></label>
+          <label class="b-field"><span class="b-label">Type</span><select class="b-select"><option>Web app</option><option>Library</option></select></label>
+          <label class="b-field"><span class="b-label">Description</span><textarea class="b-textarea"></textarea></label>
+          <label class="b-switch"><input type="checkbox" checked><span>Enable notifications</span></label>
+          <label class="b-field"><span class="b-label">Attachment</span><input class="b-file" type="file"></label>
+          <div class="b-cluster"><button class="b-btn">Submit</button><button class="b-btn b-btn-secondary" type="button">Cancel</button></div>
+        </div>
+      </form>
+    </main>
+  </body>
+</html>

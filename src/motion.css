@@ -1,0 +1,55 @@
+@import "./tokens.css";
+
+@layer blast.motion {
+  /* View Transitions */
+  @media (prefers-reduced-motion: no-preference) {
+    @view-transition {
+      navigation: auto;
+    }
+
+    ::view-transition-old(root),
+    ::view-transition-new(root) {
+      animation-duration: var(--b-duration);
+      animation-timing-function: var(--b-ease);
+    }
+
+    ::view-transition-old(root) {
+      animation-name: b-vt-fade-out;
+    }
+
+    ::view-transition-new(root) {
+      animation-name: b-vt-fade-in;
+    }
+  }
+
+  @keyframes b-vt-fade-in {
+    from { opacity: 0; transform: translateY(8px); }
+  }
+
+  @keyframes b-vt-fade-out {
+    to { opacity: 0; transform: translateY(-8px); }
+  }
+
+  /* Reusable named transitions */
+  .b-vt-name { view-transition-name: var(--b-vt, auto); }
+
+  /* Scroll-driven animations (where supported) */
+  @supports (animation-timeline: scroll()) {
+    .b-reveal {
+      animation: b-reveal-in linear both;
+      animation-timeline: view();
+      animation-range: entry 0% cover 30%;
+    }
+  }
+
+  @keyframes b-reveal-in {
+    from { opacity: 0; transform: translateY(24px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+
+  /* Animation utilities */
+  .b-anim-fade-in { animation: b-fade-in var(--b-duration) var(--b-ease) both; }
+  .b-anim-slide-up { animation: b-slide-up var(--b-duration-slow) var(--b-ease) both; }
+  .b-anim-scale-in { animation: b-scale-in var(--b-duration-slow) var(--b-ease-spring) both; }
+  .b-anim-pulse { animation: b-pulse 2s ease-in-out infinite; }
+}

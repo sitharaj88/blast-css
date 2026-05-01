@@ -1,0 +1,8 @@
+blast.min.css                      60267 B   11720 B gzip
+blast.core.min.css                 17588 B    4909 B gzip
+blast.components.min.css           26279 B    5492 B gzip
+blast.components-extra.min.css     11816 B    3220 B gzip
+blast.utilities.min.css            20253 B    4552 B gzip
+blast.motion.min.css                6296 B    2006 B gzip
+blast.reset.min.css                 1341 B     676 B gzip
+blast.min.js                       12515 B    3297 B gzip

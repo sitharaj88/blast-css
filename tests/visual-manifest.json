@@ -1,0 +1,21 @@
+{
+  "viewports": [
+    { "name": "mobile", "width": 390, "height": 844 },
+    { "name": "tablet", "width": 768, "height": 1024 },
+    { "name": "desktop", "width": 1440, "height": 1000 }
+  ],
+  "pages": [
+    "docs/index.html",
+    "docs/playground.html",
+    "docs/showcase.html",
+    "docs/components/buttons.html",
+    "docs/components/forms.html",
+    "docs/components/dialog.html",
+    "docs/guides/installation.html",
+    "examples/index.html",
+    "examples/kitchen-sink.html",
+    "benchmarks/dashboard.html",
+    "benchmarks/form.html",
+    "benchmarks/marketing.html"
+  ]
+}

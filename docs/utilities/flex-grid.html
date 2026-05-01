@@ -1,0 +1,104 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="BlastCSS is a tiny, modern, framework-agnostic CSS framework built on cascade layers, OKLCH tokens, and container queries.">
+    <meta name="theme-color" content="#0c1016">
+    <title>Flex &amp; grid — BlastCSS</title>
+    <link rel="stylesheet" href="../../dist/blast.min.css">
+    <link rel="stylesheet" href="../site.css">
+    <script type="module" src="../../dist/blast.js"></script>
+    <script defer src="../site.js"></script>
+    <script>(function(){try{var t=localStorage.getItem("b-theme");if(t)document.documentElement.dataset.theme=t;}catch(e){}})();</script>
+  </head>
+  <body class="docs-body">
+    <a class="b-skip-link" href="#main">Skip to content</a>
+
+    <header class="docs-header">
+      <div class="docs-header-inner">
+        <a class="docs-brand" href="../index.html" aria-label="BlastCSS home">
+          <span class="docs-mark" aria-hidden="true">B</span>
+          <span class="docs-brand-name">BlastCSS</span>
+          <span class="b-badge b-badge-neutral docs-version">v0.4.0</span>
+        </a>
+        <button class="docs-menu-btn b-icon-btn" type="button" aria-label="Toggle menu" data-docs-menu>
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 6h18M3 12h18M3 18h18"/></svg>
+        </button>
+        <div class="docs-search-wrap">
+          <button class="docs-search" type="button" data-docs-search>
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="7"/><path d="m21 21-4.3-4.3"/></svg>
+            <span>Search docs</span>
+            <kbd class="b-kbd">⌘K</kbd>
+          </button>
+        </div>
+        <nav class="docs-top-nav" aria-label="Primary">
+          <a href="../components/buttons.html">Components</a>
+          <a href="../guides/theming.html">Theming</a>
+          <a href="../playground.html">Playground</a>
+          <a href="https://github.com/blastcss/blastcss" rel="noopener">GitHub</a>
+        </nav>
+        <button class="b-icon-btn docs-theme-toggle" type="button" data-b-toggle="theme" aria-label="Toggle dark mode">
+          <svg class="docs-icon-sun" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M4.93 19.07l1.41-1.41M17.66 6.34l1.41-1.41"/></svg>
+          <svg class="docs-icon-moon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79Z"/></svg>
+        </button>
+      </div>
+    </header>
+
+    <div class="docs-shell">
+      <aside class="docs-sidebar" data-docs-sidebar aria-label="Documentation">
+        <nav class="docs-nav"><div class="docs-nav-section"><div class="docs-nav-title">Get started</div><ul class="docs-nav-list"><li><a class="docs-nav-link" href="../index.html">Introduction</a></li><li><a class="docs-nav-link" href="../guides/installation.html">Installation</a></li><li><a class="docs-nav-link" href="../guides/quickstart.html">Quick start</a></li><li><a class="docs-nav-link" href="../guides/theming.html">Theming & tokens</a></li><li><a class="docs-nav-link" href="../guides/dark-mode.html">Dark mode</a></li><li><a class="docs-nav-link" href="../guides/frameworks.html">Framework integration</a></li></ul></div><div class="docs-nav-section"><div class="docs-nav-title">Foundations</div><ul class="docs-nav-list"><li><a class="docs-nav-link" href="../guides/layers.html">Cascade layers</a></li><li><a class="docs-nav-link" href="../guides/layout.html">Layout primitives</a></li><li><a class="docs-nav-link" href="../guides/typography.html">Typography</a></li><li><a class="docs-nav-link" href="../guides/colors.html">Colors</a></li><li><a class="docs-nav-link" href="../guides/motion.html">Motion & view transitions</a></li><li><a class="docs-nav-link" href="../guides/accessibility.html">Accessibility</a></li></ul></div><div class="docs-nav-section"><div class="docs-nav-title">Components</div><ul class="docs-nav-list"><li><a class="docs-nav-link" href="../components/buttons.html">Buttons</a></li><li><a class="docs-nav-link" href="../components/forms.html">Forms</a></li><li><a class="docs-nav-link" href="../components/cards.html">Cards</a></li><li><a class="docs-nav-link" href="../components/badges.html">Badges & chips</a></li><li><a class="docs-nav-link" href="../components/alerts.html">Alerts</a></li><li><a class="docs-nav-link" href="../components/dialog.html">Dialog & drawer</a></li><li><a class="docs-nav-link" href="../components/dropdown.html">Dropdown</a></li><li><a class="docs-nav-link" href="../components/popover.html">Popover</a></li><li><a class="docs-nav-link" href="../components/tooltip.html">Tooltip</a></li><li><a class="docs-nav-link" href="../components/tabs.html">Tabs</a></li><li><a class="docs-nav-link" href="../components/segmented.html">Segmented control</a></li><li><a class="docs-nav-link" href="../components/combobox.html">Combobox</a></li><li><a class="docs-nav-link" href="../components/command.html">Command palette</a></li><li><a class="docs-nav-link" href="../components/tag-input.html">Tag input</a></li><li><a class="docs-nav-link" href="../components/stepper.html">Stepper</a></li><li><a class="docs-nav-link" href="../components/accordion.html">Accordion</a></li><li><a class="docs-nav-link" href="../components/toast.html">Toast</a></li><li><a class="docs-nav-link" href="../components/table.html">Table</a></li><li><a class="docs-nav-link" href="../components/avatar.html">Avatar</a></li><li><a class="docs-nav-link" href="../components/pagination.html">Pagination</a></li><li><a class="docs-nav-link" href="../components/breadcrumb.html">Breadcrumb</a></li><li><a class="docs-nav-link" href="../components/progress.html">Progress & spinner</a></li><li><a class="docs-nav-link" href="../components/skeleton.html">Skeleton</a></li><li><a class="docs-nav-link" href="../components/empty.html">Empty state</a></li><li><a class="docs-nav-link" href="../components/stat.html">Stat</a></li></ul></div><div class="docs-nav-section"><div class="docs-nav-title">Utilities</div><ul class="docs-nav-list"><li><a class="docs-nav-link" href="./spacing.html">Spacing</a></li><li><a class="docs-nav-link is-active" href="./flex-grid.html">Flexbox & grid</a></li><li><a class="docs-nav-link" href="./typography.html">Typography</a></li><li><a class="docs-nav-link" href="./colors.html">Colors & background</a></li><li><a class="docs-nav-link" href="./borders.html">Borders & shadows</a></li><li><a class="docs-nav-link" href="./responsive.html">Responsive & container</a></li></ul></div><div class="docs-nav-section"><div class="docs-nav-title">Tools</div><ul class="docs-nav-list"><li><a class="docs-nav-link" href="../playground.html">Theme playground</a></li><li><a class="docs-nav-link" href="../showcase.html">Showcase</a></li></ul></div></nav>
+      </aside>
+
+      <main id="main" class="docs-main">
+        <article class="docs-article">
+          <header class="docs-article-head">
+    <div class="docs-eyebrow">Utilities</div>
+    <h1>Flex &amp; grid</h1>
+    <p class="docs-lede">Display, flex direction, alignment, and grid column utilities.</p>
+  </header><h2 id="display"><a class="b-anchor-link" href="#display" aria-label="Anchor link">Display</a></h2>
+<p><code>d-none</code>, <code>d-block</code>, <code>d-inline</code>, <code>d-inline-block</code>, <code>d-flex</code>, <code>d-inline-flex</code>, <code>d-grid</code>, <code>d-inline-grid</code>, <code>d-contents</code>.</p>
+<h2 id="flex-direction"><a class="b-anchor-link" href="#flex-direction" aria-label="Anchor link">Flex direction</a></h2>
+<p><code>flex-row</code>, <code>flex-col</code>, <code>flex-row-rev</code>, <code>flex-col-rev</code>.</p>
+<h2 id="wrap"><a class="b-anchor-link" href="#wrap" aria-label="Anchor link">Wrap</a></h2>
+<p><code>flex-wrap</code>, <code>flex-nowrap</code>.</p>
+<h2 id="align-items-justify-content"><a class="b-anchor-link" href="#align-items-justify-content" aria-label="Anchor link">Align items / justify content</a></h2>
+<p><code>items-{start, center, end, baseline, stretch}</code>, <code>justify-{start, center, end, between, around, evenly}</code>.</p>
+<h2 id="self-alignment"><a class="b-anchor-link" href="#self-alignment" aria-label="Anchor link">Self-alignment</a></h2>
+<p><code>self-{start, center, end, stretch}</code>.</p>
+<h2 id="flex-grow-shrink-basis"><a class="b-anchor-link" href="#flex-grow-shrink-basis" aria-label="Anchor link">Flex grow/shrink/basis</a></h2>
+<p><code>grow</code>, <code>grow-0</code>, <code>shrink-0</code>, <code>basis-full</code>, <code>basis-0</code>.</p>
+<h2 id="order"><a class="b-anchor-link" href="#order" aria-label="Anchor link">Order</a></h2>
+<p><code>order-first</code>, <code>order-last</code>.</p>
+<h2 id="grid-columns"><a class="b-anchor-link" href="#grid-columns" aria-label="Anchor link">Grid columns</a></h2>
+<p><code>grid-1</code>, <code>grid-2</code>, <code>grid-3</code>, <code>grid-4</code>, <code>grid-5</code>, <code>grid-6</code>, <code>grid-12</code>, <code>grid-auto</code>.</p>
+<h2 id="spans"><a class="b-anchor-link" href="#spans" aria-label="Anchor link">Spans</a></h2>
+<p><code>col-span-{2,3,4,full}</code>, <code>row-span-{2,full}</code>.</p>
+<section class="b-demo"><div class="b-demo-preview"><div class="d-grid grid-3 gap-3">
+  <div class="b-card"><div class="b-card-body">A</div></div>
+  <div class="b-card"><div class="b-card-body">B</div></div>
+  <div class="b-card"><div class="b-card-body">C</div></div>
+  <div class="b-card col-span-full"><div class="b-card-body">Spans full</div></div>
+</div></div><div class="b-code"><div class="b-code-head"><span>html</span><button class="b-code-copy" type="button" data-b-copy>Copy</button></div><pre tabindex="0"><code>&lt;div class="d-grid grid-3 gap-3"&gt;
+  &lt;div class="b-card"&gt;&lt;div class="b-card-body"&gt;A&lt;/div&gt;&lt;/div&gt;
+  &lt;div class="b-card"&gt;&lt;div class="b-card-body"&gt;B&lt;/div&gt;&lt;/div&gt;
+  &lt;div class="b-card"&gt;&lt;div class="b-card-body"&gt;C&lt;/div&gt;&lt;/div&gt;
+  &lt;div class="b-card col-span-full"&gt;&lt;div class="b-card-body"&gt;Spans full&lt;/div&gt;&lt;/div&gt;
+&lt;/div&gt;</code></pre></div></section>
+<h2 id="place-items"><a class="b-anchor-link" href="#place-items" aria-label="Anchor link">Place items</a></h2>
+<p><code>place-center</code>, <code>place-between</code>.</p>
+        </article>
+        <aside class="docs-toc" aria-label="On this page"><div class="docs-toc-title">On this page</div><ul><li class="docs-toc-2"><a href="#display">Display</a></li><li class="docs-toc-2"><a href="#flex-direction">Flex direction</a></li><li class="docs-toc-2"><a href="#wrap">Wrap</a></li><li class="docs-toc-2"><a href="#align-items-justify-content">Align items / justify content</a></li><li class="docs-toc-2"><a href="#self-alignment">Self-alignment</a></li><li class="docs-toc-2"><a href="#flex-grow-shrink-basis">Flex grow/shrink/basis</a></li><li class="docs-toc-2"><a href="#order">Order</a></li><li class="docs-toc-2"><a href="#grid-columns">Grid columns</a></li><li class="docs-toc-2"><a href="#spans">Spans</a></li><li class="docs-toc-2"><a href="#place-items">Place items</a></li></ul></aside>
+      </main>
+    </div>
+
+    <dialog id="docs-search-dialog" class="b-command" aria-label="Search documentation">
+      <div class="b-command-search">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="7"/><path d="m21 21-4.3-4.3"/></svg>
+        <input type="search" placeholder="Search components, utilities, guides…" aria-label="Search">
+        <kbd class="b-kbd">esc</kbd>
+      </div>
+      <ul class="b-command-list" data-docs-search-list></ul>
+    </dialog>
+  </body>
+</html>

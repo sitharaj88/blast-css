@@ -1,0 +1,111 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="BlastCSS is a tiny, modern, framework-agnostic CSS framework built on cascade layers, OKLCH tokens, and container queries.">
+    <meta name="theme-color" content="#0c1016">
+    <title>Typography — BlastCSS</title>
+    <link rel="stylesheet" href="../../dist/blast.min.css">
+    <link rel="stylesheet" href="../site.css">
+    <script type="module" src="../../dist/blast.js"></script>
+    <script defer src="../site.js"></script>
+    <script>(function(){try{var t=localStorage.getItem("b-theme");if(t)document.documentElement.dataset.theme=t;}catch(e){}})();</script>
+  </head>
+  <body class="docs-body">
+    <a class="b-skip-link" href="#main">Skip to content</a>
+
+    <header class="docs-header">
+      <div class="docs-header-inner">
+        <a class="docs-brand" href="../index.html" aria-label="BlastCSS home">
+          <span class="docs-mark" aria-hidden="true">B</span>
+          <span class="docs-brand-name">BlastCSS</span>
+          <span class="b-badge b-badge-neutral docs-version">v0.4.0</span>
+        </a>
+        <button class="docs-menu-btn b-icon-btn" type="button" aria-label="Toggle menu" data-docs-menu>
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 6h18M3 12h18M3 18h18"/></svg>
+        </button>
+        <div class="docs-search-wrap">
+          <button class="docs-search" type="button" data-docs-search>
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="7"/><path d="m21 21-4.3-4.3"/></svg>
+            <span>Search docs</span>
+            <kbd class="b-kbd">⌘K</kbd>
+          </button>
+        </div>
+        <nav class="docs-top-nav" aria-label="Primary">
+          <a href="../components/buttons.html">Components</a>
+          <a href="../guides/theming.html">Theming</a>
+          <a href="../playground.html">Playground</a>
+          <a href="https://github.com/blastcss/blastcss" rel="noopener">GitHub</a>
+        </nav>
+        <button class="b-icon-btn docs-theme-toggle" type="button" data-b-toggle="theme" aria-label="Toggle dark mode">
+          <svg class="docs-icon-sun" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M4.93 19.07l1.41-1.41M17.66 6.34l1.41-1.41"/></svg>
+          <svg class="docs-icon-moon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79Z"/></svg>
+        </button>
+      </div>
+    </header>
+
+    <div class="docs-shell">
+      <aside class="docs-sidebar" data-docs-sidebar aria-label="Documentation">
+        <nav class="docs-nav"><div class="docs-nav-section"><div class="docs-nav-title">Get started</div><ul class="docs-nav-list"><li><a class="docs-nav-link" href="../index.html">Introduction</a></li><li><a class="docs-nav-link" href="./installation.html">Installation</a></li><li><a class="docs-nav-link" href="./quickstart.html">Quick start</a></li><li><a class="docs-nav-link" href="./theming.html">Theming & tokens</a></li><li><a class="docs-nav-link" href="./dark-mode.html">Dark mode</a></li><li><a class="docs-nav-link" href="./frameworks.html">Framework integration</a></li></ul></div><div class="docs-nav-section"><div class="docs-nav-title">Foundations</div><ul class="docs-nav-list"><li><a class="docs-nav-link" href="./layers.html">Cascade layers</a></li><li><a class="docs-nav-link" href="./layout.html">Layout primitives</a></li><li><a class="docs-nav-link is-active" href="./typography.html">Typography</a></li><li><a class="docs-nav-link" href="./colors.html">Colors</a></li><li><a class="docs-nav-link" href="./motion.html">Motion & view transitions</a></li><li><a class="docs-nav-link" href="./accessibility.html">Accessibility</a></li></ul></div><div class="docs-nav-section"><div class="docs-nav-title">Components</div><ul class="docs-nav-list"><li><a class="docs-nav-link" href="../components/buttons.html">Buttons</a></li><li><a class="docs-nav-link" href="../components/forms.html">Forms</a></li><li><a class="docs-nav-link" href="../components/cards.html">Cards</a></li><li><a class="docs-nav-link" href="../components/badges.html">Badges & chips</a></li><li><a class="docs-nav-link" href="../components/alerts.html">Alerts</a></li><li><a class="docs-nav-link" href="../components/dialog.html">Dialog & drawer</a></li><li><a class="docs-nav-link" href="../components/dropdown.html">Dropdown</a></li><li><a class="docs-nav-link" href="../components/popover.html">Popover</a></li><li><a class="docs-nav-link" href="../components/tooltip.html">Tooltip</a></li><li><a class="docs-nav-link" href="../components/tabs.html">Tabs</a></li><li><a class="docs-nav-link" href="../components/segmented.html">Segmented control</a></li><li><a class="docs-nav-link" href="../components/combobox.html">Combobox</a></li><li><a class="docs-nav-link" href="../components/command.html">Command palette</a></li><li><a class="docs-nav-link" href="../components/tag-input.html">Tag input</a></li><li><a class="docs-nav-link" href="../components/stepper.html">Stepper</a></li><li><a class="docs-nav-link" href="../components/accordion.html">Accordion</a></li><li><a class="docs-nav-link" href="../components/toast.html">Toast</a></li><li><a class="docs-nav-link" href="../components/table.html">Table</a></li><li><a class="docs-nav-link" href="../components/avatar.html">Avatar</a></li><li><a class="docs-nav-link" href="../components/pagination.html">Pagination</a></li><li><a class="docs-nav-link" href="../components/breadcrumb.html">Breadcrumb</a></li><li><a class="docs-nav-link" href="../components/progress.html">Progress & spinner</a></li><li><a class="docs-nav-link" href="../components/skeleton.html">Skeleton</a></li><li><a class="docs-nav-link" href="../components/empty.html">Empty state</a></li><li><a class="docs-nav-link" href="../components/stat.html">Stat</a></li></ul></div><div class="docs-nav-section"><div class="docs-nav-title">Utilities</div><ul class="docs-nav-list"><li><a class="docs-nav-link" href="../utilities/spacing.html">Spacing</a></li><li><a class="docs-nav-link" href="../utilities/flex-grid.html">Flexbox & grid</a></li><li><a class="docs-nav-link" href="../utilities/typography.html">Typography</a></li><li><a class="docs-nav-link" href="../utilities/colors.html">Colors & background</a></li><li><a class="docs-nav-link" href="../utilities/borders.html">Borders & shadows</a></li><li><a class="docs-nav-link" href="../utilities/responsive.html">Responsive & container</a></li></ul></div><div class="docs-nav-section"><div class="docs-nav-title">Tools</div><ul class="docs-nav-list"><li><a class="docs-nav-link" href="../playground.html">Theme playground</a></li><li><a class="docs-nav-link" href="../showcase.html">Showcase</a></li></ul></div></nav>
+      </aside>
+
+      <main id="main" class="docs-main">
+        <article class="docs-article">
+          <header class="docs-article-head">
+    <div class="docs-eyebrow">Foundations</div>
+    <h1>Typography</h1>
+    <p class="docs-lede">A fluid type scale, balanced headings, pretty paragraph wrapping, and modern font features.</p>
+  </header><h2 id="type-scale"><a class="b-anchor-link" href="#type-scale" aria-label="Anchor link">Type scale</a></h2>
+<p>Sizes are defined as static rems and as fluid <code>clamp()</code> values for responsive headings.</p>
+<p>| Token | Value | Usage | | --- | --- | --- | | <code>--b-text-2xs</code> | 0.6875rem | Small labels, kbd | | <code>--b-text-xs</code> | 0.75rem | Captions, badges | | <code>--b-text-sm</code> | 0.875rem | Help text, table cells | | <code>--b-text-md</code> | 1rem | Body | | <code>--b-text-lg</code> | 1.125rem | Lead text | | <code>--b-text-xl</code> | 1.25rem | Sub-headings | | <code>--b-text-2xl</code> | 1.5rem | h3 | | <code>--b-text-3xl</code> | 1.875rem | h2 | | <code>--b-text-4xl</code> | 2.25rem | h1 | | <code>--b-text-5xl</code> | 3rem | Hero |</p>
+<p>Fluid sizes:</p>
+<p>| Token | Range | | --- | --- | | <code>--b-fluid-h1</code> | 2rem → 3.75rem | | <code>--b-fluid-h2</code> | 1.625rem → 2.75rem | | <code>--b-fluid-h3</code> | 1.25rem → 1.875rem | | <code>--b-fluid-lead</code> | 1.0625rem → 1.25rem |</p>
+<h2 id="headings"><a class="b-anchor-link" href="#headings" aria-label="Anchor link">Headings</a></h2>
+<p><code>&lt;h1&gt;</code>–<code>&lt;h6&gt;</code> are styled with fluid sizes and <code>text-wrap: balance</code> for nice multi-line headlines:</p>
+<section class="b-demo"><div class="b-demo-preview"><h1>Display heading</h1>
+<h2>Section heading</h2>
+<h3>Subsection heading</h3>
+<h4>h4 heading</h4></div><div class="b-code"><div class="b-code-head"><span>html</span><button class="b-code-copy" type="button" data-b-copy>Copy</button></div><pre tabindex="0"><code>&lt;h1&gt;Display heading&lt;/h1&gt;
+&lt;h2&gt;Section heading&lt;/h2&gt;
+&lt;h3&gt;Subsection heading&lt;/h3&gt;
+&lt;h4&gt;h4 heading&lt;/h4&gt;</code></pre></div></section>
+<h2 id="body-text"><a class="b-anchor-link" href="#body-text" aria-label="Anchor link">Body text</a></h2>
+<p>Paragraphs use <code>text-wrap: pretty</code> for better orphan/widow handling.</p>
+<div class="b-code"><div class="b-code-head"><span>html</span><button class="b-code-copy" type="button" data-b-copy>Copy</button></div><pre tabindex="0"><code>&lt;p&gt;BlastCSS automatically prevents orphan words on the last line of a paragraph.&lt;/p&gt;</code></pre></div>
+<h2 id="weights"><a class="b-anchor-link" href="#weights" aria-label="Anchor link">Weights</a></h2>
+<p>| Token | Value | | --- | --- | | <code>--b-weight-normal</code> | 400 | | <code>--b-weight-medium</code> | 530 | | <code>--b-weight-semi</code> | 620 | | <code>--b-weight-bold</code> | 720 | | <code>--b-weight-black</code> | 820 |</p>
+<p>Use as utility classes: <code>.font-normal</code>, <code>.font-medium</code>, <code>.font-semi</code>, <code>.font-bold</code>, <code>.font-black</code>.</p>
+<h2 id="code-kbd-mark"><a class="b-anchor-link" href="#code-kbd-mark" aria-label="Anchor link">Code, kbd, mark</a></h2>
+<section class="b-demo"><div class="b-demo-preview"><p>Inline <code>code</code> uses the mono stack. Press <kbd class="b-kbd">⌘K</kbd> to search. Some <mark>marked text</mark> is highlighted.</p></div><div class="b-code"><div class="b-code-head"><span>html</span><button class="b-code-copy" type="button" data-b-copy>Copy</button></div><pre tabindex="0"><code>&lt;p&gt;Inline &lt;code&gt;code&lt;/code&gt; uses the mono stack. Press &lt;kbd class="b-kbd"&gt;⌘K&lt;/kbd&gt; to search. Some &lt;mark&gt;marked text&lt;/mark&gt; is highlighted.&lt;/p&gt;</code></pre></div></section>
+<h2 id="pretty-balance-utilities"><a class="b-anchor-link" href="#pretty-balance-utilities" aria-label="Anchor link">Pretty/Balance utilities</a></h2>
+<section class="b-demo"><div class="b-demo-preview"><p class="text-balance">Use .text-balance on headlines for symmetric multi-line wrapping.</p>
+<p class="text-pretty">Use .text-pretty on body text to avoid widows.</p>
+<p class="truncate" style="max-width:18rem">Use .truncate for ellipsis on overflow lines</p></div><div class="b-code"><div class="b-code-head"><span>html</span><button class="b-code-copy" type="button" data-b-copy>Copy</button></div><pre tabindex="0"><code>&lt;p class="text-balance"&gt;Use .text-balance on headlines for symmetric multi-line wrapping.&lt;/p&gt;
+&lt;p class="text-pretty"&gt;Use .text-pretty on body text to avoid widows.&lt;/p&gt;
+&lt;p class="truncate" style="max-width:18rem"&gt;Use .truncate for ellipsis on overflow lines&lt;/p&gt;</code></pre></div></section>
+<h2 id="font-stacks"><a class="b-anchor-link" href="#font-stacks" aria-label="Anchor link">Font stacks</a></h2>
+<p>Tokens default to:</p>
+<div class="b-code"><div class="b-code-head"><span>css</span><button class="b-code-copy" type="button" data-b-copy>Copy</button></div><pre tabindex="0"><code>--b-font-sans: "Inter var", Inter, ui-sans-serif, system-ui, sans-serif;
+--b-font-mono: ui-monospace, "JetBrains Mono", "SFMono-Regular", monospace;
+--b-font-display: var(--b-font-sans);</code></pre></div>
+<p>Override with brand fonts:</p>
+<div class="b-code"><div class="b-code-head"><span>css</span><button class="b-code-copy" type="button" data-b-copy>Copy</button></div><pre tabindex="0"><code>:root {
+  --b-font-sans: "Geist", system-ui, sans-serif;
+  --b-font-display: "GT Sectra", "Times New Roman", serif;
+}</code></pre></div>
+        </article>
+        <aside class="docs-toc" aria-label="On this page"><div class="docs-toc-title">On this page</div><ul><li class="docs-toc-2"><a href="#type-scale">Type scale</a></li><li class="docs-toc-2"><a href="#headings">Headings</a></li><li class="docs-toc-2"><a href="#body-text">Body text</a></li><li class="docs-toc-2"><a href="#weights">Weights</a></li><li class="docs-toc-2"><a href="#code-kbd-mark">Code, kbd, mark</a></li><li class="docs-toc-2"><a href="#pretty-balance-utilities">Pretty/Balance utilities</a></li><li class="docs-toc-2"><a href="#font-stacks">Font stacks</a></li></ul></aside>
+      </main>
+    </div>
+
+    <dialog id="docs-search-dialog" class="b-command" aria-label="Search documentation">
+      <div class="b-command-search">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="7"/><path d="m21 21-4.3-4.3"/></svg>
+        <input type="search" placeholder="Search components, utilities, guides…" aria-label="Search">
+        <kbd class="b-kbd">esc</kbd>
+      </div>
+      <ul class="b-command-list" data-docs-search-list></ul>
+    </dialog>
+  </body>
+</html>

@@ -1,0 +1,224 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>BlastCSS Demo</title>
+    <link rel="stylesheet" href="../dist/blast.min.css">
+  </head>
+  <body>
+    <a class="b-skip-link" href="#content">Skip to content</a>
+    <header class="b-container">
+      <nav class="b-navbar" aria-label="Main navigation">
+        <strong>BlastCSS</strong>
+        <ul class="b-menu">
+          <li><a aria-current="page" href="#components">Components</a></li>
+          <li><a href="#forms">Forms</a></li>
+          <li><a href="#tokens">Tokens</a></li>
+        </ul>
+      </nav>
+    </header>
+
+    <main id="content" class="b-container py-8">
+      <section class="b-grid items-center" style="--b-grid-min: 20rem; --b-grid-gap: var(--b-8)">
+        <div class="b-stack" style="--b-stack-gap: var(--b-5)">
+          <span class="b-badge">5.3 KB gzip full bundle</span>
+          <h1>Small CSS for fast product interfaces.</h1>
+          <p class="text-muted text-lg max-w-sm">Use plain classes across React, Vue, Angular, Svelte, server-rendered apps, or static HTML.</p>
+          <div class="b-cluster">
+            <a class="b-btn" href="#components">View components</a>
+            <a class="b-btn b-btn-secondary" href="../README.md">Read docs</a>
+          </div>
+        </div>
+
+        <div class="b-card shadow">
+          <div class="b-card-header">
+            <strong>Bundle Budget</strong>
+            <span class="b-badge b-badge-success">passing</span>
+          </div>
+          <div class="b-card-body b-stack">
+            <div>
+              <div class="b-split mb-2">
+                <span>Core</span>
+                <strong>2.3 KB</strong>
+              </div>
+              <div class="b-progress" role="progressbar" aria-label="Core size" aria-valuemin="0" aria-valuemax="100" aria-valuenow="56"><span style="--b-progress: 56%"></span></div>
+            </div>
+            <div>
+              <div class="b-split mb-2">
+                <span>Components</span>
+                <strong>2.9 KB</strong>
+              </div>
+              <div class="b-progress" role="progressbar" aria-label="Components size" aria-valuemin="0" aria-valuemax="100" aria-valuenow="31"><span style="--b-progress: 31%"></span></div>
+            </div>
+            <div>
+              <div class="b-split mb-2">
+                <span>Utilities</span>
+                <strong>2.3 KB</strong>
+              </div>
+              <div class="b-progress" role="progressbar" aria-label="Utilities size" aria-valuemin="0" aria-valuemax="100" aria-valuenow="27"><span style="--b-progress: 27%"></span></div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section id="components" class="py-8">
+        <div class="b-split mb-4">
+          <h2>Components</h2>
+          <div class="b-cluster">
+            <span class="b-badge">Default</span>
+            <span class="b-badge b-badge-success">Success</span>
+            <span class="b-badge b-badge-warning">Warning</span>
+            <span class="b-badge b-badge-danger">Danger</span>
+          </div>
+        </div>
+
+        <div class="b-grid">
+          <article class="b-card">
+            <div class="b-card-body b-stack">
+              <h3>Actions</h3>
+              <div class="b-cluster">
+                <button class="b-btn">Primary</button>
+                <button class="b-btn b-btn-secondary">Secondary</button>
+                <button class="b-btn b-btn-ghost">Ghost</button>
+              </div>
+              <div class="b-btn-group" aria-label="View options">
+                <button class="b-btn b-btn-secondary">Day</button>
+                <button class="b-btn b-btn-secondary">Week</button>
+                <button class="b-btn b-btn-secondary">Month</button>
+              </div>
+            </div>
+          </article>
+
+          <article class="b-card">
+            <div class="b-card-body b-stack">
+              <h3>Alert</h3>
+              <div class="b-alert b-alert-success">Deployment finished without errors.</div>
+              <div class="b-alert b-alert-warning">Review environment variables before release.</div>
+            </div>
+          </article>
+
+          <article class="b-card">
+            <div class="b-card-body b-stack">
+              <h3>Dropdown</h3>
+              <details class="b-dropdown">
+                <summary class="b-btn b-btn-secondary">Actions</summary>
+                <div class="b-dropdown-menu">
+                  <a href="#components">Open</a>
+                  <a href="#forms">Edit</a>
+                  <button type="button">Archive</button>
+                </div>
+              </details>
+            </div>
+          </article>
+
+          <article class="b-card">
+            <div class="b-card-body b-stack">
+              <h3>Accordion</h3>
+              <div class="b-accordion">
+                <details open>
+                  <summary>Performance</summary>
+                  <div class="b-accordion-panel">The full bundle stays under the 7 KB gzip budget.</div>
+                </details>
+                <details>
+                  <summary>Portability</summary>
+                  <div class="b-accordion-panel">The same classes work in component frameworks and server templates.</div>
+                </details>
+              </div>
+            </div>
+          </article>
+
+          <article class="b-card">
+            <div class="b-card-body b-stack">
+              <h3>Navigation</h3>
+              <ol class="b-breadcrumb">
+                <li><a href="#">Workspace</a></li>
+                <li><a href="#">Projects</a></li>
+                <li aria-current="page">Launch</li>
+              </ol>
+              <nav aria-label="Pagination">
+                <ol class="b-pagination">
+                  <li><a class="b-page" href="#">1</a></li>
+                  <li><a class="b-page" aria-current="page" href="#">2</a></li>
+                  <li><a class="b-page" href="#">3</a></li>
+                </ol>
+              </nav>
+            </div>
+          </article>
+
+          <article class="b-card">
+            <div class="b-card-body b-stack">
+              <h3>Identity</h3>
+              <div class="b-cluster">
+                <span class="b-avatar">SK</span>
+                <span class="b-chip">Stable API</span>
+                <button class="b-icon-btn b-tooltip" data-tooltip="Refresh" aria-label="Refresh">R</button>
+              </div>
+              <div class="b-avatar-group">
+                <span class="b-avatar">A</span>
+                <span class="b-avatar">B</span>
+                <span class="b-avatar">C</span>
+              </div>
+            </div>
+          </article>
+        </div>
+      </section>
+
+      <section id="forms" class="py-8">
+        <div class="b-card">
+          <div class="b-card-header">
+            <h2 class="text-xl">Form Controls</h2>
+            <span class="b-badge">Accessible focus</span>
+          </div>
+          <form class="b-card-body b-grid" style="--b-grid-min: 18rem">
+            <label class="b-field">
+              <span class="b-label">Project name</span>
+              <input class="b-input" value="Launch dashboard">
+              <span class="b-help">Uses native inputs with framework classes.</span>
+            </label>
+            <label class="b-field">
+              <span class="b-label">Status</span>
+              <select class="b-select">
+                <option>Ready</option>
+                <option>Review</option>
+                <option>Blocked</option>
+              </select>
+            </label>
+          </form>
+        </div>
+      </section>
+
+      <section id="tokens" class="py-8">
+        <h2 class="mb-4">Token Driven</h2>
+        <div class="b-table overflow-auto">
+          <table>
+            <thead>
+              <tr>
+                <th>Token</th>
+                <th>Default</th>
+                <th>Use</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td><code>--b-primary</code></td>
+                <td>#155dfc</td>
+                <td>Brand actions and active states</td>
+              </tr>
+              <tr>
+                <td><code>--b-radius</code></td>
+                <td>.5rem</td>
+                <td>Controls and cards</td>
+              </tr>
+              <tr>
+                <td><code>--b-container</code></td>
+                <td>72rem</td>
+                <td>Page width</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </section>
+    </main>
+  </body>
+</html>

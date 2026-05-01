@@ -1,0 +1,153 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="BlastCSS is a tiny, modern, framework-agnostic CSS framework built on cascade layers, OKLCH tokens, and container queries.">
+    <meta name="theme-color" content="#0c1016">
+    <title>Framework integration — BlastCSS</title>
+    <link rel="stylesheet" href="../../dist/blast.min.css">
+    <link rel="stylesheet" href="../site.css">
+    <script type="module" src="../../dist/blast.js"></script>
+    <script defer src="../site.js"></script>
+    <script>(function(){try{var t=localStorage.getItem("b-theme");if(t)document.documentElement.dataset.theme=t;}catch(e){}})();</script>
+  </head>
+  <body class="docs-body">
+    <a class="b-skip-link" href="#main">Skip to content</a>
+
+    <header class="docs-header">
+      <div class="docs-header-inner">
+        <a class="docs-brand" href="../index.html" aria-label="BlastCSS home">
+          <span class="docs-mark" aria-hidden="true">B</span>
+          <span class="docs-brand-name">BlastCSS</span>
+          <span class="b-badge b-badge-neutral docs-version">v0.4.0</span>
+        </a>
+        <button class="docs-menu-btn b-icon-btn" type="button" aria-label="Toggle menu" data-docs-menu>
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 6h18M3 12h18M3 18h18"/></svg>
+        </button>
+        <div class="docs-search-wrap">
+          <button class="docs-search" type="button" data-docs-search>
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="7"/><path d="m21 21-4.3-4.3"/></svg>
+            <span>Search docs</span>
+            <kbd class="b-kbd">⌘K</kbd>
+          </button>
+        </div>
+        <nav class="docs-top-nav" aria-label="Primary">
+          <a href="../components/buttons.html">Components</a>
+          <a href="../guides/theming.html">Theming</a>
+          <a href="../playground.html">Playground</a>
+          <a href="https://github.com/blastcss/blastcss" rel="noopener">GitHub</a>
+        </nav>
+        <button class="b-icon-btn docs-theme-toggle" type="button" data-b-toggle="theme" aria-label="Toggle dark mode">
+          <svg class="docs-icon-sun" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M4.93 19.07l1.41-1.41M17.66 6.34l1.41-1.41"/></svg>
+          <svg class="docs-icon-moon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79Z"/></svg>
+        </button>
+      </div>
+    </header>
+
+    <div class="docs-shell">
+      <aside class="docs-sidebar" data-docs-sidebar aria-label="Documentation">
+        <nav class="docs-nav"><div class="docs-nav-section"><div class="docs-nav-title">Get started</div><ul class="docs-nav-list"><li><a class="docs-nav-link" href="../index.html">Introduction</a></li><li><a class="docs-nav-link" href="./installation.html">Installation</a></li><li><a class="docs-nav-link" href="./quickstart.html">Quick start</a></li><li><a class="docs-nav-link" href="./theming.html">Theming & tokens</a></li><li><a class="docs-nav-link" href="./dark-mode.html">Dark mode</a></li><li><a class="docs-nav-link is-active" href="./frameworks.html">Framework integration</a></li></ul></div><div class="docs-nav-section"><div class="docs-nav-title">Foundations</div><ul class="docs-nav-list"><li><a class="docs-nav-link" href="./layers.html">Cascade layers</a></li><li><a class="docs-nav-link" href="./layout.html">Layout primitives</a></li><li><a class="docs-nav-link" href="./typography.html">Typography</a></li><li><a class="docs-nav-link" href="./colors.html">Colors</a></li><li><a class="docs-nav-link" href="./motion.html">Motion & view transitions</a></li><li><a class="docs-nav-link" href="./accessibility.html">Accessibility</a></li></ul></div><div class="docs-nav-section"><div class="docs-nav-title">Components</div><ul class="docs-nav-list"><li><a class="docs-nav-link" href="../components/buttons.html">Buttons</a></li><li><a class="docs-nav-link" href="../components/forms.html">Forms</a></li><li><a class="docs-nav-link" href="../components/cards.html">Cards</a></li><li><a class="docs-nav-link" href="../components/badges.html">Badges & chips</a></li><li><a class="docs-nav-link" href="../components/alerts.html">Alerts</a></li><li><a class="docs-nav-link" href="../components/dialog.html">Dialog & drawer</a></li><li><a class="docs-nav-link" href="../components/dropdown.html">Dropdown</a></li><li><a class="docs-nav-link" href="../components/popover.html">Popover</a></li><li><a class="docs-nav-link" href="../components/tooltip.html">Tooltip</a></li><li><a class="docs-nav-link" href="../components/tabs.html">Tabs</a></li><li><a class="docs-nav-link" href="../components/segmented.html">Segmented control</a></li><li><a class="docs-nav-link" href="../components/combobox.html">Combobox</a></li><li><a class="docs-nav-link" href="../components/command.html">Command palette</a></li><li><a class="docs-nav-link" href="../components/tag-input.html">Tag input</a></li><li><a class="docs-nav-link" href="../components/stepper.html">Stepper</a></li><li><a class="docs-nav-link" href="../components/accordion.html">Accordion</a></li><li><a class="docs-nav-link" href="../components/toast.html">Toast</a></li><li><a class="docs-nav-link" href="../components/table.html">Table</a></li><li><a class="docs-nav-link" href="../components/avatar.html">Avatar</a></li><li><a class="docs-nav-link" href="../components/pagination.html">Pagination</a></li><li><a class="docs-nav-link" href="../components/breadcrumb.html">Breadcrumb</a></li><li><a class="docs-nav-link" href="../components/progress.html">Progress & spinner</a></li><li><a class="docs-nav-link" href="../components/skeleton.html">Skeleton</a></li><li><a class="docs-nav-link" href="../components/empty.html">Empty state</a></li><li><a class="docs-nav-link" href="../components/stat.html">Stat</a></li></ul></div><div class="docs-nav-section"><div class="docs-nav-title">Utilities</div><ul class="docs-nav-list"><li><a class="docs-nav-link" href="../utilities/spacing.html">Spacing</a></li><li><a class="docs-nav-link" href="../utilities/flex-grid.html">Flexbox & grid</a></li><li><a class="docs-nav-link" href="../utilities/typography.html">Typography</a></li><li><a class="docs-nav-link" href="../utilities/colors.html">Colors & background</a></li><li><a class="docs-nav-link" href="../utilities/borders.html">Borders & shadows</a></li><li><a class="docs-nav-link" href="../utilities/responsive.html">Responsive & container</a></li></ul></div><div class="docs-nav-section"><div class="docs-nav-title">Tools</div><ul class="docs-nav-list"><li><a class="docs-nav-link" href="../playground.html">Theme playground</a></li><li><a class="docs-nav-link" href="../showcase.html">Showcase</a></li></ul></div></nav>
+      </aside>
+
+      <main id="main" class="docs-main">
+        <article class="docs-article">
+          <header class="docs-article-head">
+    <div class="docs-eyebrow">Get started</div>
+    <h1>Framework integration</h1>
+    <p class="docs-lede">Drop BlastCSS into React, Vue, Svelte, Astro, Angular, Rails, Laravel, Django — anywhere HTML is rendered.</p>
+  </header><p>BlastCSS is <em>just CSS</em>. Class names work in any framework or templating language. The optional 3 KB JS helper is a regular ES module — import it once and it auto-initializes interactive components on the entire document.</p>
+<h2 id="react"><a class="b-anchor-link" href="#react" aria-label="Anchor link">React</a></h2>
+<div class="b-code"><div class="b-code-head"><span>jsx</span><button class="b-code-copy" type="button" data-b-copy>Copy</button></div><pre tabindex="0"><code>import "blastcss";
+import { autoInit } from "blastcss/js";
+import { useEffect } from "react";
+
+export function App() {
+  useEffect(() =&gt; { autoInit(); }, []);
+
+  return (
+    &lt;button className="b-btn"&gt;Click me&lt;/button&gt;
+  );
+}</code></pre></div>
+<p>For a per-component init that respects React's rendering, scope to a ref:</p>
+<div class="b-code"><div class="b-code-head"><span>jsx</span><button class="b-code-copy" type="button" data-b-copy>Copy</button></div><pre tabindex="0"><code>import { initDialogs } from "blastcss/js";
+import { useEffect, useRef } from "react";
+
+function MyDialog() {
+  const ref = useRef();
+  useEffect(() =&gt; { initDialogs(ref.current); }, []);
+  return &lt;div ref={ref}&gt;{/* ... */}&lt;/div&gt;;
+}</code></pre></div>
+<h2 id="vue"><a class="b-anchor-link" href="#vue" aria-label="Anchor link">Vue</a></h2>
+<div class="b-code"><div class="b-code-head"><span>vue</span><button class="b-code-copy" type="button" data-b-copy>Copy</button></div><pre tabindex="0"><code>&lt;script setup&gt;
+import "blastcss";
+import { autoInit } from "blastcss/js";
+import { onMounted } from "vue";
+
+onMounted(() =&gt; autoInit());
+&lt;/script&gt;
+
+&lt;template&gt;
+  &lt;button class="b-btn"&gt;Click me&lt;/button&gt;
+&lt;/template&gt;</code></pre></div>
+<h2 id="svelte"><a class="b-anchor-link" href="#svelte" aria-label="Anchor link">Svelte</a></h2>
+<div class="b-code"><div class="b-code-head"><span>svelte</span><button class="b-code-copy" type="button" data-b-copy>Copy</button></div><pre tabindex="0"><code>&lt;script&gt;
+  import "blastcss";
+  import { autoInit } from "blastcss/js";
+  import { onMount } from "svelte";
+
+  onMount(() =&gt; autoInit());
+&lt;/script&gt;
+
+&lt;button class="b-btn"&gt;Click me&lt;/button&gt;</code></pre></div>
+<h2 id="astro"><a class="b-anchor-link" href="#astro" aria-label="Anchor link">Astro</a></h2>
+<div class="b-code"><div class="b-code-head"><span>astro</span><button class="b-code-copy" type="button" data-b-copy>Copy</button></div><pre tabindex="0"><code>---
+import "blastcss";
+---
+&lt;button class="b-btn"&gt;Click me&lt;/button&gt;
+
+&lt;script&gt;
+  import { autoInit } from "blastcss/js";
+  autoInit();
+&lt;/script&gt;</code></pre></div>
+<h2 id="angular"><a class="b-anchor-link" href="#angular" aria-label="Anchor link">Angular</a></h2>
+<p>In your global <code>styles.css</code>:</p>
+<div class="b-code"><div class="b-code-head"><span>css</span><button class="b-code-copy" type="button" data-b-copy>Copy</button></div><pre tabindex="0"><code>@import "blastcss";</code></pre></div>
+<p>In <code>main.ts</code>:</p>
+<div class="b-code"><div class="b-code-head"><span>ts</span><button class="b-code-copy" type="button" data-b-copy>Copy</button></div><pre tabindex="0"><code>import { autoInit } from "blastcss/js";
+autoInit();</code></pre></div>
+<p>Then use classes in templates:</p>
+<div class="b-code"><div class="b-code-head"><span>html</span><button class="b-code-copy" type="button" data-b-copy>Copy</button></div><pre tabindex="0"><code>&lt;button class="b-btn"&gt;Click me&lt;/button&gt;</code></pre></div>
+<h2 id="server-rendered-rails-laravel-django-php"><a class="b-anchor-link" href="#server-rendered-rails-laravel-django-php" aria-label="Anchor link">Server-rendered (Rails, Laravel, Django, PHP)</a></h2>
+<p>Link the CSS file in your layout, drop the JS helper as a module script:</p>
+<div class="b-code"><div class="b-code-head"><span>html</span><button class="b-code-copy" type="button" data-b-copy>Copy</button></div><pre tabindex="0"><code>&lt;link rel="stylesheet" href="/blast.min.css"&gt;
+&lt;script type="module" src="/blast.min.js"&gt;&lt;/script&gt;</code></pre></div>
+<p><code>autoInit()</code> runs automatically on <code>DOMContentLoaded</code> (or immediately if loaded after the parser).</p>
+<h2 id="tailwind-side-by-side"><a class="b-anchor-link" href="#tailwind-side-by-side" aria-label="Anchor link">Tailwind side-by-side</a></h2>
+<p>If you're already using Tailwind and want to adopt BlastCSS components incrementally, layer order keeps utilities winning:</p>
+<div class="b-code"><div class="b-code-head"><span>css</span><button class="b-code-copy" type="button" data-b-copy>Copy</button></div><pre tabindex="0"><code>@import "tailwindcss";
+@import "blastcss";
+
+@layer utilities {
+  /* Tailwind utilities still beat BlastCSS components in the cascade */
+}</code></pre></div>
+<h2 id="tree-shaking"><a class="b-anchor-link" href="#tree-shaking" aria-label="Anchor link">Tree-shaking</a></h2>
+<p>For maximum size optimization, import only the bundles you need:</p>
+<div class="b-code"><div class="b-code-head"><span>js</span><button class="b-code-copy" type="button" data-b-copy>Copy</button></div><pre tabindex="0"><code>import "blastcss/core";        // foundations
+import "blastcss/components";  // UI components
+// skip utilities/components-extra/motion if unused</code></pre></div>
+        </article>
+        <aside class="docs-toc" aria-label="On this page"><div class="docs-toc-title">On this page</div><ul><li class="docs-toc-2"><a href="#react">React</a></li><li class="docs-toc-2"><a href="#vue">Vue</a></li><li class="docs-toc-2"><a href="#svelte">Svelte</a></li><li class="docs-toc-2"><a href="#astro">Astro</a></li><li class="docs-toc-2"><a href="#angular">Angular</a></li><li class="docs-toc-2"><a href="#server-rendered-rails-laravel-django-php">Server-rendered (Rails, Laravel, Django, PHP)</a></li><li class="docs-toc-2"><a href="#tailwind-side-by-side">Tailwind side-by-side</a></li><li class="docs-toc-2"><a href="#tree-shaking">Tree-shaking</a></li></ul></aside>
+      </main>
+    </div>
+
+    <dialog id="docs-search-dialog" class="b-command" aria-label="Search documentation">
+      <div class="b-command-search">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="7"/><path d="m21 21-4.3-4.3"/></svg>
+        <input type="search" placeholder="Search components, utilities, guides…" aria-label="Search">
+        <kbd class="b-kbd">esc</kbd>
+      </div>
+      <ul class="b-command-list" data-docs-search-list></ul>
+    </dialog>
+  </body>
+</html>

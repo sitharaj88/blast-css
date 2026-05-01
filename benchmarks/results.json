@@ -1,0 +1,51 @@
+{
+  "generatedAt": "2026-05-01T15:42:28.112Z",
+  "bundles": {
+    "dist/blast.min.css": {
+      "bytes": 60268,
+      "gzipBytes": 11723
+    },
+    "dist/blast.core.min.css": {
+      "bytes": 17589,
+      "gzipBytes": 4912
+    },
+    "dist/blast.components.min.css": {
+      "bytes": 26280,
+      "gzipBytes": 5495
+    },
+    "dist/blast.components-extra.min.css": {
+      "bytes": 11817,
+      "gzipBytes": 3223
+    },
+    "dist/blast.utilities.min.css": {
+      "bytes": 20254,
+      "gzipBytes": 4555
+    },
+    "dist/blast.motion.min.css": {
+      "bytes": 6297,
+      "gzipBytes": 2009
+    },
+    "dist/blast.reset.min.css": {
+      "bytes": 1342,
+      "gzipBytes": 679
+    },
+    "dist/blast.min.js": {
+      "bytes": 12516,
+      "gzipBytes": 3300
+    }
+  },
+  "fixtures": {
+    "benchmarks/dashboard.html": {
+      "bytes": 1923,
+      "componentClassCount": 24
+    },
+    "benchmarks/form.html": {
+      "bytes": 1317,
+      "componentClassCount": 22
+    },
+    "benchmarks/marketing.html": {
+      "bytes": 1665,
+      "componentClassCount": 27
+    }
+  }
+}

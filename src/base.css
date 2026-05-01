@@ -1,0 +1,139 @@
+@layer blast.base {
+  body {
+    background: var(--b-bg);
+    color: var(--b-text);
+    font-family: var(--b-font-sans);
+    font-size: var(--b-text-md);
+    font-weight: var(--b-weight-normal);
+    line-height: var(--b-leading);
+    letter-spacing: var(--b-tracking);
+    font-synthesis-weight: none;
+  }
+
+  ::selection {
+    background: color-mix(in oklch, var(--b-primary) 30%, transparent);
+    color: var(--b-text);
+  }
+
+  :focus-visible {
+    outline: 2px solid var(--b-ring);
+    outline-offset: 2px;
+  }
+
+  :where(h1, h2, h3, h4, h5, h6) {
+    color: var(--b-text);
+    font-family: var(--b-font-display);
+    font-weight: var(--b-weight-bold);
+    letter-spacing: var(--b-tracking-tight);
+    line-height: var(--b-leading-tight);
+    text-wrap: balance;
+  }
+
+  h1 { font-size: var(--b-fluid-h1); font-weight: var(--b-weight-black); }
+  h2 { font-size: var(--b-fluid-h2); font-weight: var(--b-weight-bold); }
+  h3 { font-size: var(--b-fluid-h3); }
+  h4 { font-size: var(--b-text-xl); }
+  h5 { font-size: var(--b-text-lg); }
+  h6 { font-size: var(--b-text-md); text-transform: uppercase; letter-spacing: var(--b-tracking-wide); }
+
+  :where(p) {
+    text-wrap: pretty;
+  }
+
+  :where(p, ul, ol, dl, blockquote, pre, table, figure) {
+    margin-block: 0 var(--b-4);
+  }
+
+  :where(ul, ol) {
+    padding-inline-start: var(--b-6);
+  }
+
+  :where(li + li) {
+    margin-block-start: var(--b-1);
+  }
+
+  :where(figure) {
+    display: flex;
+    flex-direction: column;
+    gap: var(--b-2);
+  }
+
+  :where(figcaption) {
+    color: var(--b-muted);
+    font-size: var(--b-text-sm);
+  }
+
+  :where(blockquote) {
+    border-inline-start: 3px solid var(--b-primary);
+    color: var(--b-muted);
+    padding-inline-start: var(--b-4);
+  }
+
+  :where(code, kbd, samp, pre) {
+    font-family: var(--b-font-mono);
+    font-size: .92em;
+  }
+
+  :where(code, kbd) {
+    background: var(--b-surface-2);
+    border-radius: var(--b-radius-xs);
+    padding: .12em .35em;
+  }
+
+  :where(kbd) {
+    border: 1px solid var(--b-border);
+    box-shadow: 0 1px 0 var(--b-border);
+    font-weight: var(--b-weight-medium);
+  }
+
+  :where(pre) {
+    background: var(--b-surface);
+    border: 1px solid var(--b-border);
+    border-radius: var(--b-radius);
+    overflow: auto;
+    padding: var(--b-4);
+    line-height: var(--b-leading-snug);
+  }
+
+  :where(pre code) {
+    background: transparent;
+    padding: 0;
+  }
+
+  hr {
+    border: 0;
+    border-block-start: 1px solid var(--b-border);
+    margin-block: var(--b-6);
+  }
+
+  small {
+    color: var(--b-muted);
+    font-size: var(--b-text-sm);
+  }
+
+  mark {
+    background: var(--b-warning-soft);
+    color: var(--b-text);
+    padding: 0 .2em;
+    border-radius: var(--b-radius-xs);
+  }
+
+  details {
+    cursor: pointer;
+  }
+
+  details > summary {
+    cursor: pointer;
+  }
+
+  abbr[title] {
+    text-decoration: underline dotted;
+    text-underline-offset: .2em;
+    cursor: help;
+  }
+
+  ::placeholder {
+    color: var(--b-subtle);
+    opacity: 1;
+  }
+}

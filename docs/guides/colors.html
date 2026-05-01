@@ -1,0 +1,117 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="BlastCSS is a tiny, modern, framework-agnostic CSS framework built on cascade layers, OKLCH tokens, and container queries.">
+    <meta name="theme-color" content="#0c1016">
+    <title>Colors — BlastCSS</title>
+    <link rel="stylesheet" href="../../dist/blast.min.css">
+    <link rel="stylesheet" href="../site.css">
+    <script type="module" src="../../dist/blast.js"></script>
+    <script defer src="../site.js"></script>
+    <script>(function(){try{var t=localStorage.getItem("b-theme");if(t)document.documentElement.dataset.theme=t;}catch(e){}})();</script>
+  </head>
+  <body class="docs-body">
+    <a class="b-skip-link" href="#main">Skip to content</a>
+
+    <header class="docs-header">
+      <div class="docs-header-inner">
+        <a class="docs-brand" href="../index.html" aria-label="BlastCSS home">
+          <span class="docs-mark" aria-hidden="true">B</span>
+          <span class="docs-brand-name">BlastCSS</span>
+          <span class="b-badge b-badge-neutral docs-version">v0.4.0</span>
+        </a>
+        <button class="docs-menu-btn b-icon-btn" type="button" aria-label="Toggle menu" data-docs-menu>
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 6h18M3 12h18M3 18h18"/></svg>
+        </button>
+        <div class="docs-search-wrap">
+          <button class="docs-search" type="button" data-docs-search>
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="7"/><path d="m21 21-4.3-4.3"/></svg>
+            <span>Search docs</span>
+            <kbd class="b-kbd">⌘K</kbd>
+          </button>
+        </div>
+        <nav class="docs-top-nav" aria-label="Primary">
+          <a href="../components/buttons.html">Components</a>
+          <a href="../guides/theming.html">Theming</a>
+          <a href="../playground.html">Playground</a>
+          <a href="https://github.com/blastcss/blastcss" rel="noopener">GitHub</a>
+        </nav>
+        <button class="b-icon-btn docs-theme-toggle" type="button" data-b-toggle="theme" aria-label="Toggle dark mode">
+          <svg class="docs-icon-sun" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M4.93 19.07l1.41-1.41M17.66 6.34l1.41-1.41"/></svg>
+          <svg class="docs-icon-moon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79Z"/></svg>
+        </button>
+      </div>
+    </header>
+
+    <div class="docs-shell">
+      <aside class="docs-sidebar" data-docs-sidebar aria-label="Documentation">
+        <nav class="docs-nav"><div class="docs-nav-section"><div class="docs-nav-title">Get started</div><ul class="docs-nav-list"><li><a class="docs-nav-link" href="../index.html">Introduction</a></li><li><a class="docs-nav-link" href="./installation.html">Installation</a></li><li><a class="docs-nav-link" href="./quickstart.html">Quick start</a></li><li><a class="docs-nav-link" href="./theming.html">Theming & tokens</a></li><li><a class="docs-nav-link" href="./dark-mode.html">Dark mode</a></li><li><a class="docs-nav-link" href="./frameworks.html">Framework integration</a></li></ul></div><div class="docs-nav-section"><div class="docs-nav-title">Foundations</div><ul class="docs-nav-list"><li><a class="docs-nav-link" href="./layers.html">Cascade layers</a></li><li><a class="docs-nav-link" href="./layout.html">Layout primitives</a></li><li><a class="docs-nav-link" href="./typography.html">Typography</a></li><li><a class="docs-nav-link is-active" href="./colors.html">Colors</a></li><li><a class="docs-nav-link" href="./motion.html">Motion & view transitions</a></li><li><a class="docs-nav-link" href="./accessibility.html">Accessibility</a></li></ul></div><div class="docs-nav-section"><div class="docs-nav-title">Components</div><ul class="docs-nav-list"><li><a class="docs-nav-link" href="../components/buttons.html">Buttons</a></li><li><a class="docs-nav-link" href="../components/forms.html">Forms</a></li><li><a class="docs-nav-link" href="../components/cards.html">Cards</a></li><li><a class="docs-nav-link" href="../components/badges.html">Badges & chips</a></li><li><a class="docs-nav-link" href="../components/alerts.html">Alerts</a></li><li><a class="docs-nav-link" href="../components/dialog.html">Dialog & drawer</a></li><li><a class="docs-nav-link" href="../components/dropdown.html">Dropdown</a></li><li><a class="docs-nav-link" href="../components/popover.html">Popover</a></li><li><a class="docs-nav-link" href="../components/tooltip.html">Tooltip</a></li><li><a class="docs-nav-link" href="../components/tabs.html">Tabs</a></li><li><a class="docs-nav-link" href="../components/segmented.html">Segmented control</a></li><li><a class="docs-nav-link" href="../components/combobox.html">Combobox</a></li><li><a class="docs-nav-link" href="../components/command.html">Command palette</a></li><li><a class="docs-nav-link" href="../components/tag-input.html">Tag input</a></li><li><a class="docs-nav-link" href="../components/stepper.html">Stepper</a></li><li><a class="docs-nav-link" href="../components/accordion.html">Accordion</a></li><li><a class="docs-nav-link" href="../components/toast.html">Toast</a></li><li><a class="docs-nav-link" href="../components/table.html">Table</a></li><li><a class="docs-nav-link" href="../components/avatar.html">Avatar</a></li><li><a class="docs-nav-link" href="../components/pagination.html">Pagination</a></li><li><a class="docs-nav-link" href="../components/breadcrumb.html">Breadcrumb</a></li><li><a class="docs-nav-link" href="../components/progress.html">Progress & spinner</a></li><li><a class="docs-nav-link" href="../components/skeleton.html">Skeleton</a></li><li><a class="docs-nav-link" href="../components/empty.html">Empty state</a></li><li><a class="docs-nav-link" href="../components/stat.html">Stat</a></li></ul></div><div class="docs-nav-section"><div class="docs-nav-title">Utilities</div><ul class="docs-nav-list"><li><a class="docs-nav-link" href="../utilities/spacing.html">Spacing</a></li><li><a class="docs-nav-link" href="../utilities/flex-grid.html">Flexbox & grid</a></li><li><a class="docs-nav-link" href="../utilities/typography.html">Typography</a></li><li><a class="docs-nav-link" href="../utilities/colors.html">Colors & background</a></li><li><a class="docs-nav-link" href="../utilities/borders.html">Borders & shadows</a></li><li><a class="docs-nav-link" href="../utilities/responsive.html">Responsive & container</a></li></ul></div><div class="docs-nav-section"><div class="docs-nav-title">Tools</div><ul class="docs-nav-list"><li><a class="docs-nav-link" href="../playground.html">Theme playground</a></li><li><a class="docs-nav-link" href="../showcase.html">Showcase</a></li></ul></div></nav>
+      </aside>
+
+      <main id="main" class="docs-main">
+        <article class="docs-article">
+          <header class="docs-article-head">
+    <div class="docs-eyebrow">Foundations</div>
+    <h1>Colors</h1>
+    <p class="docs-lede">Perceptually uniform OKLCH palette with light/dark variants derived from a single hue.</p>
+  </header><h2 id="why-oklch"><a class="b-anchor-link" href="#why-oklch" aria-label="Anchor link">Why OKLCH</a></h2>
+<p>OKLCH (Lightness, Chroma, Hue) is a perceptually uniform color space — equal numeric changes correspond to equal visual changes. That means tweaks like "make this 10% lighter" actually look 10% lighter. The palette generates consistent soft, strong, and hover variants from a base hue.</p>
+<h2 id="brand-colors"><a class="b-anchor-link" href="#brand-colors" aria-label="Anchor link">Brand colors</a></h2>
+<div class="docs-swatches">
+  <div class="docs-swatch" style="--swatch: var(--b-primary)"><span>--b-primary</span></div>
+  <div class="docs-swatch" style="--swatch: var(--b-success)"><span>--b-success</span></div>
+  <div class="docs-swatch" style="--swatch: var(--b-warning)"><span>--b-warning</span></div>
+  <div class="docs-swatch" style="--swatch: var(--b-danger)"><span>--b-danger</span></div>
+  <div class="docs-swatch" style="--swatch: var(--b-info)"><span>--b-info</span></div>
+</div>
+<p>Each color has three variants:</p>
+<ul><li><code>--b-{name}</code> — base</li><li><code>--b-{name}-soft</code> — light tint (for badges, alerts, hover backgrounds)</li><li><code>--b-{name}-ink</code> — text color when used as background</li></ul>
+<p>Plus <code>--b-primary-strong</code> for emphasized text on neutral backgrounds.</p>
+<h2 id="surfaces"><a class="b-anchor-link" href="#surfaces" aria-label="Anchor link">Surfaces</a></h2>
+<p>| Token | Use | | --- | --- | | <code>--b-bg</code> | Page background | | <code>--b-surface</code> | Card/panel base | | <code>--b-surface-2</code> | Slightly elevated panel (input groups, table headers) | | <code>--b-elevated</code> | Cards/popovers above the page |</p>
+<h2 id="text"><a class="b-anchor-link" href="#text" aria-label="Anchor link">Text</a></h2>
+<p>| Token | Use | | --- | --- | | <code>--b-text</code> | Body text | | <code>--b-muted</code> | Secondary text, captions | | <code>--b-subtle</code> | Placeholders, disabled hints |</p>
+<h2 id="borders"><a class="b-anchor-link" href="#borders" aria-label="Anchor link">Borders</a></h2>
+<p>| Token | Use | | --- | --- | | <code>--b-border</code> | Default 1px lines | | <code>--b-border-strong</code> | Hover/emphasis lines |</p>
+<h2 id="color-utility-classes"><a class="b-anchor-link" href="#color-utility-classes" aria-label="Anchor link">Color utility classes</a></h2>
+<div class="b-code"><div class="b-code-head"><span>html</span><button class="b-code-copy" type="button" data-b-copy>Copy</button></div><pre tabindex="0"><code>&lt;span class="text-primary"&gt;Primary text&lt;/span&gt;
+&lt;span class="text-muted"&gt;Muted text&lt;/span&gt;
+&lt;span class="text-danger"&gt;Error&lt;/span&gt;
+&lt;div class="bg-surface p-4"&gt;Surface background&lt;/div&gt;
+&lt;div class="bg-soft-primary p-4"&gt;Soft primary background&lt;/div&gt;
+&lt;div class="bg-gradient-primary p-4"&gt;Gradient background&lt;/div&gt;</code></pre></div>
+<h2 id="building-your-own-palette"><a class="b-anchor-link" href="#building-your-own-palette" aria-label="Anchor link">Building your own palette</a></h2>
+<p>Override one variable, retune the rest:</p>
+<div class="b-code"><div class="b-code-head"><span>css</span><button class="b-code-copy" type="button" data-b-copy>Copy</button></div><pre tabindex="0"><code>:root {
+  --b-primary-h: 200;     /* sky */
+  --b-primary-c: 0.20;
+}</code></pre></div>
+<p>For a fully custom brand:</p>
+<div class="b-code"><div class="b-code-head"><span>css</span><button class="b-code-copy" type="button" data-b-copy>Copy</button></div><pre tabindex="0"><code>:root {
+  --b-primary: oklch(60% 0.20 280);          /* purple */
+  --b-primary-soft: oklch(96% 0.04 280);
+  --b-primary-strong: oklch(48% 0.22 280);
+  --b-primary-ink: white;
+}</code></pre></div>
+<h2 id="color-mix-recipes"><a class="b-anchor-link" href="#color-mix-recipes" aria-label="Anchor link">Color-mix recipes</a></h2>
+<p>The framework relies heavily on <code>color-mix()</code> for hover states. You can do the same for custom tints:</p>
+<div class="b-code"><div class="b-code-head"><span>css</span><button class="b-code-copy" type="button" data-b-copy>Copy</button></div><pre tabindex="0"><code>.my-card:hover {
+  background: color-mix(in oklch, var(--b-primary) 12%, var(--b-bg));
+}</code></pre></div>
+        </article>
+        <aside class="docs-toc" aria-label="On this page"><div class="docs-toc-title">On this page</div><ul><li class="docs-toc-2"><a href="#why-oklch">Why OKLCH</a></li><li class="docs-toc-2"><a href="#brand-colors">Brand colors</a></li><li class="docs-toc-2"><a href="#surfaces">Surfaces</a></li><li class="docs-toc-2"><a href="#text">Text</a></li><li class="docs-toc-2"><a href="#borders">Borders</a></li><li class="docs-toc-2"><a href="#color-utility-classes">Color utility classes</a></li><li class="docs-toc-2"><a href="#building-your-own-palette">Building your own palette</a></li><li class="docs-toc-2"><a href="#color-mix-recipes">Color-mix recipes</a></li></ul></aside>
+      </main>
+    </div>
+
+    <dialog id="docs-search-dialog" class="b-command" aria-label="Search documentation">
+      <div class="b-command-search">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="7"/><path d="m21 21-4.3-4.3"/></svg>
+        <input type="search" placeholder="Search components, utilities, guides…" aria-label="Search">
+        <kbd class="b-kbd">esc</kbd>
+      </div>
+      <ul class="b-command-list" data-docs-search-list></ul>
+    </dialog>
+  </body>
+</html>
