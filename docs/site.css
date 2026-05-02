@@ -968,11 +968,19 @@ body.docs-body {
   border: 1px solid var(--b-border);
   border-radius: var(--b-radius);
   color: var(--b-muted);
-  display: inline-flex;
+  display: flex;
   font-family: var(--b-font-mono);
   font-size: var(--b-text-sm);
   gap: var(--b-2);
+  inline-size: 100%;
+  justify-content: space-between;
   padding: .35rem .35rem .35rem .85rem;
+}
+
+@media (min-width: 48rem) {
+  .landing-hero-install {
+    inline-size: max-content;
+  }
 }
 
 .landing-hero-install code {
