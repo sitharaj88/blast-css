@@ -679,6 +679,9 @@ function shell({ title, description, content, currentPath, headings, hideToc, bo
               <span class="b-sr-only">GitHub</span>
             </a>
           </nav>
+          <button class="b-icon-btn docs-search-icon" type="button" aria-label="Search docs" data-docs-search>
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="7"/><path d="m21 21-4.3-4.3"/></svg>
+          </button>
           <button class="b-icon-btn docs-theme-toggle" type="button" data-b-toggle="theme" aria-label="Toggle dark mode">
             <svg class="docs-icon-sun" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M4.93 19.07l1.41-1.41M17.66 6.34l1.41-1.41"/></svg>
             <svg class="docs-icon-moon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79Z"/></svg>
@@ -692,10 +695,6 @@ function shell({ title, description, content, currentPath, headings, hideToc, bo
 
     <div class="docs-shell">
       ${isLanding ? "" : `<aside id="docs-sidebar" class="docs-sidebar" data-docs-sidebar aria-label="Documentation">
-        <button class="docs-search docs-search-mobile" type="button" data-docs-search>
-          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="7"/><path d="m21 21-4.3-4.3"/></svg>
-          <span>Search docs</span>
-        </button>
         <nav class="docs-nav">${navMarkup(currentPath)}</nav>
       </aside>`}
 

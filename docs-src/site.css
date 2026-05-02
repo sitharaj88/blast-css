@@ -149,10 +149,10 @@ body.docs-body {
 
 .docs-search > .b-kbd { margin-inline-start: auto; }
 
-.docs-search-mobile { display: none; margin-block-end: var(--b-4); width: 100%; }
-@media (max-width: 39.9375rem) {
-  .docs-sidebar.is-open .docs-search-mobile { display: inline-flex; }
-}
+/* Mobile-only search icon button in the header. Hidden once the wide
+   `.docs-search-wrap` reappears at >= 40rem. */
+.docs-search-icon { display: inline-flex; }
+@media (min-width: 40rem) { .docs-search-icon { display: none; } }
 
 .docs-top-nav {
   align-items: center;
@@ -237,7 +237,11 @@ body.docs-body {
   background: var(--b-bg);
   display: block;
   inset: var(--docs-header-h) 0 0 0;
-  max-block-size: none;
+  block-size: calc(100dvh - var(--docs-header-h));
+  /* Pin to the viewport gap below the header AND clip content to that
+     height so the sidebar's own overflow-y can take over scrolling. */
+  overflow-y: auto;
+  -webkit-overflow-scrolling: touch;
   padding: var(--b-4) var(--docs-shell-pad);
   position: fixed;
   z-index: 50;
