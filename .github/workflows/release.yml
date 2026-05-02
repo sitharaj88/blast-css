@@ -1,9 +1,22 @@
+# Publishes blastcss to npm when a GitHub Release is published.
+#
+# Required repository secret:
+#   NPM_TOKEN — an npm "Automation" token with publish scope for `blastcss`.
+#               Set via Settings → Secrets and variables → Actions →
+#               "New repository secret". The token is consumed below via the
+#               standard NODE_AUTH_TOKEN env var, which `npm publish` reads
+#               when setup-node has wired up the registry URL.
+#
+# `--provenance` requires `id-token: write` permission and a workflow that
+# runs from a public repo on a GitHub-hosted runner — both true here.
+
 name: Release
 
 on:
   release:
     types:
       - published
+  workflow_dispatch:
 
 permissions:
   contents: read
@@ -11,7 +24,7 @@ permissions:
 
 jobs:
   publish:
-    name: Publish package
+    name: Publish to npm
     runs-on: ubuntu-latest
 
     steps:
@@ -30,10 +43,13 @@ jobs:
       - name: Install Playwright browsers
         run: npx playwright install --with-deps
 
-      - name: Verify
-        run: npm run verify
+      - name: Static verify
+        run: npm run test:static
 
-      - name: Pack dry run
+      - name: Browser verify (render + interactions)
+        run: npm run test:browser
+
+      - name: Pack dry-run
         run: npm pack --dry-run
 
       - name: Publish

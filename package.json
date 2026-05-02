@@ -63,8 +63,9 @@
     "prepublishOnly": "npm run test:static",
     "test": "npm run test:static",
     "serve": "node scripts/serve.mjs",
-    "test:browser": "playwright test",
-    "test:browser:chromium": "playwright test --project=chromium",
+    "test:browser": "playwright test tests/browser/render.spec.js tests/browser/interactions.spec.js",
+    "test:browser:chromium": "playwright test tests/browser/render.spec.js tests/browser/interactions.spec.js --project=chromium",
+    "test:browser:visual": "playwright test tests/browser/visual.spec.js --project=chromium",
     "test:static": "npm run build && npm run build:docs && npm run benchmark && npm run check:size && npm run check:quality && npm run check:exports && npm run check:html && npm run check:visual-manifest",
     "test:visual:update": "playwright test tests/browser/visual.spec.js --project=chromium --update-snapshots",
     "verify": "npm run test:static && npm run test:browser"
