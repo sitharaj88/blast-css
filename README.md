@@ -38,29 +38,31 @@ blast.min.js                  ~3.3 KB gzip   (optional — dialogs, popovers, co
 
 ## Documentation
 
-The full website lives in [`docs/`](docs/index.html) — generated from markdown sources in [`docs-src/`](docs-src/) by `npm run build:docs`. To browse locally:
-
-```sh
-npm run build && npm run build:docs && npm run serve
-# open http://127.0.0.1:4173
-```
+Full docs: **[sitharaj88.github.io/blast-css](https://sitharaj88.github.io/blast-css)**
 
 Highlights:
 
-- [Installation](docs-src/guides/installation.md)
-- [Quick start](docs-src/guides/quickstart.md)
-- [Theming & tokens](docs-src/guides/theming.md)
-- [Dark mode](docs-src/guides/dark-mode.md)
-- [Cascade layers](docs-src/guides/layers.md)
-- [Layout primitives](docs-src/guides/layout.md)
-- [Motion & view transitions](docs-src/guides/motion.md)
-- [Accessibility](docs-src/guides/accessibility.md)
-- [Framework integration](docs-src/guides/frameworks.md)
-- All [components](docs-src/components/) and [utilities](docs-src/utilities/)
+- [Installation](https://sitharaj88.github.io/blast-css/guides/installation.html)
+- [Quick start](https://sitharaj88.github.io/blast-css/guides/quickstart.html)
+- [Theming & tokens](https://sitharaj88.github.io/blast-css/guides/theming.html)
+- [Dark mode](https://sitharaj88.github.io/blast-css/guides/dark-mode.html)
+- [Cascade layers](https://sitharaj88.github.io/blast-css/guides/layers.html)
+- [Layout primitives](https://sitharaj88.github.io/blast-css/guides/layout.html)
+- [Motion & view transitions](https://sitharaj88.github.io/blast-css/guides/motion.html)
+- [Accessibility](https://sitharaj88.github.io/blast-css/guides/accessibility.html)
+- [Framework integration](https://sitharaj88.github.io/blast-css/guides/frameworks.html)
+- [Components](https://sitharaj88.github.io/blast-css/components/buttons.html), [utilities](https://sitharaj88.github.io/blast-css/utilities/spacing.html), [playground](https://sitharaj88.github.io/blast-css/playground.html)
 
-Reference docs for contributors:
+To browse the docs locally instead:
 
-- [Architecture](docs/architecture.md) · [Public API](docs/public-api.md) · [Quality gates](docs/quality.md) · [Testing](docs/testing.md) · [Browser support](docs/browser-support.md) · [Versioning](docs/versioning.md) · [Release process](docs/release.md) · [1.0 readiness](docs/1.0-readiness.md) · [Phase status](docs/phase-status.md) · [Bootstrap migration](docs/migration-bootstrap.md)
+```sh
+git clone https://github.com/sitharaj88/blast-css.git
+cd blast-css && npm install
+npm run build:all && npm run serve
+# open http://127.0.0.1:4173
+```
+
+Reference docs for contributors live in [docs/](https://github.com/sitharaj88/blast-css/tree/main/docs) on the repo (architecture, public API, quality gates, testing, browser support, versioning, release process, 1.0 readiness, Bootstrap migration).
 
 ## Install
 

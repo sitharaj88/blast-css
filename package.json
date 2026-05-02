@@ -3,13 +3,13 @@
   "version": "1.0.0",
   "description": "A modern, framework-agnostic CSS framework built on cascade layers, OKLCH tokens, container queries, and the popover API.",
   "type": "module",
-  "homepage": "https://github.com/blastcss/blastcss#readme",
+  "homepage": "https://sitharaj88.github.io/blast-css",
   "bugs": {
-    "url": "https://github.com/blastcss/blastcss/issues"
+    "url": "https://github.com/sitharaj88/blast-css/issues"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/blastcss/blastcss.git"
+    "url": "git+https://github.com/sitharaj88/blast-css.git"
   },
   "sideEffects": [
     "*.css"
@@ -33,10 +33,7 @@
   "files": [
     "dist",
     "src",
-    "docs",
-    "docs-src",
     "examples",
-    "benchmarks",
     "starters",
     "README.md",
     "CHANGELOG.md",
@@ -55,6 +52,7 @@
     "check:quality": "node scripts/quality-check.mjs",
     "check:size": "node scripts/size-check.mjs",
     "check:visual-manifest": "node scripts/visual-manifest-check.mjs",
+    "prepublishOnly": "npm run test:static",
     "test": "npm run test:static",
     "serve": "node scripts/serve.mjs",
     "test:browser": "playwright test",
