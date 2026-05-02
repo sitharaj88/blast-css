@@ -2112,11 +2112,59 @@ dialog.b-command[open] { animation: b-scale-in var(--b-duration-fast) var(--b-ea
 
 .docs-article .docs-api-table tbody tr:last-child td { border-block-end: 0; }
 
-.docs-article .docs-api-table td:first-child {
+.docs-api-cell {
   align-items: center;
-  display: flex;
+  display: inline-flex;
   gap: var(--b-2);
   white-space: nowrap;
+}
+
+/* Mobile: stack each row as a labelled card. data-label on each <td>
+   becomes a small uppercase label to the left of the cell value, so all
+   four columns (Name / Type / Default / Description) stay visible without
+   horizontal scrolling. */
+@media (max-width: 39.9375rem) {
+  .docs-api-table-wrap { overflow: visible; }
+
+  .docs-article .docs-api-table,
+  .docs-article .docs-api-table tbody,
+  .docs-article .docs-api-table tr {
+    display: block;
+  }
+
+  .docs-article .docs-api-table thead { display: none; }
+
+  .docs-article .docs-api-table tr {
+    border-block-end: 1px solid var(--b-border);
+    padding: var(--b-3) var(--b-4);
+  }
+
+  .docs-article .docs-api-table tr:last-child { border-block-end: 0; }
+
+  .docs-article .docs-api-table td {
+    align-items: start;
+    border: 0;
+    display: grid;
+    gap: var(--b-3);
+    grid-template-columns: 5.5rem minmax(0, 1fr);
+    padding: .25rem 0;
+    text-align: start;
+    vertical-align: baseline;
+  }
+
+  .docs-article .docs-api-table td::before {
+    color: var(--b-muted);
+    content: attr(data-label);
+    font-size: var(--b-text-2xs);
+    font-weight: var(--b-weight-bold);
+    letter-spacing: var(--b-tracking-wide);
+    padding-block-start: .15rem;
+    text-transform: uppercase;
+  }
+
+  /* The Name cell value is .docs-api-cell (code + copy button); let it wrap
+     gracefully so long class names don't blow out the grid. */
+  .docs-api-cell { flex-wrap: wrap; white-space: normal; }
 }
 
 .docs-api-name {

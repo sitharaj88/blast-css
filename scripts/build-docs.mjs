@@ -257,16 +257,20 @@ function apiBlock(rows) {
     <th scope="col">Default</th>
     <th scope="col">Description</th>
   </tr>`;
+  // data-label on each <td> drives the responsive "card per row" layout on
+  // narrow viewports — each cell shows its column label inline.
   const bodyRows = rows.map((r) => `<tr>
-    <td>
-      <code class="docs-api-name">${inline(r.name)}</code>
-      <button class="docs-api-copy" type="button" data-b-copy data-copy-text="${escapeAttr(stripTagsForCopy(r.name))}" aria-label="Copy ${escapeAttr(stripTagsForCopy(r.name))}">
-        <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="9" y="9" width="13" height="13" rx="2"/><path d="M5 15V5a2 2 0 0 1 2-2h10"/></svg>
-      </button>
+    <td data-label="Name">
+      <span class="docs-api-cell">
+        <code class="docs-api-name">${inline(r.name)}</code>
+        <button class="docs-api-copy" type="button" data-b-copy data-copy-text="${escapeAttr(stripTagsForCopy(r.name))}" aria-label="Copy ${escapeAttr(stripTagsForCopy(r.name))}">
+          <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="9" y="9" width="13" height="13" rx="2"/><path d="M5 15V5a2 2 0 0 1 2-2h10"/></svg>
+        </button>
+      </span>
     </td>
-    <td><code class="docs-api-type">${inline(r.type || "—")}</code></td>
-    <td><code class="docs-api-default">${inline(r.default || "—")}</code></td>
-    <td>${inline(r.description || "")}</td>
+    <td data-label="Type"><code class="docs-api-type">${inline(r.type || "—")}</code></td>
+    <td data-label="Default"><code class="docs-api-default">${inline(r.default || "—")}</code></td>
+    <td data-label="Description">${inline(r.description || "")}</td>
   </tr>`).join("");
   return `<div class="docs-api-table-wrap">
     <table class="docs-api-table">
