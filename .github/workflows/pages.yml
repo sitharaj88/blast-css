@@ -1,0 +1,94 @@
+# Builds and deploys the docs site to GitHub Pages.
+#
+# Repository setup (one-time):
+#   1. Settings → Pages → Source = "GitHub Actions".
+#   2. That's it — this workflow handles the rest on every push to main.
+#
+# How it works:
+#   - npm run build       — builds dist/ (CSS + JS bundles + tokens)
+#   - BLAST_PAGES=1 build:docs — generates docs/ with dist refs that assume
+#                                 dist/ lives INSIDE docs root
+#   - npm run build:og    — generates docs/og/*.png OG cards (Playwright)
+#   - Stage step          — copies dist/ into docs/dist/ so the deployed
+#                           root contains everything pages need
+#   - upload-pages-artifact + deploy-pages publish docs/ at /blast-css/
+
+name: Deploy docs to GitHub Pages
+
+on:
+  push:
+    branches:
+      - main
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+# Allow only one concurrent deployment, skipping runs queued between an
+# in-progress run and the latest queued one. Don't cancel in-progress runs
+# (we want the active deploy to finish to avoid leaving Pages in a half state).
+concurrency:
+  group: pages
+  cancel-in-progress: false
+
+jobs:
+  build:
+    name: Build site
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: 22
+
+      - name: Install
+        run: npm ci
+
+      - name: Install Playwright (chromium)
+        run: npx playwright install --with-deps chromium
+
+      - name: Build framework bundles
+        run: npm run build
+
+      - name: Build docs (pages mode)
+        env:
+          BLAST_PAGES: "1"
+        run: npm run build:docs
+
+      - name: Build OG cards
+        run: npm run build:og
+
+      - name: Stage deploy directory
+        # Pages serves docs/ as the publishing root. Copy dist/ inside so the
+        # rewritten dist refs (./dist/... and ../dist/...) resolve correctly.
+        run: |
+          cp -r dist docs/dist
+          # Make sure jekyll doesn't try to process anything.
+          touch docs/.nojekyll
+
+      - name: Setup Pages
+        uses: actions/configure-pages@v5
+
+      - name: Upload artifact
+        uses: actions/upload-pages-artifact@v3
+        with:
+          path: docs
+
+  deploy:
+    name: Deploy to Pages
+    needs: build
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+
+    steps:
+      - name: Deploy
+        id: deployment
+        uses: actions/deploy-pages@v4

@@ -13,6 +13,12 @@ const GH_URL = "https://github.com/sitharaj88";
 const LINKEDIN_URL = "https://www.linkedin.com/in/Sitharaj08";
 const COFFEE_URL = "https://www.buymeacoffee.com/sitharaj88";
 
+// Pages-mode toggle. When BLAST_PAGES=1, dist/ is assumed to live INSIDE the
+// docs root (the workflow copies it there before deploy), so href to dist
+// drops one parent level. Local dev keeps the project-root layout where
+// dist/ is a sibling of docs/.
+const PAGES_MODE = process.env.BLAST_PAGES === "1";
+
 const NAV = [
   { title: "Get started", items: [
     { href: "/index.html", title: "Introduction" },
@@ -611,7 +617,9 @@ function shell({ title, description, content, currentPath, headings, hideToc, bo
   const desc = description || "BlastCSS is a tiny, modern, framework-agnostic CSS framework built on cascade layers, OKLCH tokens, and container queries.";
   const depth = currentPath.split("/").length - 2;
   const rel = depth > 0 ? "../".repeat(depth) : "./";
-  const distRel = `${rel}../dist/`;
+  // Local dev: dist/ is a sibling of docs/ → one extra `../` to escape docs.
+  // Pages: dist/ has been staged INSIDE docs root → no extra `../`.
+  const distRel = PAGES_MODE ? `${rel}dist/` : `${rel}../dist/`;
   const ogSlug = currentPath.replace(/^\//, "").replace(/\.html$/, "").replace(/[/\\]/g, "-") || "index";
   const ogImage = `${SITE_BASE}/og/${ogSlug}.png`;
   const ogImageRel = `${rel}og/${ogSlug}.png`;
@@ -789,7 +797,11 @@ async function buildLanding() {
 }
 
 async function buildPlayground() {
-  const html = await readFile(resolve(srcDir, "_playground.html"), "utf8");
+  let html = await readFile(resolve(srcDir, "_playground.html"), "utf8");
+  // Playground is at /playground.html (depth 0), so its rel = "./".
+  // The dist path follows the same Pages-mode rule as the shell.
+  const distRel = PAGES_MODE ? "./dist/" : "./../dist/";
+  html = html.replace(/\{\{DIST_REL\}\}/g, distRel);
   const out = shell({
     title: "Playground",
     description: "Live HTML + CSS editor with token controls. Edit, preview, share — all in the browser.",

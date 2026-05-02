@@ -20,8 +20,12 @@
   const resetBtn = root.querySelector("[data-pg-reset]");
   const statusEl = root.querySelector("[data-pg-status]");
 
-  const cssUrl = new URL("../dist/blast.min.css", location.href).href;
-  const jsUrl = new URL("../dist/blast.min.js", location.href).href;
+  // The build injects `data-dist` on [data-pg-root]; this path varies between
+  // local dev (../dist/) and the GitHub Pages deploy (./dist/) where dist/
+  // has been staged inside the docs root.
+  const distBase = root.dataset.dist || "../dist/";
+  const cssUrl = new URL(distBase + "blast.min.css", location.href).href;
+  const jsUrl = new URL(distBase + "blast.min.js", location.href).href;
   let cssBody = "";
   let jsBody = "";
   // srcdoc iframes have origin "null" which blocks many cross-origin loads.
