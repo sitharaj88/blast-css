@@ -31,9 +31,8 @@ body.docs-body {
 
 .docs-header-inner {
   align-items: center;
-  display: grid;
+  display: flex;
   gap: var(--b-2);
-  grid-template-columns: auto auto 1fr auto;
   margin-inline: auto;
   max-inline-size: 92rem;
   min-block-size: var(--docs-header-h);
@@ -41,10 +40,35 @@ body.docs-body {
 }
 
 @media (min-width: 60rem) {
-  .docs-header-inner {
-    gap: var(--b-3);
-    grid-template-columns: auto 1fr auto auto auto;
-  }
+  .docs-header-inner { gap: var(--b-3); }
+}
+
+.docs-header-start,
+.docs-header-end {
+  align-items: center;
+  display: flex;
+  flex-shrink: 0;
+  gap: var(--b-2);
+}
+
+.docs-header-end { margin-inline-start: auto; }
+
+@media (min-width: 60rem) {
+  .docs-header-end { gap: var(--b-3); }
+}
+
+.docs-header-mid {
+  align-items: center;
+  display: flex;
+  flex: 1;
+  justify-content: center;
+  min-inline-size: 0;
+}
+
+/* On narrow screens the search collapses, so don't waste flex space on the
+   middle region — let the end region snap to the right edge. */
+@media (max-width: 39.9375rem) {
+  .docs-header-mid { display: none; }
 }
 
 .docs-brand {
@@ -88,16 +112,13 @@ body.docs-body {
 }
 
 .docs-search-wrap {
-  justify-self: stretch;
+  flex: 1;
   max-inline-size: 22rem;
   min-inline-size: 0;
+  inline-size: 100%;
 }
 
 .docs-search-wrap > .docs-search { inline-size: 100%; }
-
-@media (max-width: 39.9375rem) {
-  .docs-search-wrap { display: none; }
-}
 
 .docs-search {
   align-items: center;

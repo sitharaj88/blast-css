@@ -628,39 +628,45 @@ function shell({ title, description, content, currentPath, headings, hideToc, bo
 
     <header class="docs-header">
       <div class="docs-header-inner">
-        <a class="docs-brand" href="${rel}index.html" aria-label="BlastCSS home">
-          <span class="docs-mark" aria-hidden="true">${LOGO_SVG}</span>
-          <span class="docs-brand-name">BlastCSS</span>
-          <span class="docs-version">v${VERSION}</span>
-        </a>
-        <button class="docs-menu-btn b-icon-btn" type="button" aria-label="Toggle menu" data-docs-menu>
-          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 6h18M3 12h18M3 18h18"/></svg>
-        </button>
-        <div class="docs-search-wrap">
-          <button class="docs-search" type="button" data-docs-search>
-            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="7"/><path d="m21 21-4.3-4.3"/></svg>
-            <span>Search docs</span>
-            <kbd class="b-kbd">⌘K</kbd>
-          </button>
-        </div>
-        <nav class="docs-top-nav" aria-label="Primary">
-          <a href="${rel}components/buttons.html">Components</a>
-          <a href="${rel}guides/theming.html">Theming</a>
-          <a href="${rel}playground.html">Playground</a>
-          <a href="${REPO_URL}" rel="noopener" class="docs-top-github">
-            <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2C6.48 2 2 6.58 2 12.25c0 4.51 2.87 8.34 6.84 9.69.5.09.68-.22.68-.49 0-.24-.01-.88-.01-1.72-2.78.62-3.37-1.36-3.37-1.36-.45-1.18-1.11-1.49-1.11-1.49-.91-.63.07-.62.07-.62 1.01.07 1.54 1.06 1.54 1.06.89 1.57 2.34 1.12 2.91.85.09-.66.35-1.12.63-1.37-2.22-.26-4.55-1.14-4.55-5.06 0-1.12.39-2.03 1.03-2.74-.1-.26-.45-1.31.1-2.72 0 0 .84-.27 2.75 1.04A9.34 9.34 0 0 1 12 6.84c.85.01 1.71.12 2.51.34 1.91-1.31 2.75-1.04 2.75-1.04.55 1.41.2 2.46.1 2.72.64.71 1.03 1.62 1.03 2.74 0 3.93-2.34 4.79-4.57 5.05.36.31.68.93.68 1.88 0 1.36-.01 2.45-.01 2.79 0 .27.18.59.69.49 3.97-1.35 6.83-5.18 6.83-9.69C22 6.58 17.52 2 12 2Z"/></svg>
-            <span class="b-sr-only">GitHub</span>
+        <div class="docs-header-start">
+          <a class="docs-brand" href="${rel}index.html" aria-label="BlastCSS home">
+            <span class="docs-mark" aria-hidden="true">${LOGO_SVG}</span>
+            <span class="docs-brand-name">BlastCSS</span>
+            <span class="docs-version">v${VERSION}</span>
           </a>
-        </nav>
-        <button class="b-icon-btn docs-theme-toggle" type="button" data-b-toggle="theme" aria-label="Toggle dark mode">
-          <svg class="docs-icon-sun" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M4.93 19.07l1.41-1.41M17.66 6.34l1.41-1.41"/></svg>
-          <svg class="docs-icon-moon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79Z"/></svg>
-        </button>
+        </div>
+        <div class="docs-header-mid">
+          <div class="docs-search-wrap">
+            <button class="docs-search" type="button" data-docs-search>
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="7"/><path d="m21 21-4.3-4.3"/></svg>
+              <span>Search docs</span>
+              <kbd class="b-kbd">⌘K</kbd>
+            </button>
+          </div>
+        </div>
+        <div class="docs-header-end">
+          <nav class="docs-top-nav" aria-label="Primary">
+            <a href="${rel}components/buttons.html">Components</a>
+            <a href="${rel}guides/theming.html">Theming</a>
+            <a href="${rel}playground.html">Playground</a>
+            <a href="${REPO_URL}" rel="noopener" class="docs-top-github">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2C6.48 2 2 6.58 2 12.25c0 4.51 2.87 8.34 6.84 9.69.5.09.68-.22.68-.49 0-.24-.01-.88-.01-1.72-2.78.62-3.37-1.36-3.37-1.36-.45-1.18-1.11-1.49-1.11-1.49-.91-.63.07-.62.07-.62 1.01.07 1.54 1.06 1.54 1.06.89 1.57 2.34 1.12 2.91.85.09-.66.35-1.12.63-1.37-2.22-.26-4.55-1.14-4.55-5.06 0-1.12.39-2.03 1.03-2.74-.1-.26-.45-1.31.1-2.72 0 0 .84-.27 2.75 1.04A9.34 9.34 0 0 1 12 6.84c.85.01 1.71.12 2.51.34 1.91-1.31 2.75-1.04 2.75-1.04.55 1.41.2 2.46.1 2.72.64.71 1.03 1.62 1.03 2.74 0 3.93-2.34 4.79-4.57 5.05.36.31.68.93.68 1.88 0 1.36-.01 2.45-.01 2.79 0 .27.18.59.69.49 3.97-1.35 6.83-5.18 6.83-9.69C22 6.58 17.52 2 12 2Z"/></svg>
+              <span class="b-sr-only">GitHub</span>
+            </a>
+          </nav>
+          <button class="b-icon-btn docs-theme-toggle" type="button" data-b-toggle="theme" aria-label="Toggle dark mode">
+            <svg class="docs-icon-sun" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M4.93 19.07l1.41-1.41M17.66 6.34l1.41-1.41"/></svg>
+            <svg class="docs-icon-moon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79Z"/></svg>
+          </button>
+          ${isLanding ? "" : `<button class="docs-menu-btn b-icon-btn" type="button" aria-label="Toggle navigation menu" aria-expanded="false" aria-controls="docs-sidebar" data-docs-menu>
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 6h18M3 12h18M3 18h18"/></svg>
+          </button>`}
+        </div>
       </div>
     </header>
 
     <div class="docs-shell">
-      ${isLanding ? "" : `<aside class="docs-sidebar" data-docs-sidebar aria-label="Documentation">
+      ${isLanding ? "" : `<aside id="docs-sidebar" class="docs-sidebar" data-docs-sidebar aria-label="Documentation">
         <button class="docs-search docs-search-mobile" type="button" data-docs-search>
           <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="7"/><path d="m21 21-4.3-4.3"/></svg>
           <span>Search docs</span>
