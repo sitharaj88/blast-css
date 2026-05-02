@@ -1,70 +1,62 @@
+<div align="center">
+
+<img src="https://raw.githubusercontent.com/sitharaj88/blast-css/main/docs/favicon.svg" width="84" height="84" alt="BlastCSS logo">
+
 # BlastCSS
 
-A modern, framework-agnostic CSS framework built on the latest web platform: cascade layers, OKLCH design tokens, container queries, the popover API, anchor positioning, and view transitions. Tiny, fast, no build step, no runtime dependencies.
+**A modern, framework-agnostic CSS framework.**
 
-**Version 1.0** — public API is stable. See [CHANGELOG.md](CHANGELOG.md) for the full inventory.
+Cascade layers · OKLCH tokens · `light-dark()` · container queries · popover API · view transitions.<br>
+Tiny, fast, **zero build step**, **zero runtime dependencies**.
 
-```text
-blast.min.css                  ~12 KB gzip   (full bundle)
-blast.core.min.css            ~5.0 KB gzip   (tokens + reset + base + layout + forms + a11y + motion)
-blast.components.min.css      ~5.5 KB gzip   (buttons, cards, dialogs, popovers, etc.)
-blast.components-extra.min.css ~3.2 KB gzip  (command palette, combobox, segmented, tag input, stepper)
-blast.utilities.min.css       ~4.5 KB gzip   (flex/grid/spacing/colors + container query variants)
-blast.motion.min.css          ~2.0 KB gzip   (view transitions, animation utilities)
-blast.reset.min.css           ~0.7 KB gzip
-blast.min.js                  ~3.3 KB gzip   (optional — dialogs, popovers, command palette, theme toggle)
-```
+[![npm version](https://img.shields.io/npm/v/blastcss?style=flat-square&color=4f46e5&label=npm)](https://www.npmjs.com/package/blastcss)
+[![License](https://img.shields.io/badge/License-MIT-22c55e?style=flat-square)](LICENSE)
+[![Bundle size](https://img.shields.io/badge/gzip-~12%20KB-0ea5e9?style=flat-square)](https://sitharaj88.github.io/blast-css)
+[![Tests](https://img.shields.io/badge/Playwright-137%20pass-3b82f6?style=flat-square)](#-verify)
+[![Stars](https://img.shields.io/github/stars/sitharaj88/blast-css?style=flat-square&color=eab308)](https://github.com/sitharaj88/blast-css/stargazers)
 
-## What's modern about this
+[**📖 Documentation**](https://sitharaj88.github.io/blast-css) ·
+[**🎨 Playground**](https://sitharaj88.github.io/blast-css/playground.html) ·
+[**🧩 Components**](https://sitharaj88.github.io/blast-css/components/buttons.html) ·
+[**📝 Changelog**](https://sitharaj88.github.io/blast-css/whats-new.html)
 
-- **Cascade layers** — predictable specificity. App styles always win without `!important`.
-- **OKLCH tokens with `light-dark()`** — perceptually uniform color, dark mode without double-defining variables.
-- **Container queries** — components respond to their own width, not the viewport. Drop a card into a sidebar or a hero and it adapts.
-- **Native popover & `<dialog>`** — top-layer rendering, automatic light dismiss, with `@starting-style` animations that honor `prefers-reduced-motion`.
-- **CSS anchor positioning** — tooltips and popovers anchor without JavaScript on supporting browsers.
-- **View Transitions** — cross-document and same-document transitions out of the box.
-- **`field-sizing: content`** — textareas grow with input.
-- **`text-wrap: balance` / `pretty`** — better headlines and paragraphs by default.
-- **Subgrid** where supported.
+<br>
 
-## Goals
+<img src="https://raw.githubusercontent.com/sitharaj88/blast-css/main/docs/og/index.png" alt="BlastCSS — modern, fast, framework-agnostic CSS" width="720">
 
-- Faster and smaller than every full-fat UI framework, with more components than every minimal CSS toolkit.
-- Works with HTML, React, Vue, Angular, Svelte, Solid, Astro, Rails, Laravel, Django, and any server-rendered app.
-- No runtime JavaScript required for most components. No PostCSS, no Sass.
-- Native-platform components where possible.
-- Accessible defaults — focus rings, reduced motion, semantic HTML, ARIA, Axe-tested in CI.
-- Tokens travel — JSON, CSS, and TypeScript exports for design pipelines.
+</div>
 
-## Documentation
+---
 
-Full docs: **[sitharaj88.github.io/blast-css](https://sitharaj88.github.io/blast-css)**
+## ✨ Why BlastCSS
 
-Highlights:
+- 🪶 **Tiny** — ~12 KB gzip full bundle (about 2.4× smaller than Bootstrap, with comparable component coverage)
+- 🧠 **Modern CSS** — cascade layers, OKLCH, `light-dark()`, container queries, popover API, view transitions
+- 🚫 **No build step** — drop a `<link>` and ship. No PostCSS. No Sass. No JS framework.
+- 🌍 **Framework-agnostic** — works with React, Vue, Svelte, Astro, Solid, Angular, Rails, Laravel, Django
+- 🧩 **40+ components** — buttons, dialog, popover, command palette, combobox, tag input, stepper…
+- ♿ **Accessible by default** — focus rings, reduced-motion, semantic HTML, ARIA, Axe-tested in CI
+- 🎨 **Themeable** — change one hue token, the whole palette retunes (soft, strong, hover, ring)
+- 📱 **Mobile-first** — container queries make components respond to their own width, not the viewport
 
-- [Installation](https://sitharaj88.github.io/blast-css/guides/installation.html)
-- [Quick start](https://sitharaj88.github.io/blast-css/guides/quickstart.html)
-- [Theming & tokens](https://sitharaj88.github.io/blast-css/guides/theming.html)
-- [Dark mode](https://sitharaj88.github.io/blast-css/guides/dark-mode.html)
-- [Cascade layers](https://sitharaj88.github.io/blast-css/guides/layers.html)
-- [Layout primitives](https://sitharaj88.github.io/blast-css/guides/layout.html)
-- [Motion & view transitions](https://sitharaj88.github.io/blast-css/guides/motion.html)
-- [Accessibility](https://sitharaj88.github.io/blast-css/guides/accessibility.html)
-- [Framework integration](https://sitharaj88.github.io/blast-css/guides/frameworks.html)
-- [Components](https://sitharaj88.github.io/blast-css/components/buttons.html), [utilities](https://sitharaj88.github.io/blast-css/utilities/spacing.html), [playground](https://sitharaj88.github.io/blast-css/playground.html)
+## 📑 Table of contents
 
-To browse the docs locally instead:
+- [Quick start](#-quick-start)
+- [Modular bundles](#-modular-bundles)
+- [Theming](#-theming)
+- [Components](#-components)
+- [Layout primitives](#-layout-primitives)
+- [Utilities](#-utilities)
+- [How it compares](#-how-it-compares)
+- [Documentation](#-documentation)
+- [Browser support](#-browser-support)
+- [Verify](#-verify)
+- [Contributing](#-contributing)
+- [Author](#-author)
+- [Support the project](#-support-the-project)
+- [License](#-license)
 
-```sh
-git clone https://github.com/sitharaj88/blast-css.git
-cd blast-css && npm install
-npm run build:all && npm run serve
-# open http://127.0.0.1:4173
-```
-
-Reference docs for contributors live in [docs/](https://github.com/sitharaj88/blast-css/tree/main/docs) on the repo (architecture, public API, quality gates, testing, browser support, versioning, release process, 1.0 readiness, Bootstrap migration).
-
-## Install
+## 🚀 Quick start
 
 ```sh
 npm install blastcss
@@ -77,79 +69,170 @@ import { autoInit } from "blastcss/js";
 autoInit();
 ```
 
-## Modular bundles
+That's it. `autoInit()` wires up dialogs, dropdowns, tabs, toasts, popovers, command palettes, comboboxes, tag inputs, and the theme toggle. Most components work without any JavaScript at all.
 
-```js
-import "blastcss/core";              // foundations only
-import "blastcss/components";        // buttons, cards, dialog, popover, ...
-import "blastcss/components-extra";  // command palette, combobox, segmented, tag input, stepper
-import "blastcss/utilities";         // flex, grid, spacing, color
-import "blastcss/motion";            // view transitions + animation utilities
-import "blastcss/reset";             // 700-byte modern reset
+```html
+<button class="b-btn">Hello, BlastCSS</button>
 ```
 
-## Theming
+## 📦 Modular bundles
 
-Override CSS variables anywhere:
+Pick the slice that fits — full, layered, or per-section:
+
+| Import path                | Size (gzip) | What you get |
+| -------------------------- | ----------- | ------------- |
+| `blastcss`                 | **~12 KB**  | Full bundle (everything below combined) |
+| `blastcss/core`            | ~5.0 KB     | Tokens · reset · base · layout · forms · a11y · motion |
+| `blastcss/components`      | ~5.5 KB     | Buttons · cards · dialog · popover · tabs · accordion · toast · spinner · drawer · progress · table · pagination · breadcrumb · avatar · stat · badge · alert · empty · skeleton |
+| `blastcss/components-extra`| ~3.2 KB     | Command palette · combobox · segmented · tag input · stepper · code block · hero |
+| `blastcss/utilities`       | ~4.5 KB     | Flex · grid · spacing · color · container-query variants (`@sm:`, `@md:`, `@lg:`) |
+| `blastcss/motion`          | ~2.0 KB     | View transitions · animation utilities |
+| `blastcss/reset`           | ~0.7 KB     | Modern CSS reset only |
+| `blastcss/js`              | ~3.3 KB     | Optional behavior helpers (only what you need) |
+
+Tokens travel as JSON, CSS, or TypeScript for design pipelines:
+
+```js
+import tokens from "blastcss/tokens.json";   // { light: { ... }, dark: { ... } }
+import { tokens } from "blastcss/tokens.ts"; // typed
+```
+
+## 🎨 Theming
+
+Override CSS variables anywhere — no rebuild, no Sass:
 
 ```css
 :root {
-  --b-primary-h: 200;     /* shift hue → re-tunes whole palette */
-  --b-radius: .375rem;
-  --b-control: 2.75rem;
+  --b-primary-h: 200;     /* shift hue → re-tunes the whole palette */
+  --b-radius: .375rem;    /* tighter corners */
+  --b-control: 2.75rem;   /* taller controls */
+  --b-font-sans: "Geist", system-ui, sans-serif;
 }
 ```
 
 Toggle dark mode:
 
 ```html
-<button class="b-btn" data-b-toggle="theme" aria-label="Toggle theme">🌗</button>
+<button class="b-icon-btn" data-b-toggle="theme" aria-label="Toggle theme">🌗</button>
 ```
 
 The bundled JS persists the user's choice to `localStorage`. Dark variants come from `light-dark()` — no double-defining tokens.
 
-## Components included
+> [!TIP]
+> Try the live [theme playground](https://sitharaj88.github.io/blast-css/playground.html) — it has sliders for hue, chroma, radius, control height, and weight, plus an HTML+CSS editor with live preview and shareable URLs.
 
-Buttons (primary/secondary/ghost/soft/outline/danger/success/warning), Cards (with header/footer/interactive), Badges, Chips, Alerts, Avatars (with status + groups), Breadcrumbs, Tabs (underline + pill), Tables (striped + hover), Lists, Pagination, Navbar, Menu, Dropdown (`<details>`-based), Modal Dialog, Drawer (left/right/bottom), Popover (native API + anchor positioning), Tooltip, Progress (bar + indeterminate), Spinner, Skeleton, Empty state, Stat, Toast (programmatic), **Segmented control**, **Combobox**, **Command palette (⌘K)**, **Tag input**, **Stepper** (vertical + horizontal), Form fields (input, select, textarea, switch, checkbox, range, file, fieldset, input groups with addons), Code blocks (with copy button), Hero, Kbd, Divider.
+## 🧩 Components
 
-## Layout primitives
+Buttons (primary / secondary / ghost / soft / outline / success / warning / danger), Cards (with header / footer / interactive), Badges, Chips, Alerts, Avatars (with status + groups), Breadcrumbs, Tabs (underline + pill), Tables (striped + hover), Lists, Pagination, Navbar, Menu, Dropdown (`<details>`-based), Modal Dialog, Drawer (left / right / bottom), Popover (native API + anchor positioning), Tooltip, Progress (bar + indeterminate), Spinner, Skeleton, Empty state, Stat, Toast (programmatic), **Segmented control**, **Combobox**, **Command palette (⌘K)**, **Tag input**, **Stepper** (vertical + horizontal), Form fields (input, select, textarea, switch, checkbox, range, file, fieldset, input groups with addons), Code blocks (with copy button), Hero, Kbd, Divider.
+
+## 📐 Layout primitives
 
 `.b-container` (with container-query enabled), `.b-stack`, `.b-cluster`, `.b-split`, `.b-center`, `.b-grid` (auto-fit), `.b-sidebar`, `.b-cover`, `.b-switcher`, `.b-prose`, `.b-spacer`, `.b-subgrid`.
 
-## Utilities
+## 🛠 Utilities
 
-Display, flex, grid, gap, margin, padding, sizing, typography, weight, family, colors, gradients, borders, radius, shadows, position, z-index, overflow, opacity, scroll-snap, content-visibility, color-scheme, motion-safe/reduce, and **container-query variants** (`@sm:`, `@md:`, `@lg:`).
+Display, flex, grid, gap, margin, padding, sizing, typography, weight, family, colors, gradients, borders, radius, shadows, position, z-index, overflow, opacity, scroll-snap, content-visibility, color-scheme, motion-safe / motion-reduce, and **container-query variants** (`@sm:`, `@md:`, `@lg:`).
 
-## Verify
+## 📊 How it compares
+
+|                                | **BlastCSS** | Tailwind     | Bootstrap | Pico |
+| ------------------------------ | ------------ | ------------ | --------- | ---- |
+| Full bundle (gzip)             | ✅ **~12 KB**| ~10–45 KB\*  | ~28 KB    | ~7 KB |
+| Build step required            | ✅ **No**    | Yes          | No        | No   |
+| Pre-built components           | ✅ **40+**   | 0 (utility-only) | 40+   | ~12  |
+| OKLCH design tokens            | ✅ **Yes**   | Yes (v4+)    | No        | No   |
+| Cascade layers                 | ✅ **Yes**   | Yes (v4+)    | No        | No   |
+| Container queries              | ✅ **Yes**   | Yes          | No        | No   |
+| Popover API                    | ✅ **Yes**   | No           | No        | No   |
+| View Transitions               | ✅ **Yes**   | No           | No        | No   |
+| Live theme playground          | ✅ **Yes**   | No           | No        | No   |
+
+<sub>\* depending on JIT output and components used</sub>
+
+## 📚 Documentation
+
+Full docs live at **[sitharaj88.github.io/blast-css](https://sitharaj88.github.io/blast-css)**.
+
+### Get started
+
+| | | |
+| --- | --- | --- |
+| [📥 Installation](https://sitharaj88.github.io/blast-css/guides/installation.html) | [⚡ Quick start](https://sitharaj88.github.io/blast-css/guides/quickstart.html) | [🎨 Theming & tokens](https://sitharaj88.github.io/blast-css/guides/theming.html) |
+| [🌗 Dark mode](https://sitharaj88.github.io/blast-css/guides/dark-mode.html) | [🧩 Framework integration](https://sitharaj88.github.io/blast-css/guides/frameworks.html) | [🎮 Playground](https://sitharaj88.github.io/blast-css/playground.html) |
+
+### Foundations
+
+| | | |
+| --- | --- | --- |
+| [📚 Cascade layers](https://sitharaj88.github.io/blast-css/guides/layers.html) | [📐 Layout primitives](https://sitharaj88.github.io/blast-css/guides/layout.html) | [🔤 Typography](https://sitharaj88.github.io/blast-css/guides/typography.html) |
+| [🎨 Colors](https://sitharaj88.github.io/blast-css/guides/colors.html) | [🎬 Motion & view transitions](https://sitharaj88.github.io/blast-css/guides/motion.html) | [♿ Accessibility](https://sitharaj88.github.io/blast-css/guides/accessibility.html) |
+
+### Components (selected)
+
+| | | | |
+| --- | --- | --- | --- |
+| [Buttons](https://sitharaj88.github.io/blast-css/components/buttons.html) | [Forms](https://sitharaj88.github.io/blast-css/components/forms.html) | [Dialog](https://sitharaj88.github.io/blast-css/components/dialog.html) | [Popover](https://sitharaj88.github.io/blast-css/components/popover.html) |
+| [Tabs](https://sitharaj88.github.io/blast-css/components/tabs.html) | [Accordion](https://sitharaj88.github.io/blast-css/components/accordion.html) | [Combobox](https://sitharaj88.github.io/blast-css/components/combobox.html) | [Command palette](https://sitharaj88.github.io/blast-css/components/command.html) |
+| [Toast](https://sitharaj88.github.io/blast-css/components/toast.html) | [Stepper](https://sitharaj88.github.io/blast-css/components/stepper.html) | [Tag input](https://sitharaj88.github.io/blast-css/components/tag-input.html) | [Segmented control](https://sitharaj88.github.io/blast-css/components/segmented.html) |
+
+→ [Browse all 40+ components](https://sitharaj88.github.io/blast-css/components/buttons.html)
+
+To browse the docs locally:
+
+```sh
+git clone https://github.com/sitharaj88/blast-css.git
+cd blast-css && npm install
+npm run build:all && npm run serve
+# open http://127.0.0.1:4173
+```
+
+## 🌐 Browser support
+
+Evergreen, with progressive enhancement for older browsers via `@supports`:
+
+- ✅ Chrome / Edge **125+**
+- ✅ Firefox **128+**
+- ✅ Safari **17.4+**
+
+Older browsers fall back to a static hex palette, so the framework still works — just without OKLCH-derived tints, `light-dark()` swaps, and the popover API.
+
+## ✅ Verify
 
 ```sh
 npm run build         # bundles, exports, minifies — produces dist/
 npm run build:docs    # generates docs/ from docs-src/
 npm run test:static   # build + benchmark + size + quality + exports + html + visual-manifest
-npm run test:browser  # Playwright across Chromium / Firefox / WebKit + mobile
+npm run test:browser  # Playwright across Chromium / Firefox / WebKit + mobile Chrome + mobile Safari
 npm run verify        # all of the above
 ```
 
-## Browser support
+**Stats:** 137 Playwright tests, 5-browser matrix, 0 Axe violations, gzip-budget enforced, every public class verified in CI.
 
-Evergreen, with progressive enhancement:
+## 🤝 Contributing
 
-- Chrome / Edge 125+
-- Firefox 128+
-- Safari 17.4+
+PRs welcome. Read [CONTRIBUTING.md](CONTRIBUTING.md) for the rules — keep it CSS-only by default, no runtime dependencies in core, accessible, semantic, and within the size budget.
 
-Older browsers fall back to hex colors via `@supports not (color: light-dark(#fff, #000))`.
+## 👤 Author
 
-## Author
+Built and maintained by **Sitharaj Seenivasan**.
 
-Built and maintained by **[Sitharaj Seenivasan](https://github.com/sitharaj88)**.
+<a href="https://github.com/sitharaj88"><img alt="GitHub" src="https://img.shields.io/badge/GitHub-Sitharaj88-181717?style=for-the-badge&logo=github&logoColor=white"></a>
+<a href="https://www.linkedin.com/in/Sitharaj08"><img alt="LinkedIn" src="https://img.shields.io/badge/LinkedIn-Sitharaj08-0A66C2?style=for-the-badge&logo=linkedin&logoColor=white"></a>
+<a href="https://www.buymeacoffee.com/sitharaj88"><img alt="Buy me a coffee" src="https://img.shields.io/badge/Buy_me_a_coffee-sitharaj88-FFDD00?style=for-the-badge&logo=buymeacoffee&logoColor=black"></a>
 
-- GitHub — [@sitharaj88](https://github.com/sitharaj88)
-- LinkedIn — [in/Sitharaj08](https://www.linkedin.com/in/Sitharaj08)
-- ☕ Buy me a coffee — [buymeacoffee.com/sitharaj88](https://www.buymeacoffee.com/sitharaj88)
+## ☕ Support the project
 
-If BlastCSS saves you time, a coffee or a star on the [GitHub repo](https://github.com/sitharaj88/blast-css) is the easiest way to say thanks.
+If BlastCSS saves you time, the easiest ways to say thanks:
 
-## License
+- ⭐ **Star the repo** on [GitHub](https://github.com/sitharaj88/blast-css) — it genuinely helps adoption
+- 🐦 **Share it** with someone building a UI — the smaller this framework gets, the more people benefit
+- 🐛 **Open an issue** when something doesn't work — every report makes the next release sharper
+- ☕ **Buy me a coffee** — keeps the late-night CSS spec reading going
 
-MIT © [Sitharaj Seenivasan](https://github.com/sitharaj88) — see [LICENSE](LICENSE).
+<a href="https://www.buymeacoffee.com/sitharaj88" target="_blank" rel="noopener">
+  <img src="https://cdn.buymeacoffee.com/buttons/v2/default-yellow.png" alt="Buy Me A Coffee" height="50" width="210">
+</a>
+
+## 📄 License
+
+[MIT](LICENSE) © [Sitharaj Seenivasan](https://github.com/sitharaj88)
