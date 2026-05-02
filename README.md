@@ -140,6 +140,16 @@ Evergreen, with progressive enhancement:
 
 Older browsers fall back to hex colors via `@supports not (color: light-dark(#fff, #000))`.
 
+## Author
+
+Built and maintained by **[Sitharaj Seenivasan](https://github.com/sitharaj88)**.
+
+- GitHub — [@sitharaj88](https://github.com/sitharaj88)
+- LinkedIn — [in/Sitharaj08](https://www.linkedin.com/in/Sitharaj08)
+- ☕ Buy me a coffee — [buymeacoffee.com/sitharaj88](https://www.buymeacoffee.com/sitharaj88)
+
+If BlastCSS saves you time, a coffee or a star on the [GitHub repo](https://github.com/sitharaj88/blast-css) is the easiest way to say thanks.
+
 ## License
 
-MIT — see [LICENSE](LICENSE).
+MIT © [Sitharaj Seenivasan](https://github.com/sitharaj88) — see [LICENSE](LICENSE).

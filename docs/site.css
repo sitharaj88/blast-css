@@ -1336,6 +1336,58 @@ body.docs-body {
 
 .docs-footer-meta a:hover { color: var(--b-text); }
 
+.docs-footer-social {
+  align-items: center;
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--b-2);
+  margin-block-start: var(--b-4);
+}
+
+.docs-footer-social a {
+  align-items: center;
+  background: var(--b-elevated);
+  border: 1px solid var(--b-border);
+  border-radius: var(--b-radius-pill);
+  color: var(--b-muted);
+  display: inline-flex;
+  block-size: 2.25rem;
+  inline-size: 2.25rem;
+  justify-content: center;
+  text-decoration: none;
+  transition: color var(--b-duration-fast) var(--b-ease), border-color var(--b-duration-fast) var(--b-ease), background var(--b-duration-fast) var(--b-ease);
+}
+
+.docs-footer-social a:hover {
+  background: var(--b-surface-2);
+  border-color: var(--b-border-strong);
+  color: var(--b-text);
+}
+
+.docs-footer-coffee {
+  background: linear-gradient(135deg, oklch(82% 0.16 70), oklch(78% 0.18 50)) !important;
+  border-color: oklch(70% 0.18 50) !important;
+  color: oklch(20% 0.05 50) !important;
+  font-size: var(--b-text-xs);
+  font-weight: var(--b-weight-bold);
+  gap: var(--b-1) !important;
+  inline-size: auto !important;
+  padding-inline: var(--b-3) !important;
+}
+
+.docs-footer-coffee:hover {
+  background: linear-gradient(135deg, oklch(86% 0.16 70), oklch(82% 0.18 50)) !important;
+  color: oklch(15% 0.05 50) !important;
+}
+
+.docs-footer-bottom a {
+  color: var(--b-muted);
+  text-decoration: none;
+  transition: color var(--b-duration-fast) var(--b-ease);
+}
+
+.docs-footer-bottom a:hover { color: var(--b-text); }
+
 .docs-footer-grid {
   display: grid;
   gap: var(--b-6);

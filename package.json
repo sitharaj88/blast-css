@@ -3,6 +3,14 @@
   "version": "1.0.0",
   "description": "A modern, framework-agnostic CSS framework built on cascade layers, OKLCH tokens, container queries, and the popover API.",
   "type": "module",
+  "author": {
+    "name": "Sitharaj Seenivasan",
+    "url": "https://github.com/sitharaj88"
+  },
+  "funding": [
+    { "type": "buymeacoffee", "url": "https://www.buymeacoffee.com/sitharaj88" },
+    { "type": "github", "url": "https://github.com/sitharaj88" }
+  ],
   "homepage": "https://sitharaj88.github.io/blast-css",
   "bugs": {
     "url": "https://github.com/sitharaj88/blast-css/issues"
