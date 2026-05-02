@@ -1446,13 +1446,20 @@ dialog.b-command[open] { animation: b-scale-in var(--b-duration-fast) var(--b-ea
    ───────────────────────────────────────────────────────────── */
 
 .pg {
+  background: var(--b-elevated);
   border: 1px solid var(--b-border);
   border-radius: var(--b-radius-lg);
-  overflow: clip;
   display: grid;
   grid-template-rows: auto 1fr auto;
-  background: var(--b-elevated);
+  overflow: clip;
   block-size: clamp(36rem, 80vh, 50rem);
+}
+
+@media (max-width: 60rem) {
+  .pg {
+    grid-template-rows: auto auto 1fr auto;
+    block-size: clamp(34rem, calc(100dvh - 8rem), 50rem);
+  }
 }
 
 .pg-toolbar {
@@ -1512,6 +1519,46 @@ dialog.b-command[open] { animation: b-scale-in var(--b-duration-fast) var(--b-ea
   color: var(--b-text);
 }
 
+/* Mobile-only Editor / Preview view switcher */
+.pg-view-switch {
+  align-items: center;
+  background: var(--b-surface);
+  border-block-end: 1px solid var(--b-border);
+  display: none;
+  gap: var(--b-1);
+  padding: var(--b-1);
+}
+
+.pg-view-tab {
+  align-items: center;
+  background: transparent;
+  border: 0;
+  border-radius: var(--b-radius-sm);
+  color: var(--b-muted);
+  cursor: pointer;
+  display: inline-flex;
+  flex: 1;
+  font-family: inherit;
+  font-size: var(--b-text-sm);
+  font-weight: var(--b-weight-semi);
+  gap: var(--b-2);
+  justify-content: center;
+  padding: .5rem .65rem;
+  transition: background var(--b-duration-fast) var(--b-ease), color var(--b-duration-fast) var(--b-ease);
+}
+
+.pg-view-tab:hover { color: var(--b-text); }
+
+.pg-view-tab.is-active {
+  background: var(--b-elevated);
+  box-shadow: var(--b-shadow-xs);
+  color: var(--b-text);
+}
+
+@media (max-width: 60rem) {
+  .pg-view-switch { display: flex; }
+}
+
 /* Body */
 .pg-body {
   display: grid;
@@ -1521,6 +1568,12 @@ dialog.b-command[open] { animation: b-scale-in var(--b-duration-fast) var(--b-ea
 
 @media (min-width: 60rem) {
   .pg-body { grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); }
+}
+
+/* On mobile only one pane is visible at a time, controlled by data-view. */
+@media (max-width: 60rem) {
+  .pg[data-view="editor"] .pg-preview-pane { display: none; }
+  .pg[data-view="preview"] .pg-editor-pane { display: none; }
 }
 
 .pg-editor-pane,
@@ -1711,6 +1764,8 @@ dialog.b-command[open] { animation: b-scale-in var(--b-duration-fast) var(--b-ea
   gap: var(--b-3);
   padding: var(--b-3) var(--b-4);
 }
+
+.pg-tokens[hidden] { display: none; }
 
 .pg-tokens-head {
   color: var(--b-muted);

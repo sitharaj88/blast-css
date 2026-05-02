@@ -19,6 +19,7 @@
   const shareBtn = root.querySelector("[data-pg-share]");
   const resetBtn = root.querySelector("[data-pg-reset]");
   const statusEl = root.querySelector("[data-pg-status]");
+  const viewTabs = root.querySelectorAll("[data-pg-view]");
 
   // The build injects `data-dist` on [data-pg-root]; this path varies between
   // local dev (../dist/) and the GitHub Pages deploy (./dist/) where dist/
@@ -346,6 +347,17 @@ ${inlineJs}
 
   for (const b of bpButtons) b.addEventListener("click", () => setBp(b.dataset.pgBp));
 
+  // Mobile-only Editor / Preview view switcher
+  function setView(which) {
+    root.dataset.view = which;
+    for (const t of viewTabs) {
+      const active = t.dataset.pgView === which;
+      t.classList.toggle("is-active", active);
+      t.setAttribute("aria-selected", String(active));
+    }
+  }
+  for (const t of viewTabs) t.addEventListener("click", () => setView(t.dataset.pgView));
+
   // ───────────────────────────────────────────────────────────
   // Theme switcher (preview-only)
   // ───────────────────────────────────────────────────────────
@@ -457,6 +469,7 @@ ${inlineJs}
   }
   setActiveTab("html");
   setBp(state.bp);
+  setView("editor");
   setTokensVisible(false);
   render();
 })();
