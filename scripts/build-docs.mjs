@@ -312,6 +312,11 @@ function parseApi(raw) {
 }
 
 function parseMarkdown(src) {
+  // Normalise line endings so the build is deterministic regardless of how the
+  // source was checked out (git core.autocrlf=true yields CRLF on Windows).
+  // JS regex `$` and `.` do not match before a `\r`, so CRLF would otherwise
+  // break every heading/list/blockquote when building on Windows.
+  src = src.replace(/\r\n?/g, "\n");
   const fmMatch = src.match(/^---\s*\n([\s\S]+?)\n---\s*\n/);
   let frontmatter = {};
   let body = src;

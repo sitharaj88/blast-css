@@ -41,6 +41,7 @@ async function bundle(file, seen = new Set()) {
 
 function minify(css) {
   return css
+    .replace(/\r\n?/g, "\n")
     .replace(/\/\*[\s\S]*?\*\//g, "")
     .replace(/\s+/g, " ")
     .replace(/\s*([{}:;,>+~])\s*/g, "$1")
@@ -50,7 +51,11 @@ function minify(css) {
 }
 
 function minifyJs(js) {
+  // Normalise CRLF first: the line-comment stripper below is anchored on \n,
+  // and a stray \r would let a `//` comment survive and then collapse onto the
+  // rest of the file — corrupting the whole minified bundle on Windows builds.
   return js
+    .replace(/\r\n?/g, "\n")
     .replace(/\/\*[\s\S]*?\*\//g, "")
     .replace(/(^|\n)\s*\/\/.*(?=\n|$)/g, "$1")
     .replace(/\s+/g, " ")

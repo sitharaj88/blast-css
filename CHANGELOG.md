@@ -2,6 +2,20 @@
 
 All notable changes to BlastCSS will be documented here.
 
+## 1.0.1
+
+Patch release: cross-platform build robustness and accessibility fixes. No public API or token changes.
+
+### Fixed
+- **Minified JS corruption on Windows builds.** The JS minifier's line-comment stripper was anchored on `\n`; with CRLF-checked-out sources (git `core.autocrlf=true`) a `//` comment survived and collapsed the rest of `dist/blast.min.js` into a single comment, producing an invalid bundle (`SyntaxError: Unexpected end of input`). The minifier now normalizes line endings first.
+- **Docs content unrendered on Windows builds.** The Markdown parser's heading/list/blockquote regexes failed on CRLF lines (JS `$` and `.` do not match before `\r`), so headings rendered as literal `# Heading` text. The parser now normalizes line endings before parsing.
+- **Dev server 404s on Windows.** `scripts/serve.mjs` used `path.normalize`, converting URL forward-slashes to backslashes and breaking the root/path resolution. It now uses POSIX normalization for URL paths.
+- **Accessibility:** added accessible names to the progress-bar demos (`aria-label`) and completed the pill-tabs demo with its `tabpanel`s so `aria-controls` references resolve. All 46 docs pages now pass axe with zero violations.
+
+### Added
+- `.gitattributes` enforcing LF for text sources so builds are deterministic across platforms.
+- Comprehensive `tests/browser/a11y-all.spec.js` axe sweep covering every generated docs page (wired into `test:browser` / CI).
+
 ## 1.0.0
 
 The first stable release. The public API surface is now committed:

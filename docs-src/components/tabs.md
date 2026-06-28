@@ -27,6 +27,9 @@ lede: Underline tabs and pill tabs with full keyboard navigation (arrow keys, Ho
   <button class="b-tab" role="tab" aria-selected="false" aria-controls="dp-2" id="dp-2-t">Week</button>
   <button class="b-tab" role="tab" aria-selected="false" aria-controls="dp-3" id="dp-3-t">Month</button>
 </div>
+<div id="dp-1" class="b-tab-panel" role="tabpanel" aria-labelledby="dp-1-t">Today's schedule.</div>
+<div id="dp-2" class="b-tab-panel" role="tabpanel" aria-labelledby="dp-2-t" hidden>This week's schedule.</div>
+<div id="dp-3" class="b-tab-panel" role="tabpanel" aria-labelledby="dp-3-t" hidden>This month's schedule.</div>
 </demo>
 
 ## Markup

@@ -1,6 +1,6 @@
 {
   "name": "blastcss",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "A modern, framework-agnostic CSS framework built on cascade layers, OKLCH tokens, container queries, and the popover API.",
   "type": "module",
   "author": {
@@ -63,8 +63,9 @@
     "prepublishOnly": "npm run test:static",
     "test": "npm run test:static",
     "serve": "node scripts/serve.mjs",
-    "test:browser": "playwright test tests/browser/render.spec.js tests/browser/interactions.spec.js",
-    "test:browser:chromium": "playwright test tests/browser/render.spec.js tests/browser/interactions.spec.js --project=chromium",
+    "test:browser": "playwright test tests/browser/render.spec.js tests/browser/interactions.spec.js && npm run test:browser:a11y",
+    "test:browser:a11y": "playwright test tests/browser/a11y-all.spec.js --project=chromium",
+    "test:browser:chromium": "playwright test tests/browser/render.spec.js tests/browser/interactions.spec.js --project=chromium && npm run test:browser:a11y",
     "test:browser:visual": "playwright test tests/browser/visual.spec.js --project=chromium",
     "test:static": "npm run build && npm run build:docs && npm run benchmark && npm run check:size && npm run check:quality && npm run check:exports && npm run check:html && npm run check:visual-manifest",
     "test:visual:update": "playwright test tests/browser/visual.spec.js --project=chromium --update-snapshots",

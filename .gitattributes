@@ -1,0 +1,24 @@
+# Normalise line endings so builds are deterministic across platforms.
+# Source and text files are stored and checked out as LF regardless of
+# the contributor's git core.autocrlf setting.
+* text=auto eol=lf
+
+*.css   text eol=lf
+*.js    text eol=lf
+*.mjs   text eol=lf
+*.json  text eol=lf
+*.md    text eol=lf
+*.html  text eol=lf
+*.svg   text eol=lf
+*.ts    text eol=lf
+*.yml   text eol=lf
+*.yaml  text eol=lf
+
+# Binary assets — never normalise.
+*.png   binary
+*.jpg   binary
+*.jpeg  binary
+*.gif   binary
+*.ico   binary
+*.woff  binary
+*.woff2 binary

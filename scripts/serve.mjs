@@ -1,7 +1,7 @@
 import { createServer } from "node:http";
 import { createReadStream } from "node:fs";
 import { stat } from "node:fs/promises";
-import { extname, join, normalize, resolve } from "node:path";
+import { extname, posix, resolve } from "node:path";
 
 const root = process.cwd();
 const port = Number(process.env.PORT || 4173);
@@ -19,7 +19,9 @@ const types = {
 
 function safePath(url) {
   const pathname = decodeURIComponent(new URL(url, `http://localhost:${port}`).pathname);
-  return normalize(pathname).replace(/^(\.\.[/\\])+/, "");
+  // Normalise with POSIX semantics so forward-slash URLs are not converted to
+  // backslashes on Windows (which broke the "/" root check and leading-slash strip).
+  return posix.normalize(pathname).replace(/^(\.\.\/)+/, "");
 }
 
 async function tryFile(p) {
