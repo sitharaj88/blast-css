@@ -664,6 +664,10 @@ body.docs-body {
 .b-demo-preview > .b-cover { inline-size: min(28rem, 100%); }
 .b-demo-preview > .b-grid { inline-size: min(34rem, 100%); }
 .b-demo-preview > .b-navbar { inline-size: min(38rem, 100%); }
+/* Full-width block elements (progress track, block button) have no intrinsic
+   width and collapse as a centered flex item. */
+.b-demo-preview > .b-progress,
+.b-demo-preview > .b-btn-block { inline-size: min(22rem, 100%); }
 
 /* Overlay demos: the opened menu would be clipped by the demo frame's
    overflow. Reserve head-room and anchor the trigger so the menu fits

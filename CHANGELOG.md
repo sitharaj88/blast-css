@@ -14,7 +14,8 @@ Patch release: cross-platform build robustness and accessibility fixes. No publi
 
 ### Docs
 - **API tables rendered.** The docs Markdown parser had no GFM table support, so the `| Class | … |` API reference tables on 32 component/guide/utility pages rendered as raw pipe text. Added table parsing (with column alignment), reusing the responsive API-table styling.
-- **Card demos no longer collapse.** `.b-card` (and `.b-navbar`) use `container-type: inline-size`, which made them shrink to a sliver as centered flex items — every card demo rendered empty. The demo preview now gives container-type surfaces an intrinsic width.
+- **Card & layout demos no longer collapse.** `.b-card`/`.b-navbar` use `container-type: inline-size`, which made them (and the `.b-stack`/`.b-grid`/`.b-split` wrappers around them, and the indeterminate `.b-progress` track) shrink to a sliver as centered flex items — those demos rendered empty. The preview now gives such elements an intrinsic width so children lay out normally.
+- **Overlay demos no longer clipped.** Opened dropdown and combobox menus (which open downward) and tooltips (which open upward) were cut off by the demo frame's `overflow`. The build now tags overlay demos so the preview reserves head-room in the correct direction; command palette and popover use the top layer and are unaffected.
 - **Modernized component preview blocks.** Refreshed the demo preview surface (tinted background for contrast against cards/inputs, soft dotted backdrop, subtle elevation) so all component demos read clearly in both themes.
 
 ### Added
