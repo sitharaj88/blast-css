@@ -190,6 +190,15 @@ function codeBlock(code, lang) {
   </figure>`;
 }
 
+// Overlay demos open a menu that would be clipped by the demo frame's
+// overflow. Tag the section so CSS can reserve head-room in the right
+// direction. Top-layer overlays (popover, command/dialog) need nothing.
+function demoOverflowClass(html) {
+  if (/\bb-dropdown\b|\bb-combobox\b/.test(html)) return " b-demo-menu-down";
+  if (/\bb-tooltip\b/.test(html)) return " b-demo-menu-up";
+  return "";
+}
+
 function demoBlock(html) {
   // Multi-variant detection: lines starting with `## Variant Name` split into tabs.
   const variantParts = html.split(/^##\s+(.+)$/m);
@@ -208,7 +217,7 @@ function demoBlock(html) {
 }
 
 function demoSingle(html) {
-  return `<section class="b-demo">
+  return `<section class="b-demo${demoOverflowClass(html)}">
     <div class="b-demo-bar">
       <div class="b-demo-tabs" role="tablist">
         <button class="b-demo-tab is-active" type="button" role="tab" aria-selected="true" data-tab="preview">Preview</button>
@@ -232,7 +241,7 @@ function demoVariantsBlock(variants, preamble) {
     <div class="b-demo-code" role="tabpanel" data-panel="code" hidden>${codeBlock((preamble ? preamble + "\n" : "") + v.body, "html")}</div>
   </div>`).join("");
 
-  return `<section class="b-demo b-demo-variants">
+  return `<section class="b-demo b-demo-variants${demoOverflowClass(preamble + " " + variants.map((v) => v.body).join(" "))}">
     <div class="b-demo-bar">
       <div class="b-demo-tabs" role="tablist">
         <button class="b-demo-tab is-active" type="button" role="tab" aria-selected="true" data-tab="preview">Preview</button>
@@ -282,6 +291,45 @@ function apiBlock(rows) {
 
 function stripTagsForCopy(s) {
   return s.replace(/`([^`]+)`/g, "$1");
+}
+
+// ── GFM tables ───────────────────────────────────────────────────
+// Generic `| a | b |` / `| --- | --- |` tables. Reuses the API table
+// styling (.docs-api-table) so they get the same responsive card layout.
+function isTableSeparator(line) {
+  const t = line.trim();
+  return t.includes("-") && /^\|?\s*:?-+:?\s*(\|\s*:?-+:?\s*)*\|?$/.test(t);
+}
+
+function splitTableRow(line) {
+  return line
+    .trim()
+    .replace(/^\|/, "")
+    .replace(/\|$/, "")
+    .split(/(?<!\\)\|/)
+    .map((c) => c.trim().replace(/\\\|/g, "|"));
+}
+
+function tableAlign(cell) {
+  const t = cell.trim();
+  const left = t.startsWith(":");
+  const right = t.endsWith(":");
+  if (left && right) return "center";
+  if (right) return "right";
+  return "";
+}
+
+function mdTable(headerCells, aligns, bodyRows) {
+  const alignAttr = (i) => (aligns[i] ? ` style="text-align:${aligns[i]}"` : "");
+  const thead = `<tr>${headerCells
+    .map((c, i) => `<th scope="col"${alignAttr(i)}>${inline(c)}</th>`)
+    .join("")}</tr>`;
+  const tbody = bodyRows
+    .map((cells) => `<tr>${headerCells
+      .map((_, i) => `<td data-label="${escapeAttr(stripTagsForCopy(headerCells[i] || ""))}"${alignAttr(i)}>${inline(cells[i] || "")}</td>`)
+      .join("")}</tr>`)
+    .join("");
+  return `<div class="docs-api-table-wrap"><table class="docs-api-table"><thead>${thead}</thead><tbody>${tbody}</tbody></table></div>`;
 }
 
 function parseApi(raw) {
@@ -377,6 +425,20 @@ function parseMarkdown(src) {
     if (apiMatch) {
       out.push(apiBlock(apis[Number(apiMatch[1])]));
       i++; continue;
+    }
+
+    // GFM table: a `| ... |` row immediately followed by a separator row.
+    if (line.includes("|") && i + 1 < lines.length && isTableSeparator(lines[i + 1])) {
+      const headerCells = splitTableRow(line);
+      const aligns = splitTableRow(lines[i + 1]).map(tableAlign);
+      i += 2;
+      const bodyRows = [];
+      while (i < lines.length && lines[i].trim() && lines[i].includes("|") && !/^@@/.test(lines[i].trim())) {
+        bodyRows.push(splitTableRow(lines[i]));
+        i++;
+      }
+      out.push(mdTable(headerCells, aligns, bodyRows));
+      continue;
     }
 
     const h = line.match(/^(#{1,6})\s+(.+)$/);

@@ -514,8 +514,10 @@ body.docs-body {
    ───────────────────────────────────────────────────────────── */
 
 .b-demo {
+  background: var(--b-bg);
   border: 1px solid var(--b-border);
   border-radius: var(--b-radius-lg);
+  box-shadow: var(--b-shadow-xs);
   margin-block: var(--b-5);
   overflow: clip;
 }
@@ -622,30 +624,62 @@ body.docs-body {
 .b-demo-preview {
   align-items: center;
   background:
-    radial-gradient(circle at 30% 10%, color-mix(in oklch, var(--b-primary) 8%, transparent), transparent 40%),
-    var(--b-bg);
+    radial-gradient(120% 80% at 50% -10%, color-mix(in oklch, var(--b-primary) 7%, transparent), transparent 60%),
+    color-mix(in oklch, var(--b-surface) 60%, var(--b-bg));
   display: flex;
   flex-wrap: wrap;
-  gap: var(--b-3);
+  gap: var(--b-4);
   justify-content: center;
-  padding: var(--b-6) var(--b-4);
+  min-block-size: 9.5rem;
+  padding: clamp(var(--b-6), 4vw, var(--b-10)) var(--b-5);
   position: relative;
 }
 
+/* Soft dotted backdrop — modern, low-contrast, decorative only. */
 .b-demo-preview::before {
-  background-image:
-    linear-gradient(color-mix(in oklch, var(--b-border) 50%, transparent) 1px, transparent 1px),
-    linear-gradient(90deg, color-mix(in oklch, var(--b-border) 50%, transparent) 1px, transparent 1px);
-  background-size: 2rem 2rem;
+  background-image: radial-gradient(color-mix(in oklch, var(--b-muted) 26%, transparent) 1px, transparent 1px);
+  background-position: center;
+  background-size: 1.25rem 1.25rem;
   content: "";
   inset: 0;
-  mask-image: radial-gradient(ellipse at center, #000 30%, transparent 80%);
-  opacity: .35;
+  mask-image: radial-gradient(ellipse 75% 75% at center, #000 35%, transparent 80%);
+  opacity: .55;
   pointer-events: none;
   position: absolute;
 }
 
 .b-demo-preview > * { position: relative; z-index: 1; }
+
+/* Cards (and other `container-type: inline-size` surfaces) collapse to a
+   sliver as a shrink-to-fit flex item — inline-size containment makes the
+   element ignore its own content width. The collapse also propagates up
+   through layout wrappers (a .b-stack/.b-grid of cards shrinks to zero too),
+   so give the top-level demo element an intrinsic width. Children then lay
+   out against a real width instead of a content-derived zero. */
+.b-demo-preview > .b-card,
+.b-demo-preview > .b-stack,
+.b-demo-preview > .b-split,
+.b-demo-preview > .b-sidebar,
+.b-demo-preview > .b-switcher,
+.b-demo-preview > .b-cover { inline-size: min(28rem, 100%); }
+.b-demo-preview > .b-grid { inline-size: min(34rem, 100%); }
+.b-demo-preview > .b-navbar { inline-size: min(38rem, 100%); }
+
+/* Overlay demos: the opened menu would be clipped by the demo frame's
+   overflow. Reserve head-room and anchor the trigger so the menu fits
+   inside the preview. Down-openers (dropdown, combobox) get space below;
+   up-openers (tooltip) get space above. Command palette and popover render
+   in the top layer, so they need no special handling. */
+.b-demo-menu-down .b-demo-preview {
+  align-items: flex-start;
+  min-block-size: 21rem;
+  padding-block: var(--b-7) var(--b-6);
+}
+
+.b-demo-menu-up .b-demo-preview {
+  align-items: flex-end;
+  min-block-size: 12rem;
+}
 
 .b-demo .b-code {
   border: 0;

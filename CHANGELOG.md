@@ -12,6 +12,11 @@ Patch release: cross-platform build robustness and accessibility fixes. No publi
 - **Dev server 404s on Windows.** `scripts/serve.mjs` used `path.normalize`, converting URL forward-slashes to backslashes and breaking the root/path resolution. It now uses POSIX normalization for URL paths.
 - **Accessibility:** added accessible names to the progress-bar demos (`aria-label`) and completed the pill-tabs demo with its `tabpanel`s so `aria-controls` references resolve. All 46 docs pages now pass axe with zero violations.
 
+### Docs
+- **API tables rendered.** The docs Markdown parser had no GFM table support, so the `| Class | … |` API reference tables on 32 component/guide/utility pages rendered as raw pipe text. Added table parsing (with column alignment), reusing the responsive API-table styling.
+- **Card demos no longer collapse.** `.b-card` (and `.b-navbar`) use `container-type: inline-size`, which made them shrink to a sliver as centered flex items — every card demo rendered empty. The demo preview now gives container-type surfaces an intrinsic width.
+- **Modernized component preview blocks.** Refreshed the demo preview surface (tinted background for contrast against cards/inputs, soft dotted backdrop, subtle elevation) so all component demos read clearly in both themes.
+
 ### Added
 - `.gitattributes` enforcing LF for text sources so builds are deterministic across platforms.
 - Comprehensive `tests/browser/a11y-all.spec.js` axe sweep covering every generated docs page (wired into `test:browser` / CI).
