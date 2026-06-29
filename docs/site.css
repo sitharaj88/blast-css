@@ -623,9 +623,13 @@ body.docs-body {
 
 .b-demo-preview {
   align-items: center;
+  /* Plain page background, NOT a surface tint: skeleton, progress tracks and
+     dividers are surface-coloured, so a surface-tinted canvas would wash them
+     out in both themes. Elevated surfaces (cards, inputs) instead stand out
+     via their own border + shadow (boosted below). */
   background:
     radial-gradient(120% 80% at 50% -10%, color-mix(in oklch, var(--b-primary) 7%, transparent), transparent 60%),
-    color-mix(in oklch, var(--b-surface) 60%, var(--b-bg));
+    var(--b-bg);
   display: flex;
   flex-wrap: wrap;
   gap: var(--b-4);
@@ -662,6 +666,9 @@ body.docs-body {
 .b-demo-preview > .b-sidebar,
 .b-demo-preview > .b-switcher,
 .b-demo-preview > .b-cover { inline-size: min(28rem, 100%); }
+
+/* On the plain canvas, elevated surfaces lean on shadow to read as "lifted". */
+.b-demo-preview .b-card { box-shadow: var(--b-shadow); }
 .b-demo-preview > .b-grid { inline-size: min(34rem, 100%); }
 .b-demo-preview > .b-navbar { inline-size: min(38rem, 100%); }
 /* Full-width block elements (progress track, block button) have no intrinsic
